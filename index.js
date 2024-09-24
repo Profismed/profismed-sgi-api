@@ -8,11 +8,11 @@ app.get('/', (req, res) => {
 })
 
 app.post('/login', (req, res) => {
-  res.json({ message: 'Login route' });
+  res.json({ message: 'Login route' })
 })
 
 app.post('/register', (req, res) => {
-  res.send('Register route');
+  res.send('Register route')
 })
 
 app.post('/logout', (req, res) => {
