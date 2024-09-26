@@ -1,54 +1,23 @@
-import DBLocal from 'db-local'
-import crypto from 'node:crypto'
+import { pool } from '../../db/db-connection.js'
 import bcrypt from 'bcrypt'
-import { SALT_ROUNDS } from '../../config.js'
 
-const { Schema } = new DBLocal({ path: './db' })
+export const saveUser = async (user) => {
+  const { username, password } = user
+  const hashedPassword = await bcrypt.hash(password, 10)
 
-const User = Schema('User', {
-  _id: {
-    type: String,
-    required: true
-  },
-  username: {
-    type: String,
-    required: true
-  },
-  password: {
-    type: String,
-    required: true
+  try {
+    await pool.query('INSERT INTO users (username, password) VALUES (?, ?)', [username, hashedPassword])
+  } catch (e) {
+    console.error(e)
   }
-})
+}
 
-export class UserRepository {
-  static async create ({
-    username,
-    password
-  }) {
-    if (typeof username !== 'string') throw new Error('Username must be a string')
-    if (username.length < 3) throw new Error('Username must be at least 3 characters long')
-
-    if (typeof password !== 'string') throw new Error('Password must be a string')
-    if (password.length < 6) throw new Error('Password must be at least 6 characters long')
-
-    const user = User.findOne({ username })
-    if (user) throw new Error('User already exists')
-
-    const id = crypto.randomUUID()
-    const hashedPassword = await bcrypt.hash(password, SALT_ROUNDS)
-
-    User.create({
-      _id: id,
-      username,
-      password: hashedPassword
-    }).save()
-
-    return id
+export const verifyUser = async (user) => {
+  const { username, password } = user
+  const [rows] = await pool.query('SELECT * FROM users WHERE username = ?', [username])
+  if (rows.length === 0) {
+    return false
   }
-
-  static login ({
-    username,
-    password
-  }) {
-  }
+  const hashedPassword = rows[0].password
+  return await bcrypt.compare(password, hashedPassword)
 }
