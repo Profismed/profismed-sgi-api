@@ -21,3 +21,8 @@ export const verifyUser = async (user) => {
   const hashedPassword = rows[0].password
   return await bcrypt.compare(password, hashedPassword)
 }
+
+export const verifyExistingUser = async (username) => {
+  const [rows] = await pool.query('SELECT * FROM users WHERE username = ?', [username])
+  return rows.length > 0
+}
