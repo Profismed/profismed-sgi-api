@@ -1,5 +1,7 @@
 import express from 'express'
-import { loginUser, registerUser, retrieveUserName, logoutUser } from '../../controllers/users/users-controller.js'
+import { registerUser } from '../../controllers/users/users-controller.js'
+import { loginUser, logoutUser, retrieveUserName } from '../../controllers/auth/auth-controller.js'
+
 import cookieParser from 'cookie-parser'
 
 export const router = express.Router()
