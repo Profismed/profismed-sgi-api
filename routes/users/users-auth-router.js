@@ -1,6 +1,6 @@
 import express from 'express'
 import { registerUser } from '../../controllers/users/users-controller.js'
-import { loginUser, logoutUser, retrieveUserName } from '../../controllers/auth/auth-controller.js'
+import { loginUser, logoutUser, retrieveUserSessionData } from '../../controllers/auth/auth-controller.js'
 
 import cookieParser from 'cookie-parser'
 
@@ -14,4 +14,4 @@ router.post('/logout', logoutUser)
 
 router.use(cookieParser())
 
-router.get('/userName', retrieveUserName)
+router.get('/userData', retrieveUserSessionData)

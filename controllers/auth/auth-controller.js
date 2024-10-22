@@ -1,4 +1,4 @@
-import { verifyUser } from '../../repositories/users/user-repository.js'
+import { verifyUserCredentials, retrieveUserData } from '../../repositories/users/user-repository.js'
 import jwt from 'jsonwebtoken'
 import { JWT_SECRET } from '../../config/config.js'
 
@@ -8,10 +8,11 @@ export const loginUser = async (req, res) => {
   const user = { username, password }
 
   try {
-    const isUser = await verifyUser(user)
+    const isUser = await verifyUserCredentials(user)
     if (isUser) {
-      const token = jwt.sign(username, JWT_SECRET)
-      res.cookie('token', token)
+      const userData = await retrieveUserData(username)
+      console.log(userData)
+      res.cookie('token', jwt.sign(userData, JWT_SECRET))
       res.status(200).send('Logged in')
     } else {
       res.status(401).send('Invalid credentials')
@@ -22,11 +23,11 @@ export const loginUser = async (req, res) => {
   }
 }
 
-export const retrieveUserName = async (req, res) => {
+export const retrieveUserSessionData = async (req, res) => {
   try {
     const token = req.cookies.token
-    const username = jwt.verify(token, JWT_SECRET)
-    res.status(200).send(username)
+    const userData = jwt.verify(token, JWT_SECRET)
+    res.status(200).send(userData)
   } catch (e) {
     console.error(e)
     res.status(500).send('Something went wrong')
