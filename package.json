@@ -17,7 +17,8 @@
     "express": "^4.21.0",
     "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.11.3",
-    "profismed-crm-api": "file:"
+    "profismed-crm-api": "file:",
+    "sequelize": "^6.37.4"
   },
   "devDependencies": {
     "morgan": "^1.10.0",
