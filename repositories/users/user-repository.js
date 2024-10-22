@@ -1,9 +1,10 @@
 import { pool } from '../../db/db-connection.js'
 import bcrypt from 'bcrypt'
+import { SALT_ROUNDS } from '../../config/config.js'
 
 export const saveUser = async (user) => {
   const { username, password } = user
-  const hashedPassword = await bcrypt.hash(password, 10)
+  const hashedPassword = await bcrypt.hash(password, SALT_ROUNDS)
 
   try {
     await pool.query('INSERT INTO users (username, password) VALUES (?, ?)', [username, hashedPassword])
