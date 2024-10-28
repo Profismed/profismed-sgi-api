@@ -2,7 +2,7 @@ import { saveUser, verifyExistingUser } from '../../repositories/users/user-repo
 
 export const registerUser = async (req, res) => {
   const {
-    username: userName,
+    userName,
     firstName,
     lastName,
     userEmail,
