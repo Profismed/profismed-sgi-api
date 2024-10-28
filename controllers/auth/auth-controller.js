@@ -47,8 +47,16 @@ export const logoutUser = async (req, res) => {
 export const isSessionActive = async (req, res, next) => {
   try {
     const token = req.cookies.token
-    jwt.verify(token, JWT_SECRET)
-    next()
+    if (!token) {
+      return res.status(401).send('Unauthorized')
+    }
+
+    const decoded = jwt.verify(token, JWT_SECRET)
+    if (decoded) {
+      next()
+    } else {
+      res.status(401).send('Unauthorized')
+    }
   } catch (e) {
     console.error(e)
     res.status(401).send('Unauthorized')

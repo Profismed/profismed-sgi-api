@@ -4,12 +4,14 @@ import bcrypt from 'bcrypt'
 import { SALT_ROUNDS } from '../../config/config.js'
 
 export const saveUser = async (user) => {
-  const { username, userEmail, userPhone, roleId, documentId, documentNumber, userJob, userContactOrigin, locationId, password } = user
+  const { username, firstName, lastName, userEmail, userPhone, roleId, documentId, documentNumber, userJob, userContactOrigin, locationId, password } = user
   const hashedPassword = await bcrypt.hash(password, SALT_ROUNDS)
 
   try {
     await User.create({
       username,
+      firstName,
+      lastName,
       userEmail,
       userPhone,
       roleId,

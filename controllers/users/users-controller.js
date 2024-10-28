@@ -2,7 +2,9 @@ import { saveUser, verifyExistingUser } from '../../repositories/users/user-repo
 
 export const registerUser = async (req, res) => {
   const {
-    username,
+    username: userName,
+    firstName,
+    lastName,
     userEmail,
     userPhone,
     roleId,
@@ -15,7 +17,9 @@ export const registerUser = async (req, res) => {
   } = req.body
 
   const user = {
-    username,
+    userName,
+    firstName,
+    lastName,
     userEmail,
     userPhone,
     roleId,
@@ -26,7 +30,7 @@ export const registerUser = async (req, res) => {
     locationId,
     password
   }
-  if (await verifyExistingUser(username)) {
+  if (await verifyExistingUser(userName)) {
     return res.status(400).send('User already exists')
   } else {
     try {
