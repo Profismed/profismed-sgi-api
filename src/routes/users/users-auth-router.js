@@ -9,10 +9,12 @@ export const router = express.Router()
 router.use(express.json())
 
 router.post('/register', registerUser)
-router.post('/login', loginUser)
+
 router.post('/logout', logoutUser)
 
 router.use(cookieParser())
+router.post('/login', loginUser)
+
 router.use(isSessionActive)
 
 router.get('/userData', retrieveUserSessionData)

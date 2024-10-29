@@ -8,6 +8,14 @@ export const loginUser = async (req, res) => {
   const user = { username, password }
 
   try {
+    const token = req.cookies.token
+    if (token) {
+      const decoded = jwt.verify(token, JWT_SECRET)
+      if (decoded) {
+        return res.status(400).send('Session already active')
+      }
+    }
+
     const isUser = await verifyUserCredentials(user)
     if (isUser) {
       const userData = await retrieveUserData(username)
