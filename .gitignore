@@ -2,5 +2,3 @@ node_modules/
 .idea/
 .local.env
 .env
-package-lock.json
-yarn.lock
