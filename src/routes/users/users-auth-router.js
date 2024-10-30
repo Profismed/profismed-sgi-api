@@ -1,6 +1,8 @@
 import express from 'express'
 import { registerUser } from '../../controllers/users/users-controller.js'
-import { loginUser, logoutUser, retrieveUserSessionData, isSessionActive } from '../../controllers/auth/auth-controller.js'
+import { loginUser, logoutUser, retrieveUserSessionData} from '../../controllers/auth/auth-controller.js'
+import {isSessionActive} from "../../middlewares/auth/auth-middlewares.js";
+
 
 import cookieParser from 'cookie-parser'
 
