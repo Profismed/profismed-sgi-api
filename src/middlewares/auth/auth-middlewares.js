@@ -1,5 +1,5 @@
-import jwt from "jsonwebtoken"
-import { JWT_SECRET } from "../../config/config.js"
+import jwt from 'jsonwebtoken'
+import { JWT_SECRET } from '../../config/config.js'
 
 /**
  * Middleware para verificar si la sesión de un usuario está activa.
