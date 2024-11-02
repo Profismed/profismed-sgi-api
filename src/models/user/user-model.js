@@ -1,8 +1,6 @@
 import { DataTypes } from 'sequelize'
 import { sequelize } from '../../db/db-connection.js'
 
-import { DB_HOST, DB_NAME, DB_PASSWORD, DB_USER } from '../../config/config.js'
-
 /**
  * Modelo de usuario que define la estructura de la tabla 'user' en la base de datos.
  *

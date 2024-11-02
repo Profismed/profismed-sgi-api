@@ -1,7 +1,7 @@
-import express from "express";
-import {createProduct, listProducts, updateProduct, deleteProduct } from "../../controllers/products/products-controller.js";
+import express from 'express'
+import { createProduct, listProducts, updateProduct, deleteProduct } from '../../controllers/products/products-controller.js'
 
-export const productsRouter = express.Router();
+export const productsRouter = express.Router()
 
 productsRouter.use(express.json())
 
@@ -12,6 +12,3 @@ productsRouter.get('/', listProducts)
 productsRouter.put('/update/:id', updateProduct)
 
 productsRouter.delete('/delete/:id', deleteProduct)
-
-
-

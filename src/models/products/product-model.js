@@ -1,5 +1,5 @@
-import { DataTypes } from 'sequelize';
-import { sequelize } from '../../db/db-connection.js';
+import { DataTypes } from 'sequelize'
+import { sequelize } from '../../db/db-connection.js'
 
 /**
  * Modelo de producto que define la estructura de la tabla 'products' en la base de datos.
@@ -58,4 +58,4 @@ export const Product = sequelize.define('product', {
       key: 'user_id'
     }
   }
-}, { timestamps: false });
+}, { timestamps: false })

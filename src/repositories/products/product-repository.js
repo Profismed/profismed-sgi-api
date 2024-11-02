@@ -1,4 +1,4 @@
-import { Product } from "../../models/products/product-model.js"
+import { Product } from '../../models/products/product-model.js'
 
 /**
  * Guarda un nuevo producto en la base de datos.
@@ -12,18 +12,18 @@ import { Product } from "../../models/products/product-model.js"
  * @returns {Promise<void>} - Indica el éxito o fallo de la operación.
  */
 export const saveProduct = async (product) => {
-    const { productName, productDescription, productPrice, quantity, userId } = product
-    try {
-        await Product.create({
-            productName,
-            productDescription,
-            productPrice,
-            quantity,
-            userId
-        })
-    } catch (e) {
-        console.error(e)
-    }
+  const { productName, productDescription, productPrice, quantity, userId } = product
+  try {
+    await Product.create({
+      productName,
+      productDescription,
+      productPrice,
+      quantity,
+      userId
+    })
+  } catch (e) {
+    console.error(e)
+  }
 }
 
 /**
@@ -32,15 +32,15 @@ export const saveProduct = async (product) => {
  * @returns {Promise<Array>} - Lista de productos disponibles.
  */
 export const getProducts = async () => {
-    try {
-        return await Product.findAll({
-            where: {
-                isAvailable: 1
-            }
-        })
-    } catch (e) {
-        console.error(e)
-    }
+  try {
+    return await Product.findAll({
+      where: {
+        isAvailable: 1
+      }
+    })
+  } catch (e) {
+    console.error(e)
+  }
 }
 
 /**
@@ -51,22 +51,22 @@ export const getProducts = async () => {
  * @returns {Promise<void>} - Indica el éxito o fallo de la operación.
  */
 export const updateProductDB = async (product, productId) => {
-    const { productName, productDescription, productPrice, quantity, userId } = product
-    try {
-        await Product.update({
-            productName,
-            productDescription,
-            productPrice,
-            quantity,
-            userId
-        }, {
-            where: {
-                productId
-            }
-        })
-    } catch (e) {
-        console.error(e)
-    }
+  const { productName, productDescription, productPrice, quantity, userId } = product
+  try {
+    await Product.update({
+      productName,
+      productDescription,
+      productPrice,
+      quantity,
+      userId
+    }, {
+      where: {
+        productId
+      }
+    })
+  } catch (e) {
+    console.error(e)
+  }
 }
 
 /**
@@ -76,16 +76,16 @@ export const updateProductDB = async (product, productId) => {
  * @returns {Promise<void>} - Indica el éxito o fallo de la operación.
  */
 export const deleteProductDB = async (productId) => {
-    try {
-        await Product.update(
-            { isAvailable: 0 },
-            {
-                where: {
-                    productId
-                }
-            }
-        );
-    } catch (e) {
-        console.error(e);
-    }
+  try {
+    await Product.update(
+      { isAvailable: 0 },
+      {
+        where: {
+          productId
+        }
+      }
+    )
+  } catch (e) {
+    console.error(e)
+  }
 }
