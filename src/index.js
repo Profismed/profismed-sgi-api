@@ -6,22 +6,11 @@ import cors from 'cors'
 
 const app = express()
 
-// Middleware para registrar las solicitudes en la consola en formato de desarrollo
 app.use(morgan('dev'))
-
-// Middleware para habilitar CORS (Cross-Origin Resource Sharing)
 app.use(cors())
 
-/**
- * Rutas de autenticación y gestión de usuarios.
- * Prefijo para las rutas de autenticación: `/api/auth`
- */
 app.use('/api/auth', usersAuthRoutes)
 
-/**
- * Inicia el servidor en el puerto especificado en la configuración.
- * Muestra un mensaje en la consola indicando que el servidor está en funcionamiento.
- */
 app.listen(PORT, () => {
-  console.log(`Servidor funcionando en el puerto ${PORT}`)
+  console.log(`Server is running on port ${PORT}`)
 })
