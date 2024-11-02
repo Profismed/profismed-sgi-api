@@ -1,7 +1,14 @@
-import {saveProduct, getProducts, updateProductDB,deleteProductDB} from "../../repositories/products/product-repository.js";
+import { saveProduct, getProducts, updateProductDB, deleteProductDB } from "../../repositories/products/product-repository.js"
 
+/**
+ * Crea un nuevo producto y lo guarda en la base de datos.
+ *
+ * @param {object} req - Objeto de solicitud de Express, que contiene los datos del producto en `req.body`.
+ * @param {object} res - Objeto de respuesta de Express, utilizado para enviar la respuesta HTTP.
+ * @returns {Promise<void>} - Responde con un mensaje de éxito o error.
+ */
 export const createProduct = async (req, res) => {
-    const {productName, productDescription, productPrice, quantity, userId} = req.body
+    const { productName, productDescription, productPrice, quantity, userId } = req.body
     const product = {
         productName,
         productDescription,
@@ -18,6 +25,13 @@ export const createProduct = async (req, res) => {
     }
 }
 
+/**
+ * Lista todos los productos disponibles en la base de datos.
+ *
+ * @param {object} req - Objeto de solicitud de Express.
+ * @param {object} res - Objeto de respuesta de Express, utilizado para enviar los datos de los productos.
+ * @returns {Promise<void>} - Responde con un listado de productos o un mensaje de error.
+ */
 export const listProducts = async (req, res) => {
     try {
         const products = await getProducts()
@@ -28,10 +42,17 @@ export const listProducts = async (req, res) => {
     }
 }
 
+/**
+ * Actualiza la información de un producto existente en la base de datos.
+ *
+ * @param {object} req - Objeto de solicitud de Express, contiene los datos actualizados del producto en `req.body`.
+ * @param {object} res - Objeto de respuesta de Express.
+ * @returns {Promise<void>} - Responde con un mensaje de éxito o error.
+ */
 export const updateProduct = async (req, res) => {
     const productId = req.params.id
     console.log(productId)
-    const {productName, productDescription, productPrice, quantity, userId} = req.body
+    const { productName, productDescription, productPrice, quantity, userId } = req.body
     const product = {
         productName,
         productDescription,
@@ -48,7 +69,13 @@ export const updateProduct = async (req, res) => {
     }
 }
 
-
+/**
+ * Marca un producto como no disponible en la base de datos.
+ *
+ * @param {object} req - Objeto de solicitud de Express, que contiene el `id` del producto en `req.params`.
+ * @param {object} res - Objeto de respuesta de Express.
+ * @returns {Promise<void>} - Responde con un mensaje de éxito o error.
+ */
 export const deleteProduct = async (req, res) => {
     const productId = req.params.id
     try {
