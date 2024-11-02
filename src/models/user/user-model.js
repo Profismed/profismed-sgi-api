@@ -6,6 +6,25 @@ const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
   dialect: 'mysql'
 })
 
+/**
+ * Modelo de usuario que define la estructura de la tabla 'user' en la base de datos.
+ *
+ * @typedef {object} User
+ * @property {number} userId - ID único del usuario (clave primaria, auto-incremental).
+ * @property {string} username - Nombre de usuario.
+ * @property {string} firstName - Nombre del usuario.
+ * @property {string} lastName - Apellido del usuario.
+ * @property {string} userEmail - Correo electrónico del usuario.
+ * @property {string} userPhone - Teléfono del usuario.
+ * @property {number} roleId - ID del rol del usuario.
+ * @property {number} documentId - Tipo de documento del usuario.
+ * @property {string} documentNumber - Número de documento del usuario.
+ * @property {string} userJob - Profesión o cargo del usuario.
+ * @property {string} userContactOrigin - Origen de contacto del usuario.
+ * @property {number} locationId - ID de la ubicación del usuario.
+ * @property {string} password - Contraseña del usuario, almacenada como hash.
+ */
+
 export const User = sequelize.define('user', {
   userId: {
     type: DataTypes.INTEGER,

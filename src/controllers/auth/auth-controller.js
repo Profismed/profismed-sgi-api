@@ -2,9 +2,16 @@ import { verifyUserCredentials, retrieveUserData } from '../../repositories/user
 import jwt from 'jsonwebtoken'
 import { JWT_SECRET } from '../../config/config.js'
 
+/**
+ * Autentica un usuario y genera un token JWT para la sesión.
+ * Si el usuario ya tiene una sesión activa, responde con un error.
+ *
+ * @param {object} req - Objeto de solicitud de Express, que contiene `username` y `password` en `req.body`.
+ * @param {object} res - Objeto de respuesta de Express para enviar la respuesta HTTP.
+ * @returns {Promise<void>} - Responde con un mensaje de éxito si las credenciales son válidas, o con un mensaje de error en caso contrario.
+ */
 export const loginUser = async (req, res) => {
   const { username, password } = req.body
-
   const user = { username, password }
 
   try {
@@ -31,6 +38,13 @@ export const loginUser = async (req, res) => {
   }
 }
 
+/**
+ * Recupera los datos de la sesión del usuario autenticado utilizando el token JWT.
+ *
+ * @param {object} req - Objeto de solicitud de Express, que contiene el token en `req.cookies`.
+ * @param {object} res - Objeto de respuesta de Express para enviar la respuesta HTTP.
+ * @returns {Promise<void>} - Responde con los datos del usuario si el token es válido.
+ */
 export const retrieveUserSessionData = async (req, res) => {
   try {
     const token = req.cookies.token
@@ -42,6 +56,13 @@ export const retrieveUserSessionData = async (req, res) => {
   }
 }
 
+/**
+ * Cierra la sesión del usuario eliminando el token JWT de las cookies.
+ *
+ * @param {object} req - Objeto de solicitud de Express.
+ * @param {object} res - Objeto de respuesta de Express para enviar la respuesta HTTP.
+ * @returns {Promise<void>} - Responde con un mensaje de éxito al cerrar la sesión.
+ */
 export const logoutUser = async (req, res) => {
   try {
     res.clearCookie('token')
@@ -51,5 +72,3 @@ export const logoutUser = async (req, res) => {
     res.status(500).send('Something went wrong')
   }
 }
-
-
