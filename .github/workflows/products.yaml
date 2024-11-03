@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - products-functionality
 
 jobs:
   install-dependencies:
