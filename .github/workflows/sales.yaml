@@ -1,0 +1,16 @@
+name: Sales Testing
+run-name: ${{ github.actor }} is Testing Github Actions
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  install-dependencies:
+    uses: Profismed/profismed-sgi-api/.github/workflows/common_workflow.yml@workflows # Usa la rama "workflows"
+  run-tests:
+    needs: install-dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run sales tests
+        run: npm test

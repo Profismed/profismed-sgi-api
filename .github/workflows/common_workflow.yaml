@@ -1,0 +1,12 @@
+name: Common Setup
+
+on:
+  workflow_call: # Habilita que este workflow pueda ser llamado por otros workflows
+
+jobs:
+  setup-environment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
