@@ -1,5 +1,5 @@
 import express from 'express'
-import { PORT } from './config/config.js'
+import { PORT, corsOptions } from './config/config.js'
 import morgan from 'morgan'
 import { router as usersAuthRoutes } from './routes/users/users-auth-router.js'
 import cors from 'cors'
@@ -13,8 +13,7 @@ const app = express()
 app.use(morgan('dev'))
 
 // Middleware para habilitar CORS (Cross-Origin Resource Sharing)
-// Permite que el servidor acepte solicitudes desde diferentes dominios, necesario para aplicaciones web distribuidas
-app.use(cors())
+app.use(cors(corsOptions))
 
 /**
  * Rutas para la autenticación y gestión de usuarios.
