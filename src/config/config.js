@@ -21,3 +21,9 @@ export const DB_PASSWORD = process.env.DB_PASSWORD ?? ''
 export const DB_NAME = process.env.DB_NAME ?? 'test'
 export const JWT_SECRET = process.env.JWT_SECRET
 export const SALT_ROUNDS = Number(process.env.SALT_ROUNDS) ?? 5
+
+
+export const corsOptions = {
+  origin: 'http://localhost:3001',
+  credentials: true
+}
