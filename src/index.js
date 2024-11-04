@@ -4,6 +4,7 @@ import morgan from 'morgan'
 import { router as usersAuthRoutes } from './routes/users/users-auth-router.js'
 import cors from 'cors'
 import { productsRouter } from './routes/products/products-router.js'
+import { salesRouter } from './routes/sales/sales-router.js'
 
 const app = express()
 
@@ -28,6 +29,10 @@ app.use('/api/auth', usersAuthRoutes)
  * Este grupo de rutas permite realizar operaciones CRUD en productos, como listar, crear, actualizar y eliminar productos.
  */
 app.use('/api/products', productsRouter)
+
+
+
+app.use('/api/sales', salesRouter)
 
 /**
  * Inicia el servidor y escucha en el puerto especificado.

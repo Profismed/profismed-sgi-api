@@ -2136,7 +2136,7 @@ prelude-ls@^1.2.1:
     express "^4.21.0"
     jsonwebtoken "^9.0.2"
     mysql2 "^3.11.3"
-    profismed-crm-api "file:../../AppData/Local/Yarn/Cache/v6/npm-profismed-crm-api-1.0.0-c2b426e4-9220-4bda-9c18-0642e2793215-1730172100767/node_modules/profismed-crm-api"
+    profismed-crm-api "file:../../AppData/Local/Yarn/Cache/v6/npm-profismed-crm-api-1.0.0-e597d6c6-ec8d-4a99-87e0-998219a6bb51-1730683534859/node_modules/profismed-crm-api"
     sequelize "^6.37.4"
 
 prop-types@^15.8.1:

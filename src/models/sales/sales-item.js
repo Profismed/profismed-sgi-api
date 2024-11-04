@@ -2,7 +2,7 @@ import { DataTypes } from 'sequelize';
 import { sequelize } from '../../db/db-connection.js';
 
 /**
- * Modelo de SalesItem que define la estructura de la tabla 'sales_item' en la base de datos.
+ * Modelo de SalesItemModel que define la estructura de la tabla 'sales_item' en la base de datos.
  *
  * @typedef {object} SalesItem
  * @property {number} salesItemId - ID único del ítem de venta (clave primaria, auto-incremental).
@@ -54,4 +54,4 @@ export const SalesItem = sequelize.define('sales_item', {
       key: 'sales_id'
     }
   }
-}, { timestamps: false });
+}, { timestamps: false, tableName: 'sales_item' });
