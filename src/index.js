@@ -6,7 +6,7 @@ import cors from 'cors'
 import { productsRouter } from './routes/products/products-router.js'
 import { salesRouter } from './routes/sales/sales-router.js'
 
-const app = express()
+export const app = express()
 
 // Middleware de registro de solicitudes
 // Utiliza morgan en el formato 'dev' para mostrar detalles sobre cada solicitud en la consola

@@ -3734,7 +3734,7 @@ pretty-format@^29.7.0:
     express "^4.21.0"
     jsonwebtoken "^9.0.2"
     mysql2 "^3.11.3"
-    profismed-crm-api "file:../../AppData/Local/Yarn/Cache/v6/npm-profismed-crm-api-1.0.0-f4294e3e-2a52-4585-a0da-358b6ea3337e-1730691467215/node_modules/profismed-crm-api"
+    profismed-crm-api "file:./../../AppData/Local/Yarn/Cache/v6/npm-profismed-crm-api-1.0.0-104442be-52fb-4c96-8b70-99c1688aefcf-1730698365236/node_modules/profismed-crm-api"
     sequelize "^6.37.4"
 
 prompts@^2.0.1:
