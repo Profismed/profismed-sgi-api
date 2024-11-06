@@ -18,6 +18,7 @@ import { sequelize } from '../../db/db-connection.js'
  * @property {string} userContactOrigin - Origen de contacto del usuario.
  * @property {number} locationId - ID de la ubicación del usuario.
  * @property {string} password - Contraseña del usuario, almacenada como hash.
+ * @property {number} isAvailable - Indica si el usuario está disponible (1) o no (0).
  */
 
 export const User = sequelize.define('user', {
@@ -87,5 +88,11 @@ export const User = sequelize.define('user', {
     type: DataTypes.STRING,
     allowNull: false,
     field: 'password_hash'
+  },
+  isAvailable: {
+    type: DataTypes.TINYINT,
+    allowNull: false,
+    defaultValue: 1,
+    field: 'is_available'
   }
 }, { timestamps: false })

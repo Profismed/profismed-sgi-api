@@ -1,30 +1,12 @@
 import express from 'express'
-import { registerUser } from '../../controllers/users/users-controller.js'
 import { loginUser, logoutUser, retrieveUserSessionData } from '../../controllers/auth/auth-controller.js'
 import { isSessionActive } from '../../middlewares/auth/auth-middlewares.js'
 import cookieParser from 'cookie-parser'
 
-export const router = express.Router()
+export const authRouter = express.Router()
 
-router.use(express.json())
-
-/**
- * Ruta para registrar un nuevo usuario.
- * Llama a la función `registerUser` del controlador.
- *
- * @name POST /register
- */
-router.post('/register', registerUser)
-
-/**
- * Ruta para cerrar sesión del usuario.
- * Llama a la función `logoutUser` del controlador.
- *
- * @name POST /logout
- */
-router.post('/logout', logoutUser)
-
-router.use(cookieParser())
+authRouter.use(express.json())
+authRouter.use(cookieParser())
 
 /**
  * Ruta para iniciar sesión de un usuario.
@@ -32,12 +14,20 @@ router.use(cookieParser())
  *
  * @name POST /login
  */
-router.post('/login', loginUser)
+authRouter.post('/login', loginUser)
+
+/**
+ * Ruta para cerrar sesión del usuario.
+ * Llama a la función `logoutUser` del controlador.
+ *
+ * @name POST /logout
+ */
+authRouter.post('/logout', logoutUser)
 
 /**
  * Middleware para verificar si la sesión está activa antes de acceder a rutas protegidas
  */
-router.use(isSessionActive)
+authRouter.use(isSessionActive)
 
 /**
  * Ruta para recuperar los datos de la sesión de un usuario autenticado.
@@ -45,4 +35,4 @@ router.use(isSessionActive)
  *
  * @name GET /userData
  */
-router.get('/userData', retrieveUserSessionData)
+authRouter.get('/userData', retrieveUserSessionData)

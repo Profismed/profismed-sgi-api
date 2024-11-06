@@ -1,4 +1,4 @@
-import { saveUser, verifyExistingUser } from '../../repositories/users/user-repository.js'
+import { saveUser, verifyExistingUserByUsername, updateUserDb, deleteUserByIdDb, verifyExistingUserById } from '../../repositories/users/user-repository.js'
 
 /**
  * Registra un nuevo usuario en el sistema.
@@ -38,7 +38,7 @@ export const registerUser = async (req, res) => {
     locationId,
     password
   }
-  if (await verifyExistingUser(username)) {
+  if (await verifyExistingUserByUsername(username)) {
     return res.status(400).send('User already exists')
   } else {
     try {
@@ -48,5 +48,66 @@ export const registerUser = async (req, res) => {
       console.error(e)
       res.status(500).send('Something went wrong')
     }
+  }
+}
+
+export const updateUser = async (req, res) => {
+  const { userId } = req.params
+  const {
+    firstName,
+    lastName,
+    userEmail,
+    userPhone,
+    roleId,
+    documentId,
+    documentNumber,
+    userJob,
+    userContactOrigin,
+    locationId
+  } = req.body
+
+  const user = {
+    firstName,
+    lastName,
+    userEmail,
+    userPhone,
+    roleId,
+    documentId,
+    documentNumber,
+    userJob,
+    userContactOrigin,
+    locationId
+  }
+
+  if (!(await verifyExistingUserById(userId))) {
+    return res.status(404).send('User not found')
+  }
+
+  try {
+    await updateUserDb(userId, user)
+    res.status(200).send('User updated')
+  } catch (e) {
+    console.error(e)
+    res.status(500).send('Something went wrong')
+  }
+}
+
+export const deleteUser = async (req, res) => {
+  const { userId } = req.params
+
+  if (!userId) {
+    return res.status(400).send('User ID is required')
+  }
+
+  if (!(await verifyExistingUserById(userId))) {
+    return res.status(404).send('User not found')
+  }
+
+  try {
+    await deleteUserByIdDb(userId)
+    res.status(200).send('User deleted')
+  } catch (e) {
+    console.error(e)
+    res.status(500).send('Something went wrong')
   }
 }

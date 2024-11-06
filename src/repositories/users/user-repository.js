@@ -71,7 +71,7 @@ export const verifyUserCredentials = async (user) => {
  * @param {string} username - Nombre de usuario a verificar.
  * @returns {Promise<boolean>} - Devuelve `true` si el usuario existe, `false` en caso contrario.
  */
-export const verifyExistingUser = async (username) => {
+export const verifyExistingUserByUsername = async (username) => {
   try {
     const user = await User.findOne({ where: { username } })
     return !!user
@@ -94,6 +94,39 @@ export const retrieveUserData = async (username) => {
     }
     const { password, ...userWithoutPassword } = user.toJSON()
     return userWithoutPassword
+  } catch (e) {
+    console.error(e)
+  }
+}
+
+export const updateUserDb = async (username, user) => {
+  try {
+    await User.update(user, { where: { username } })
+  } catch (e) {
+    console.error(e)
+  }
+}
+
+export const deleteUserByUsernameDb = async (username) => {
+    try {
+        await User.update({ isAvailable: 0 }, { where: { username } })
+    } catch (e) {
+        console.error(e)
+    }
+}
+
+export const verifyExistingUserById = async (userId) => {
+  try {
+    const user = await User.findByPk(userId)
+    return !!user
+  } catch (e) {
+    console.error(e)
+  }
+}
+
+export const deleteUserByIdDb = async (userId) => {
+  try {
+    await User.update({ isAvailable: 0 }, { where: { userId } })
   } catch (e) {
     console.error(e)
   }
