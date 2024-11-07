@@ -1,8 +1,7 @@
 import express from 'express'
 import { registerUser, updateUser, deleteUser, getAllUsers } from '../../controllers/users/users-controller.js'
-import { isSessionActive } from "../../middlewares/auth/auth-middlewares.js"
-import cookieParser from "cookie-parser"
-import { authRouter } from "../auth/auth-router.js"
+import { isSessionActive } from '../../middlewares/auth/auth-middlewares.js'
+import cookieParser from 'cookie-parser'
 
 export const usersRouter = express.Router()
 
