@@ -39,14 +39,14 @@ export const registerUser = async (req, res) => {
     password
   }
   if (await verifyExistingUserByUsername(username)) {
-    return res.status(400).send('User already exists')
+    return res.status(400).json({ message: 'User already exists' })
   } else {
     try {
       await saveUser(user)
-      res.status(201).send('User created')
+      res.status(201).json({ message: 'User created' })
     } catch (e) {
       console.error(e)
-      res.status(500).send('Something went wrong')
+      res.status(500).json({ message: 'Something went wrong' })
     }
   }
 }
@@ -88,15 +88,15 @@ export const updateUser = async (req, res) => {
   }
 
   if (!(await verifyExistingUserById(userId))) {
-    return res.status(404).send('User not found')
+    return res.status(404).json({ message: 'User not found' })
   }
 
   try {
     await updateUserDb(userId, user)
-    res.status(200).send('User updated')
+    res.status(200).json({ message: 'User updated' })
   } catch (e) {
     console.error(e)
-    res.status(500).send('Something went wrong')
+    res.status(500).json({ message: 'Something went wrong' })
   }
 }
 
@@ -112,19 +112,19 @@ export const deleteUser = async (req, res) => {
   const { userId } = req.params
 
   if (!userId) {
-    return res.status(400).send('User ID is required')
+    return res.status(400).json({ message: 'User ID is required' })
   }
 
   if (!(await verifyExistingUserById(userId))) {
-    return res.status(404).send('User not found')
+    return res.status(404).json({ message: 'User not found' })
   }
 
   try {
     await deleteUserByIdDb(userId)
-    res.status(200).send('User deleted')
+    res.status(200).json({ message: 'User deleted' })
   } catch (e) {
     console.error(e)
-    res.status(500).send('Something went wrong')
+    res.status(500).json({ message: 'Something went wrong' })
   }
 }
 
@@ -138,9 +138,9 @@ export const deleteUser = async (req, res) => {
 export const getAllUsers = async (req, res) => {
   try {
     const users = await getAllUsersDb()
-    res.status(200).send(users)
+    res.status(200).json(users)
   } catch (e) {
     console.error(e)
-    res.status(500).send('Something went wrong')
+    res.status(500).json({ message: 'Something went wrong' })
   }
 }

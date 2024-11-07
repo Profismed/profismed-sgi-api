@@ -19,7 +19,7 @@ export const loginUser = async (req, res) => {
     if (token) {
       const decoded = jwt.verify(token, JWT_SECRET)
       if (decoded) {
-        return res.status(400).send('Session already active')
+        return res.status(400).json({ message: 'Session already active' })
       }
     }
 
@@ -28,13 +28,13 @@ export const loginUser = async (req, res) => {
       const userData = await retrieveUserData(username)
       console.log(userData)
       res.cookie('token', jwt.sign(userData, JWT_SECRET))
-      res.status(200).send('Logged in')
+      res.status(200).json({ message: 'Logged in' })
     } else {
-      res.status(401).send('Invalid credentials')
+      res.status(401).json({ message: 'Invalid credentials' })
     }
   } catch (e) {
     console.error(e)
-    res.status(500).send('Something went wrong')
+    res.status(500).json({ message: 'Something went wrong' })
   }
 }
 
@@ -49,10 +49,10 @@ export const retrieveUserSessionData = async (req, res) => {
   try {
     const token = req.cookies.token
     const userData = jwt.verify(token, JWT_SECRET)
-    res.status(200).send(userData)
+    res.status(200).json(userData)
   } catch (e) {
     console.error(e)
-    res.status(500).send('Something went wrong')
+    res.status(500).json({ message: 'Something went wrong' })
   }
 }
 
@@ -66,9 +66,9 @@ export const retrieveUserSessionData = async (req, res) => {
 export const logoutUser = async (req, res) => {
   try {
     res.clearCookie('token')
-    res.status(200).send('Logged out')
+    res.status(200).json({ message: 'Logged out' })
   } catch (e) {
     console.error(e)
-    res.status(500).send('Something went wrong')
+    res.status(500).json({ message: 'Something went wrong' })
   }
 }
