@@ -1,5 +1,5 @@
-import { DataTypes } from 'sequelize';
-import { sequelize } from '../../db/db-connection.js';
+import { DataTypes } from 'sequelize'
+import { sequelize } from '../../db/db-connection.js'
 
 /**
  * Modelo de Sales que define la estructura de la tabla 'sales' en la base de datos.
@@ -42,4 +42,4 @@ export const Sales = sequelize.define('sales', {
       key: 'user_id'
     }
   }
-}, { timestamps: false });
+}, { timestamps: false })

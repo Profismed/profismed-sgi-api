@@ -1,5 +1,5 @@
 import express from 'express'
-import { registerUser, updateUser, deleteUser } from '../../controllers/users/users-controller.js'
+import { registerUser, updateUser, deleteUser, getAllUsers } from '../../controllers/users/users-controller.js'
 
 export const usersRouter = express.Router()
 
@@ -28,3 +28,5 @@ usersRouter.put('/update/:userId', updateUser)
  * @name DELETE /delete/:userId
  */
 usersRouter.delete('/delete/:userId', deleteUser)
+
+usersRouter.get('/all', getAllUsers)

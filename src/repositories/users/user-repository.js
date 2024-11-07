@@ -1,6 +1,7 @@
 import { User } from '../../models/user/user-model.js'
 import bcrypt from 'bcrypt'
 import { SALT_ROUNDS } from '../../config/config.js'
+import { Op } from 'sequelize'
 
 /**
  * Guarda un nuevo usuario en la base de datos.
@@ -108,11 +109,11 @@ export const updateUserDb = async (username, user) => {
 }
 
 export const deleteUserByUsernameDb = async (username) => {
-    try {
-        await User.update({ isAvailable: 0 }, { where: { username } })
-    } catch (e) {
-        console.error(e)
-    }
+  try {
+    await User.update({ isAvailable: 0 }, { where: { username } })
+  } catch (e) {
+    console.error(e)
+  }
 }
 
 export const verifyExistingUserById = async (userId) => {
@@ -127,6 +128,20 @@ export const verifyExistingUserById = async (userId) => {
 export const deleteUserByIdDb = async (userId) => {
   try {
     await User.update({ isAvailable: 0 }, { where: { userId } })
+  } catch (e) {
+    console.error(e)
+  }
+}
+
+export const getAllUsersDb = async () => {
+  try {
+    return await User.findAll({
+      where: {
+        roleId: {
+          [Op.ne]: 1
+        }
+      }
+    })
   } catch (e) {
     console.error(e)
   }

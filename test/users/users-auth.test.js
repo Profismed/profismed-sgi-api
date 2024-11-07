@@ -1,5 +1,5 @@
-import request from 'supertest';
-import { app } from '../../src/index.js';
+import request from 'supertest'
+import { app } from '../../src/index.js'
 
 describe('User Authentication', () => {
   it('should return a 400 status and a message if the user already exists', async () => {
@@ -18,9 +18,9 @@ describe('User Authentication', () => {
         userContactOrigin: 'Company Website',
         locationId: 1,
         password: 'anotherSecurePassword456'
-      });
+      })
 
-    expect(response.status).toBe(400);
-    expect(response.text).toBe('User already exists');
-  });
-});
+    expect(response.status).toBe(400)
+    expect(response.text).toBe('User already exists')
+  })
+})

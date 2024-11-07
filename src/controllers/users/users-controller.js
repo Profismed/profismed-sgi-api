@@ -1,4 +1,4 @@
-import { saveUser, verifyExistingUserByUsername, updateUserDb, deleteUserByIdDb, verifyExistingUserById } from '../../repositories/users/user-repository.js'
+import { saveUser, verifyExistingUserByUsername, updateUserDb, deleteUserByIdDb, verifyExistingUserById, getAllUsersDb } from '../../repositories/users/user-repository.js'
 
 /**
  * Registra un nuevo usuario en el sistema.
@@ -106,6 +106,16 @@ export const deleteUser = async (req, res) => {
   try {
     await deleteUserByIdDb(userId)
     res.status(200).send('User deleted')
+  } catch (e) {
+    console.error(e)
+    res.status(500).send('Something went wrong')
+  }
+}
+
+export const getAllUsers = async (req, res) => {
+  try {
+    const users = await getAllUsersDb()
+    res.status(200).send(users)
   } catch (e) {
     console.error(e)
     res.status(500).send('Something went wrong')
