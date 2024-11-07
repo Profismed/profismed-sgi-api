@@ -2,4 +2,3 @@ node_modules/
 .idea/
 .local.env
 .env
-test/jest.setup.js

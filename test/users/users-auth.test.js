@@ -21,6 +21,6 @@ describe('User Authentication', () => {
       })
 
     expect(response.status).toBe(400)
-    expect(response.text).toBe('User already exists')
+    expect(response.body.message).toBe('User already exists')
   })
 })
