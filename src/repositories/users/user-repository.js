@@ -55,7 +55,12 @@ export const saveUser = async (user) => {
 export const verifyUserCredentials = async (user) => {
   const { username, password } = user
   try {
-    const user = await User.findOne({ where: { username } })
+    const user = await User.findOne({
+      where: {
+        username,
+        isAvailable: 1
+      }
+    })
     if (!user) {
       return false
     }
@@ -73,7 +78,12 @@ export const verifyUserCredentials = async (user) => {
  */
 export const verifyExistingUserByUsername = async (username) => {
   try {
-    const user = await User.findOne({ where: { username } })
+    const user = await User.findOne({
+      where: {
+        username,
+        isAvailable: 1
+      }
+    })
     return !!user
   } catch (e) {
     console.error(e)
@@ -102,13 +112,13 @@ export const retrieveUserData = async (username) => {
 /**
  * Actualiza la información de un usuario en la base de datos por su nombre de usuario.
  *
- * @param {string} username - Nombre de usuario a actualizar.
+ * @param {number} userId - ID del usuario a actualizar.
  * @param {object} user - Objeto con los datos actualizados.
  * @returns {Promise<void>} - Indica el éxito o fallo de la operación.
  */
-export const updateUserDb = async (username, user) => {
+export const updateUserDb = async (userId, user) => {
   try {
-    await User.update(user, { where: { username } })
+    await User.update(user, { where: { userId } })
   } catch (e) {
     console.error(e)
   }
@@ -136,7 +146,12 @@ export const deleteUserByUsernameDb = async (username) => {
  */
 export const verifyExistingUserById = async (userId) => {
   try {
-    const user = await User.findByPk(userId)
+    const user = await User.findOne({
+      where: {
+        userId,
+        isAvailable: 1
+      }
+    })
     return !!user
   } catch (e) {
     console.error(e)

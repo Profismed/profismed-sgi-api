@@ -1,9 +1,13 @@
 import express from 'express'
 import { registerUser, updateUser, deleteUser, getAllUsers } from '../../controllers/users/users-controller.js'
+import { isSessionActive } from "../../middlewares/auth/auth-middlewares.js"
+import cookieParser from "cookie-parser"
+import { authRouter } from "../auth/auth-router.js"
 
 export const usersRouter = express.Router()
 
 usersRouter.use(express.json())
+usersRouter.use(cookieParser())
 
 /**
  * Ruta para registrar un nuevo usuario.
@@ -13,6 +17,12 @@ usersRouter.use(express.json())
  * @path {POST} /register
  */
 usersRouter.post('/register', registerUser)
+
+/**
+ * Middleware para verificar que la sesión esté activa antes de permitir
+ * el acceso a las rutas protegidas.
+ */
+usersRouter.use(isSessionActive)
 
 /**
  * Ruta para actualizar un usuario.
