@@ -4,7 +4,7 @@ import { app } from '../../src/index.js'
 describe('User Authentication', () => {
   it('should return a 400 status and a message if the user already exists', async () => {
     const response = await request(app)
-      .post('/api/auth/register')
+      .post('/api/users/register')
       .send({
         username: 'janedoe',
         firstName: 'Jane',
