@@ -180,6 +180,7 @@ export const deleteUserByIdDb = async (userId) => {
 export const getAllUsersDb = async () => {
   try {
     return await User.findAll({
+      attributes: { exclude: ['password', 'isAvailable'] },
       where: {
         roleId: {
           [Op.ne]: 1
