@@ -18,10 +18,10 @@ export const createProduct = async (req, res) => {
   }
   try {
     await saveProduct(product)
-    res.status(201).send('Product created')
+    res.status(201).json({ message: 'Product created' })
   } catch (e) {
     console.error(e)
-    res.status(500).send('Something went wrong')
+    res.status(500).json({ message: 'Something went wrong' })
   }
 }
 
@@ -38,7 +38,7 @@ export const listProducts = async (req, res) => {
     res.status(200).json(products)
   } catch (e) {
     console.error(e)
-    res.status(500).send('Something went wrong')
+    res.status(500).json({ message: 'Something went wrong' })
   }
 }
 
@@ -62,10 +62,10 @@ export const updateProduct = async (req, res) => {
   }
   try {
     await updateProductDB(product, productId)
-    res.status(200).send('Product updated')
+    res.status(200).json({ message: 'Product updated' })
   } catch (e) {
     console.error(e)
-    res.status(500).send('Something went wrong')
+    res.status(500).json({ message: 'Something went wrong' })
   }
 }
 
@@ -80,9 +80,9 @@ export const deleteProduct = async (req, res) => {
   const productId = req.params.id
   try {
     await deleteProductDB(productId)
-    res.status(200).send('Product deleted')
+    res.status(200).json({ message: 'Product deleted' })
   } catch (e) {
     console.error(e)
-    res.status(500).send('Something went wrong')
+    res.status(500).json({ message: 'Something went wrong' })
   }
 }

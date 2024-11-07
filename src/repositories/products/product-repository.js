@@ -34,6 +34,7 @@ export const saveProduct = async (product) => {
 export const getProducts = async () => {
   try {
     return await Product.findAll({
+      attributes: { exclude: ['isAvailable'] },
       where: {
         isAvailable: 1
       }
