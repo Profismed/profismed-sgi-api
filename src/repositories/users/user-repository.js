@@ -20,7 +20,7 @@ import { Op } from 'sequelize'
  * @param {string} user.userContactOrigin - Origen de contacto del usuario.
  * @param {number} user.locationId - ID de la ubicación del usuario.
  * @param {string} user.password - Contraseña del usuario.
- * @returns {Promise<void>} - Devuelve una promesa que indica el éxito o fallo de la operación.
+ * @returns {Promise<void>} - Indica el éxito o fallo de la operación.
  */
 export const saveUser = async (user) => {
   const { username, firstName, lastName, userEmail, userPhone, roleId, documentId, documentNumber, userJob, userContactOrigin, locationId, password } = user
@@ -59,7 +59,6 @@ export const verifyUserCredentials = async (user) => {
     if (!user) {
       return false
     }
-
     return await bcrypt.compare(password, user.password)
   } catch (e) {
     console.error(e)
@@ -100,6 +99,13 @@ export const retrieveUserData = async (username) => {
   }
 }
 
+/**
+ * Actualiza la información de un usuario en la base de datos por su nombre de usuario.
+ *
+ * @param {string} username - Nombre de usuario a actualizar.
+ * @param {object} user - Objeto con los datos actualizados.
+ * @returns {Promise<void>} - Indica el éxito o fallo de la operación.
+ */
 export const updateUserDb = async (username, user) => {
   try {
     await User.update(user, { where: { username } })
@@ -108,6 +114,12 @@ export const updateUserDb = async (username, user) => {
   }
 }
 
+/**
+ * Marca un usuario como no disponible en la base de datos por su nombre de usuario.
+ *
+ * @param {string} username - Nombre de usuario a eliminar.
+ * @returns {Promise<void>} - Indica el éxito o fallo de la operación.
+ */
 export const deleteUserByUsernameDb = async (username) => {
   try {
     await User.update({ isAvailable: 0 }, { where: { username } })
@@ -116,6 +128,12 @@ export const deleteUserByUsernameDb = async (username) => {
   }
 }
 
+/**
+ * Verifica si un usuario ya existe en la base de datos por su ID.
+ *
+ * @param {number} userId - ID del usuario a verificar.
+ * @returns {Promise<boolean>} - Devuelve `true` si el usuario existe, `false` en caso contrario.
+ */
 export const verifyExistingUserById = async (userId) => {
   try {
     const user = await User.findByPk(userId)
@@ -125,6 +143,12 @@ export const verifyExistingUserById = async (userId) => {
   }
 }
 
+/**
+ * Marca un usuario como no disponible en la base de datos por su ID.
+ *
+ * @param {number} userId - ID del usuario a eliminar.
+ * @returns {Promise<void>} - Indica el éxito o fallo de la operación.
+ */
 export const deleteUserByIdDb = async (userId) => {
   try {
     await User.update({ isAvailable: 0 }, { where: { userId } })
@@ -133,6 +157,11 @@ export const deleteUserByIdDb = async (userId) => {
   }
 }
 
+/**
+ * Recupera todos los usuarios que no tienen el rol con ID 1.
+ *
+ * @returns {Promise<Array>} - Lista de usuarios sin el rol 1.
+ */
 export const getAllUsersDb = async () => {
   try {
     return await User.findAll({

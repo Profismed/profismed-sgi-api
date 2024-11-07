@@ -10,6 +10,7 @@ usersRouter.use(express.json())
  * Llama a la función `registerUser` del controlador.
  *
  * @name POST /register
+ * @path {POST} /register
  */
 usersRouter.post('/register', registerUser)
 
@@ -18,6 +19,7 @@ usersRouter.post('/register', registerUser)
  * Llama a la función `updateUser` del controlador.
  *
  * @name PUT /update/:userId
+ * @path {PUT} /update/:userId
  */
 usersRouter.put('/update/:userId', updateUser)
 
@@ -26,7 +28,15 @@ usersRouter.put('/update/:userId', updateUser)
  * Llama a la función `deleteUser` del controlador.
  *
  * @name DELETE /delete/:userId
+ * @path {DELETE} /delete/:userId
  */
 usersRouter.delete('/delete/:userId', deleteUser)
 
+/**
+ * Ruta para obtener todos los usuarios que no son administradores.
+ * Llama a la función `getAllUsers` del controlador.
+ *
+ * @name GET /all
+ * @path {GET} /all
+ */
 usersRouter.get('/all', getAllUsers)

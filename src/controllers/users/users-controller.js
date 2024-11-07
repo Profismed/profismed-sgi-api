@@ -51,6 +51,14 @@ export const registerUser = async (req, res) => {
   }
 }
 
+/**
+ * Actualiza un usuario existente en el sistema.
+ * Verifica si el usuario existe antes de realizar la actualización.
+ *
+ * @param {object} req - Objeto de solicitud de Express, que contiene `userId` en `req.params` y los datos a actualizar en `req.body`.
+ * @param {object} res - Objeto de respuesta de Express para enviar la respuesta HTTP.
+ * @returns {Promise<void>} - Envía una respuesta indicando si la actualización fue exitosa o si ocurrió un error.
+ */
 export const updateUser = async (req, res) => {
   const { userId } = req.params
   const {
@@ -92,6 +100,14 @@ export const updateUser = async (req, res) => {
   }
 }
 
+/**
+ * Elimina (marca como no disponible) un usuario del sistema.
+ * Verifica si el usuario existe antes de eliminarlo.
+ *
+ * @param {object} req - Objeto de solicitud de Express, que contiene `userId` en `req.params`.
+ * @param {object} res - Objeto de respuesta de Express para enviar la respuesta HTTP.
+ * @returns {Promise<void>} - Envía una respuesta indicando si la eliminación fue exitosa o si ocurrió un error.
+ */
 export const deleteUser = async (req, res) => {
   const { userId } = req.params
 
@@ -112,6 +128,13 @@ export const deleteUser = async (req, res) => {
   }
 }
 
+/**
+ * Recupera todos los usuarios que no tienen el rol de administrador (ID de rol diferente de 1).
+ *
+ * @param {object} req - Objeto de solicitud de Express.
+ * @param {object} res - Objeto de respuesta de Express para enviar la respuesta HTTP.
+ * @returns {Promise<void>} - Envía una respuesta con la lista de usuarios o un mensaje de error.
+ */
 export const getAllUsers = async (req, res) => {
   try {
     const users = await getAllUsersDb()
