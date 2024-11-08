@@ -5,7 +5,14 @@ import cookieParser from 'cookie-parser'
 
 export const usersRouter = express.Router()
 
+/**
+ * Middleware para analizar el cuerpo de las solicitudes como JSON.
+ */
 usersRouter.use(express.json())
+
+/**
+ * Middleware para habilitar el análisis de cookies.
+ */
 usersRouter.use(cookieParser())
 
 /**
@@ -19,7 +26,8 @@ usersRouter.post('/register', registerUser)
 
 /**
  * Middleware para verificar que la sesión esté activa antes de permitir
- * el acceso a las rutas protegidas.
+ * el acceso a las rutas protegidas. Llama a la función `isSessionActive` para
+ * asegurar que el usuario esté autenticado.
  */
 usersRouter.use(isSessionActive)
 
