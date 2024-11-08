@@ -91,7 +91,7 @@ export const verifyExistingUserByUsername = async (username) => {
 }
 
 /**
- * Recupera los datos de un usuario sin incluir la contraseña.
+ * Recupera los datos de un usuario sin incluir la contraseña y el estado de disponibilidad.
  *
  * @param {string} username - Nombre de usuario cuyos datos se desean recuperar.
  * @returns {Promise<object|null>} - Devuelve un objeto con los datos del usuario sin la contraseña, o `null` si el usuario no existe.
@@ -109,7 +109,7 @@ export const retrieveUserData = async (username) => {
 }
 
 /**
- * Actualiza la información de un usuario en la base de datos por su nombre de usuario.
+ * Actualiza la información de un usuario en la base de datos por su ID.
  *
  * @param {number} userId - ID del usuario a actualizar.
  * @param {object} user - Objeto con los datos actualizados.
@@ -172,7 +172,7 @@ export const deleteUserByIdDb = async (userId) => {
 }
 
 /**
- * Recupera todos los usuarios que no tienen el rol con ID 1.
+ * Recupera todos los usuarios que no tienen el rol con ID 1, excluyendo la contraseña y el estado de disponibilidad.
  *
  * @returns {Promise<Array>} - Lista de usuarios sin el rol 1.
  */

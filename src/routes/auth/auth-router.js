@@ -5,7 +5,14 @@ import cookieParser from 'cookie-parser'
 
 export const authRouter = express.Router()
 
+/**
+ * Middleware para analizar el cuerpo de las solicitudes como JSON.
+ */
 authRouter.use(express.json())
+
+/**
+ * Middleware para habilitar el análisis de cookies.
+ */
 authRouter.use(cookieParser())
 
 /**
@@ -13,6 +20,7 @@ authRouter.use(cookieParser())
  * Llama a la función `loginUser` del controlador.
  *
  * @name POST /login
+ * @path {POST} /login
  */
 authRouter.post('/login', loginUser)
 
@@ -21,11 +29,13 @@ authRouter.post('/login', loginUser)
  * Llama a la función `logoutUser` del controlador.
  *
  * @name POST /logout
+ * @path {POST} /logout
  */
 authRouter.post('/logout', logoutUser)
 
 /**
- * Middleware para verificar si la sesión está activa antes de acceder a rutas protegidas
+ * Middleware para verificar si la sesión está activa antes de acceder a rutas protegidas.
+ * Llama a la función `isSessionActive` para asegurar que el usuario esté autenticado.
  */
 authRouter.use(isSessionActive)
 
@@ -34,5 +44,6 @@ authRouter.use(isSessionActive)
  * Llama a la función `retrieveUserSessionData` del controlador.
  *
  * @name GET /userData
+ * @path {GET} /userData
  */
 authRouter.get('/userData', retrieveUserSessionData)
