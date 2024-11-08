@@ -98,12 +98,11 @@ export const verifyExistingUserByUsername = async (username) => {
  */
 export const retrieveUserData = async (username) => {
   try {
-    const user = await User.findOne({ where: { username } })
+    const user = await User.findOne({ attributes: { exclude: ['isAvailable', 'password'] }, where: { username } })
     if (!user) {
       return null
     }
-    const { password, ...userWithoutPassword } = user.toJSON()
-    return userWithoutPassword
+    return user.dataValues
   } catch (e) {
     console.error(e)
   }
