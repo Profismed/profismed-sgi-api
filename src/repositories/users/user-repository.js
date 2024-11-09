@@ -49,7 +49,7 @@ export const saveUser = async (user) => {
 /**
  * Verifica las credenciales de un usuario comparando la contraseña ingresada con la almacenada.
  *
- * @param {object} user - Objeto que contiene `username` y `password` del usuario.
+ * @param {object} user - Objeto que contiene `userEmail` y `password` del usuario.
  * @returns {Promise<boolean>} - Devuelve `true` si las credenciales son válidas, `false` en caso contrario.
  */
 export const verifyUserCredentials = async (user) => {
@@ -192,6 +192,12 @@ export const getAllUsersDb = async () => {
   }
 }
 
+/**
+ * Verifica si un usuario ya existe en la base de datos por su correo electrónico.
+ *
+ * @param {string} userEmail - Correo electrónico del usuario a verificar.
+ * @returns {Promise<boolean>} - Devuelve `true` si el usuario existe, `false` en caso contrario.
+ */
 export const verifyExistingUserByEmail = async (userEmail) => {
   try {
     const user = await User.findOne({
@@ -206,6 +212,12 @@ export const verifyExistingUserByEmail = async (userEmail) => {
   }
 }
 
+/**
+ * Recupera los datos de un usuario utilizando el correo electrónico, excluyendo la contraseña y el estado de disponibilidad.
+ *
+ * @param {string} userEmail - Correo electrónico del usuario cuyos datos se desean recuperar.
+ * @returns {Promise<object|null>} - Devuelve un objeto con los datos del usuario sin la contraseña, o `null` si el usuario no existe.
+ */
 export const retrieveUserDataByEmail = async (userEmail) => {
   try {
     const user = await User.findOne({ attributes: { exclude: ['isAvailable', 'password'] }, where: { userEmail } })

@@ -6,7 +6,7 @@ import { JWT_SECRET } from '../../config/config.js'
  * Autentica un usuario y genera un token JWT para la sesión.
  * Si el usuario ya tiene una sesión activa, responde con un error.
  *
- * @param {object} req - Objeto de solicitud de Express, que contiene `username` y `password` en `req.body`.
+ * @param {object} req - Objeto de solicitud de Express, que contiene `email` y `password` en `req.body`.
  * @param {object} res - Objeto de respuesta de Express para enviar la respuesta HTTP.
  * @returns {Promise<void>} - Responde con un mensaje de éxito si las credenciales son válidas, o con un mensaje de error en caso contrario.
  */
