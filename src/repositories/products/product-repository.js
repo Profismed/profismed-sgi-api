@@ -90,3 +90,23 @@ export const deleteProductDB = async (productId) => {
     console.error(e)
   }
 }
+
+/**
+ * Obtiene un producto específico de la base de datos.
+ *
+ * @param {number} productId - ID del producto a obtener.
+ * @returns {Promise<object>} - Objeto que contiene los datos del producto.
+ */
+export const getProductById = async (productId) => {
+  try {
+    return await Product.findOne({
+      attributes: { exclude: ['isAvailable'] },
+      where: {
+        productId,
+        isAvailable: 1
+      }
+    })
+  } catch (e) {
+    console.error(e)
+  }
+}

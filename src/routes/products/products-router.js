@@ -1,5 +1,5 @@
 import express from 'express'
-import { createProduct, listProducts, updateProduct, deleteProduct } from '../../controllers/products/products-controller.js'
+import { createProduct, listProducts, updateProduct, deleteProduct, getProduct } from '../../controllers/products/products-controller.js'
 import { isSessionActive } from '../../middlewares/auth/auth-middlewares.js'
 import cookieParser from 'cookie-parser'
 
@@ -56,3 +56,12 @@ productsRouter.put('/update/:id', updateProduct)
  * @path {DELETE} /delete/:id
  */
 productsRouter.delete('/delete/:id', deleteProduct)
+
+/**
+ * Ruta para obtener un producto específico.
+ * Llama a la función `getProduct` del controlador.
+ * 
+ * @name GET /:id
+ * @path {GET} /:id
+ */
+productsRouter.get('/:id', getProduct)

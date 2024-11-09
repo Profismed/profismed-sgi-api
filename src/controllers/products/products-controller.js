@@ -1,4 +1,4 @@
-import { saveProduct, getProducts, updateProductDB, deleteProductDB } from '../../repositories/products/product-repository.js'
+import { saveProduct, getProducts, updateProductDB, deleteProductDB, getProductById } from '../../repositories/products/product-repository.js'
 
 /**
  * Crea un nuevo producto y lo guarda en la base de datos.
@@ -86,3 +86,27 @@ export const deleteProduct = async (req, res) => {
     res.status(500).json({ message: 'Something went wrong' })
   }
 }
+
+/**
+ * Obtiene la información de un producto específico en la base de datos.
+ *
+ * @param {object} req - Objeto de solicitud de Express, que contiene el `id` del producto en `req.params`.
+ * @param {object} res - Objeto de respuesta de Express, utilizado para enviar los datos del producto.
+ * @returns {Promise<void>} - Responde con los datos del producto o un mensaje de error.
+ */
+export const getProduct = async (req, res) => {
+  const productId = req.params.id
+  try {
+    const product = await getProductById(productId)
+    if(!product) {
+      return res.status(404).json({ message: 'Product not found' })
+    }else{
+      res.status(200).json(product)
+    }
+    
+  } catch (e) {
+    console.error(e)
+    res.status(500).json({ message: 'Something went wrong' })
+  }
+}
+
