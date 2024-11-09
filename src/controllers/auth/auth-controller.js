@@ -26,7 +26,6 @@ export const loginUser = async (req, res) => {
     const isUser = await verifyUserCredentials(user)
     if (isUser) {
       const userData = await retrieveUserDataByEmail(email)
-      console.log(userData)
 
       const token = jwt.sign(userData, JWT_SECRET, { expiresIn: '3h' })
 
