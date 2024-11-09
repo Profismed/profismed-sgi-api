@@ -60,7 +60,7 @@ productsRouter.delete('/delete/:id', deleteProduct)
 /**
  * Ruta para obtener un producto específico.
  * Llama a la función `getProduct` del controlador.
- * 
+ *
  * @name GET /:id
  * @path {GET} /:id
  */

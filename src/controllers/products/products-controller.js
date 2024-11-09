@@ -98,15 +98,13 @@ export const getProduct = async (req, res) => {
   const productId = req.params.id
   try {
     const product = await getProductById(productId)
-    if(!product) {
+    if (!product) {
       return res.status(404).json({ message: 'Product not found' })
-    }else{
+    } else {
       res.status(200).json(product)
     }
-    
   } catch (e) {
     console.error(e)
     res.status(500).json({ message: 'Something went wrong' })
   }
 }
-
