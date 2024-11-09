@@ -1,8 +1,9 @@
-import { saveUser, verifyExistingUserByUsername, updateUserDb, deleteUserByIdDb, verifyExistingUserById, getAllUsersDb } from '../../repositories/users/user-repository.js'
+import { saveUser, verifyExistingUserByUsername, updateUserDb, deleteUserByIdDb, verifyExistingUserById, getAllUsersDb, verifyExistingUserByEmail } from '../../repositories/users/user-repository.js'
 
 /**
  * Registra un nuevo usuario en el sistema.
  * Verifica si el nombre de usuario ya existe antes de crear el usuario.
+ * Verifica si el correo electrónico ya está en uso antes de crear el usuario.
  *
  * @param {object} req - Objeto de solicitud de Express, que contiene los datos del usuario en `req.body`.
  * @param {object} res - Objeto de respuesta de Express para enviar la respuesta HTTP.
@@ -38,16 +39,21 @@ export const registerUser = async (req, res) => {
     locationId,
     password
   }
+
   if (await verifyExistingUserByUsername(username)) {
     return res.status(400).json({ message: 'User already exists' })
-  } else {
-    try {
-      await saveUser(user)
-      res.status(201).json({ message: 'User created' })
-    } catch (e) {
-      console.error(e)
-      res.status(500).json({ message: 'Something went wrong' })
-    }
+  }
+
+  if (await verifyExistingUserByEmail(userEmail)) {
+    return res.status(400).json({ message: 'Email already in use' })
+  }
+
+  try {
+    await saveUser(user)
+    res.status(201).json({ message: 'User created' })
+  } catch (e) {
+    console.error(e)
+    res.status(500).json({ message: 'Something went wrong' })
   }
 }
 
