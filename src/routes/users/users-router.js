@@ -16,6 +16,13 @@ usersRouter.use(express.json())
 usersRouter.use(cookieParser())
 
 /**
+ * Middleware para verificar que la sesión esté activa antes de permitir
+ * el acceso a las rutas protegidas. Llama a la función `isSessionActive` para
+ * asegurar que el usuario esté autenticado.
+ */
+usersRouter.use(isSessionActive)
+
+/**
  * Ruta para registrar un nuevo usuario.
  * Llama a la función `registerUser` del controlador.
  *
@@ -23,13 +30,6 @@ usersRouter.use(cookieParser())
  * @path {POST} /register
  */
 usersRouter.post('/register', registerUser)
-
-/**
- * Middleware para verificar que la sesión esté activa antes de permitir
- * el acceso a las rutas protegidas. Llama a la función `isSessionActive` para
- * asegurar que el usuario esté autenticado.
- */
-usersRouter.use(isSessionActive)
 
 /**
  * Ruta para actualizar un usuario.
