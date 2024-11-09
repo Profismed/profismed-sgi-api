@@ -53,11 +53,11 @@ export const saveUser = async (user) => {
  * @returns {Promise<boolean>} - Devuelve `true` si las credenciales son válidas, `false` en caso contrario.
  */
 export const verifyUserCredentials = async (user) => {
-  const { username, password } = user
+  const { email, password } = user
   try {
     const user = await User.findOne({
       where: {
-        username,
+        userEmail: email,
         isAvailable: 1
       }
     })
@@ -67,6 +67,7 @@ export const verifyUserCredentials = async (user) => {
     return await bcrypt.compare(password, user.password)
   } catch (e) {
     console.error(e)
+    return false
   }
 }
 
@@ -186,6 +187,32 @@ export const getAllUsersDb = async () => {
         }
       }
     })
+  } catch (e) {
+    console.error(e)
+  }
+}
+
+export const verifyExistingUserByEmail = async (userEmail) => {
+  try {
+    const user = await User.findOne({
+      where: {
+        userEmail,
+        isAvailable: 1
+      }
+    })
+    return !!user
+  } catch (e) {
+    console.error(e)
+  }
+}
+
+export const retrieveUserDataByEmail = async (userEmail) => {
+  try {
+    const user = await User.findOne({ attributes: { exclude: ['isAvailable', 'password'] }, where: { userEmail } })
+    if (!user) {
+      return null
+    }
+    return user.dataValues
   } catch (e) {
     console.error(e)
   }

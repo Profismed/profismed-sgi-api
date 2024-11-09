@@ -1,7 +1,6 @@
-import { verifyUserCredentials, retrieveUserData } from '../../repositories/users/user-repository.js'
+import { verifyUserCredentials, retrieveUserData, retrieveUserDataByEmail } from '../../repositories/users/user-repository.js'
 import jwt from 'jsonwebtoken'
 import { JWT_SECRET } from '../../config/config.js'
-import moment from 'moment-timezone'
 
 /**
  * Autentica un usuario y genera un token JWT para la sesión.
@@ -12,8 +11,8 @@ import moment from 'moment-timezone'
  * @returns {Promise<void>} - Responde con un mensaje de éxito si las credenciales son válidas, o con un mensaje de error en caso contrario.
  */
 export const loginUser = async (req, res) => {
-  const { username, password } = req.body
-  const user = { username, password }
+  const { email, password } = req.body
+  const user = { email, password }
 
   try {
     const token = req.cookies.token
@@ -26,7 +25,8 @@ export const loginUser = async (req, res) => {
 
     const isUser = await verifyUserCredentials(user)
     if (isUser) {
-      const userData = await retrieveUserData(username)
+      const userData = await retrieveUserDataByEmail(email)
+      console.log(userData)
 
       const token = jwt.sign(userData, JWT_SECRET, { expiresIn: '3h' })
 
