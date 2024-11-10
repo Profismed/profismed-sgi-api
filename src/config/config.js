@@ -1,4 +1,4 @@
-process.loadEnvFile('.local.env')
+//process.loadEnvFile('.local.env')
 
 /**
  * Configuración de la aplicación obtenida de variables de entorno.
