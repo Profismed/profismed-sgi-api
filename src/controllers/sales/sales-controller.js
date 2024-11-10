@@ -1,4 +1,4 @@
-import { saveSale, getSales } from '../../repositories/sales/sales-item-repository.js'
+import { saveSale, getSalesDb } from '../../repositories/sales/sales-item-repository.js'
 
 export const createSale = async (req, res) => {
   const { buyerId, sellerId, items } = req.body
@@ -18,7 +18,7 @@ export const createSale = async (req, res) => {
 
 export const listSales = async (req, res) => {
   try {
-    const sales = await getSales()
+    const sales = await getSalesDb()
     res.status(200).send(sales)
   } catch (e) {
     console.error(e)

@@ -59,13 +59,22 @@ export const saveSale = async (sale) => {
   }
 }
 
-export const getSales = async () => {
+export const getSalesDb = async () => {
   try {
     const sales = await Sales.findAll()
-  for (const sale of sales) {
-    const items = await SalesItem.findAll({ where: { salesId: sale.salesId } })
-    sale.dataValues.items = items
+    let salesWithItems = {}
+    for (const sale of sales) {
+      const items = await SalesItem.findAll({
+        where: {
+          salesId: sale.salesId
+        }
+      })
+      salesWithItems[sale.salesId] = {
+        ...sale.dataValues,
+        items
+      }
     }
+    return salesWithItems
   } catch (e) {
     console.error(e)
   }
