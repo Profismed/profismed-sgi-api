@@ -1,6 +1,6 @@
 import { SalesItem } from '../../models/sales/sales-item.js'
 import { Sales } from '../../models/sales/sales-model.js'
-import { Product } from '../../models/products/product-model.js' // Importa el modelo Product
+import { Product } from '../../models/products/product-model.js' 
 
 /**
  * Guarda una nueva venta en la base de datos, incluyendo los elementos de la venta.
@@ -14,12 +14,12 @@ import { Product } from '../../models/products/product-model.js' // Importa el m
  * @returns {Promise<void>} - Indica el éxito o fallo de la operación.
  */
 export const saveSale = async (sale) => {
-  const { buyerId, sellerId, items } = sale
+  const { buyerId, sellerId, items, saleDate } = sale
   try {
     let salesAmount = 0
 
     for (const item of items) {
-      const { productId, productQuantity } = item
+      const { productId, productQuantity, unitPrice: itemUnitPrice } = item
 
       const product = await Product.findByPk(productId)
       if (!product) {
@@ -27,7 +27,7 @@ export const saveSale = async (sale) => {
         return
       }
 
-      const unitPrice = product.productPrice
+      const unitPrice = itemUnitPrice || product.productPrice
       const subtotal = productQuantity * unitPrice
       salesAmount += subtotal
     }
@@ -35,14 +35,15 @@ export const saveSale = async (sale) => {
     const newSale = await Sales.create({
       salesAmount,
       buyerId,
-      sellerId
+      sellerId,
+      saleDate
     })
 
     for (const item of items) {
-      const { productId, productQuantity } = item
+      const { productId, productQuantity, unitPrice: itemUnitPrice } = item
 
       const product = await Product.findByPk(productId)
-      const unitPrice = product.productPrice
+      const unitPrice = itemUnitPrice || product.productPrice
       const subtotal = productQuantity * unitPrice
 
       await SalesItem.create({
