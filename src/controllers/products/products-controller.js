@@ -1,4 +1,4 @@
-import { saveProduct, getProducts, updateProductDB, deleteProductDB } from '../../repositories/products/product-repository.js'
+import { saveProduct, getProducts, updateProductDB, deleteProductDB, getProductById } from '../../repositories/products/product-repository.js'
 
 /**
  * Crea un nuevo producto y lo guarda en la base de datos.
@@ -18,10 +18,10 @@ export const createProduct = async (req, res) => {
   }
   try {
     await saveProduct(product)
-    res.status(201).send('Product created')
+    res.status(201).json({ message: 'Product created' })
   } catch (e) {
     console.error(e)
-    res.status(500).send('Something went wrong')
+    res.status(500).json({ message: 'Something went wrong' })
   }
 }
 
@@ -38,7 +38,7 @@ export const listProducts = async (req, res) => {
     res.status(200).json(products)
   } catch (e) {
     console.error(e)
-    res.status(500).send('Something went wrong')
+    res.status(500).json({ message: 'Something went wrong' })
   }
 }
 
@@ -62,10 +62,10 @@ export const updateProduct = async (req, res) => {
   }
   try {
     await updateProductDB(product, productId)
-    res.status(200).send('Product updated')
+    res.status(200).json({ message: 'Product updated' })
   } catch (e) {
     console.error(e)
-    res.status(500).send('Something went wrong')
+    res.status(500).json({ message: 'Something went wrong' })
   }
 }
 
@@ -80,9 +80,31 @@ export const deleteProduct = async (req, res) => {
   const productId = req.params.id
   try {
     await deleteProductDB(productId)
-    res.status(200).send('Product deleted')
+    res.status(200).json({ message: 'Product deleted' })
   } catch (e) {
     console.error(e)
-    res.status(500).send('Something went wrong')
+    res.status(500).json({ message: 'Something went wrong' })
+  }
+}
+
+/**
+ * Obtiene la información de un producto específico en la base de datos.
+ *
+ * @param {object} req - Objeto de solicitud de Express, que contiene el `id` del producto en `req.params`.
+ * @param {object} res - Objeto de respuesta de Express, utilizado para enviar los datos del producto.
+ * @returns {Promise<void>} - Responde con los datos del producto o un mensaje de error.
+ */
+export const getProduct = async (req, res) => {
+  const productId = req.params.id
+  try {
+    const product = await getProductById(productId)
+    if (!product) {
+      return res.status(404).json({ message: 'Product not found' })
+    } else {
+      res.status(200).json(product)
+    }
+  } catch (e) {
+    console.error(e)
+    res.status(500).json({ message: 'Something went wrong' })
   }
 }
