@@ -1,5 +1,5 @@
 import express from 'express'
-import { loginUser, logoutUser, retrieveUserSessionData } from '../../controllers/auth/auth-controller.js'
+import { loginUser, logoutUser, retrieveUserSessionData, verifyUserSession } from '../../controllers/auth/auth-controller.js'
 import { isSessionActive } from '../../middlewares/auth/auth-middlewares.js'
 import cookieParser from 'cookie-parser'
 
@@ -32,6 +32,15 @@ authRouter.post('/login', loginUser)
  * @path {POST} /logout
  */
 authRouter.post('/logout', logoutUser)
+
+/**
+ * Ruta para verificar si el usuario tiene una sesión activa.
+ * Llama a la función `verifyUserSession` del controlador.
+ *
+ * @name GET /verifySession
+ * @path {GET} /verifySession
+ */
+authRouter.get('/verifySession', verifyUserSession)
 
 /**
  * Middleware para verificar si la sesión está activa antes de acceder a rutas protegidas.

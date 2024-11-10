@@ -74,3 +74,26 @@ export const logoutUser = async (req, res) => {
     res.status(500).json({ message: 'Something went wrong' })
   }
 }
+
+/**
+ * Verifica si el usuario tiene una sesión activa.
+ *
+ * @param {object} req - Objeto de solicitud de Express.
+ * @param {object} res - Objeto de respuesta de Express para enviar la respuesta HTTP.
+ * @returns {Promise<void>} - Responde con `sessionActive: true` si el usuario tiene una sesión activa, o `sessionActive: false` en caso contrario.
+ */
+export const verifyUserSession = async (req, res) => {
+  try {
+    const token = req.cookies.token
+    if (!token) {
+      return res.status(401).json({ sessionActive: false })
+    }
+    const decoded = jwt.verify(token, JWT_SECRET)
+    if (decoded) {
+      return res.status(200).json({ sessionActive: true })
+    }
+  } catch (e) {
+    console.error(e)
+    res.status(401).json({ sessionActive: false })
+  }
+}
