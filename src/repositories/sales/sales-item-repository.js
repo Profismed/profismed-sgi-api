@@ -1,6 +1,6 @@
-import { SalesItem } from '../../models/sales/sales-item.js'
-import { Sales } from '../../models/sales/sales-model.js'
-import { Product } from '../../models/products/product-model.js' 
+import {SalesItem} from '../../models/sales/sales-item.js'
+import {Sales} from '../../models/sales/sales-model.js'
+import {Product} from '../../models/products/product-model.js'
 
 /**
  * Guarda una nueva venta en la base de datos, incluyendo los elementos de la venta.
@@ -53,6 +53,18 @@ export const saveSale = async (sale) => {
         subtotal,
         salesId: newSale.salesId
       })
+    }
+  } catch (e) {
+    console.error(e)
+  }
+}
+
+export const getSales = async () => {
+  try {
+    const sales = await Sales.findAll()
+  for (const sale of sales) {
+    const items = await SalesItem.findAll({ where: { salesId: sale.salesId } })
+    sale.dataValues.items = items
     }
   } catch (e) {
     console.error(e)
