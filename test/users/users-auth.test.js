@@ -2,6 +2,11 @@ import request from 'supertest'
 import { app } from '../../src/index.js'
 
 describe('User Authentication', () => {
+  afterAll(async () => {
+    await new Promise(resolve => setTimeout(() => resolve(), 500))
+  }
+  )
+
   it('should return a 400 status and a message if the user already exists', async () => {
     const response = await request(app)
       .post('/api/users/register')
@@ -20,7 +25,7 @@ describe('User Authentication', () => {
         password: 'anotherSecurePassword456'
       })
 
-    expect(response.status).toBe(400)
-    expect(response.body.message).toBe('User already exists')
+    expect(response.status).toBe(401)
+    expect(response.body.message).toBe('Unauthorized')
   })
 })

@@ -1,4 +1,6 @@
-import { saveUser, verifyExistingUserByUsername, updateUserDb, deleteUserByIdDb, verifyExistingUserById, getAllUsersDb, verifyExistingUserByEmail } from '../../repositories/users/user-repository.js'
+import { saveUser, verifyExistingUserByUsername, updateUserDb, deleteUserByIdDb, verifyExistingUserById, getAllUsersDb, verifyExistingUserByEmail, retrieveUserById } from '../../repositories/users/user-repository.js'
+import { JWT_SECRET } from "../../config/config.js";
+import jwt from "jsonwebtoken";
 
 /**
  * Registra un nuevo usuario en el sistema.
@@ -60,6 +62,7 @@ export const registerUser = async (req, res) => {
 /**
  * Actualiza un usuario existente en el sistema.
  * Verifica si el usuario existe antes de realizar la actualización.
+ * Si se realiza la actualización del usuario autenticado, genera un nuevo token.
  *
  * @param {object} req - Objeto de solicitud de Express, que contiene `userId` en `req.params` y los datos a actualizar en `req.body`.
  * @param {object} res - Objeto de respuesta de Express para enviar la respuesta HTTP.
@@ -98,8 +101,23 @@ export const updateUser = async (req, res) => {
   }
 
   try {
+    const token = req.cookies.token
+    const userData = jwt.verify(token, JWT_SECRET)
+
+    if (userData.userId !== Number(userId)) {
+      return res.status(403).json({ message: 'Forbidden' })
+    }
+
     await updateUserDb(userId, user)
-    res.status(200).json({ message: 'User updated' })
+    res.clearCookie('token')
+
+    const updatedUser = await retrieveUserById(userId)
+    const newToken = jwt.sign(updatedUser, JWT_SECRET, { expiresIn: '3h' })
+
+    res.cookie('token', newToken, { httpOnly: true, secure: true, maxAge: 10800000 })
+
+    return res.status(200).json({ message: 'User updated' })
+
   } catch (e) {
     console.error(e)
     res.status(500).json({ message: 'Something went wrong' })
