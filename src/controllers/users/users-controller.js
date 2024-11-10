@@ -114,7 +114,7 @@ export const updateUser = async (req, res) => {
     const updatedUser = await retrieveUserById(userId)
     const newToken = jwt.sign(updatedUser, JWT_SECRET, { expiresIn: '3h' })
 
-    res.cookie('token', newToken, { httpOnly: true, secure: true, maxAge: 10800000 })
+    res.cookie('token', newToken, { httpOnly: true, secure: true, maxAge: 10800000, sameSite: 'none' })
 
     return res.status(200).json({ message: 'User updated' })
 

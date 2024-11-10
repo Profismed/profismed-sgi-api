@@ -29,7 +29,7 @@ export const loginUser = async (req, res) => {
 
       const token = jwt.sign(userData, JWT_SECRET, { expiresIn: '3h' })
 
-      res.cookie('token', token, { httpOnly: true, secure: true, maxAge: 10800000 })
+      res.cookie('token', token, { httpOnly: true, secure: true, maxAge: 10800000, sameSite: 'none' })
       res.status(200).json({ message: 'Logged in' })
     } else {
       res.status(401).json({ message: 'Invalid credentials' })
