@@ -229,3 +229,21 @@ export const retrieveUserDataByEmail = async (userEmail) => {
     console.error(e)
   }
 }
+
+/**
+ * Recupera los datos de un usuario utilizando su ID, excluyendo la contraseña y el estado de disponibilidad.
+ *
+ * @param {number} userId - ID del usuario cuyos datos se desean recuperar.
+ * @returns {Promise<object|null>} - Devuelve un objeto con los datos del usuario sin la contraseña, o `null` si el usuario no existe.
+ */
+export const retrieveUserById = async (userId) => {
+  try {
+    const user = await User.findOne({ attributes: { exclude: ['isAvailable', 'password'] }, where: { userId } })
+    if (!user) {
+      return null
+    }
+    return user.dataValues
+  } catch (e) {
+    console.error(e)
+  }
+}
