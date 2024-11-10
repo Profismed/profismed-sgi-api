@@ -1,4 +1,8 @@
-//process.loadEnvFile('.local.env')
+try {
+  process.loadEnvFile('.local.env')
+} catch (error) {
+  console.error('Error loading .local.env file:', error.message)
+}
 
 /**
  * Configuración de la aplicación obtenida de variables de entorno.
@@ -13,14 +17,14 @@
  * @constant {string} JWT_SECRET - Secreto utilizado para firmar tokens JWT. Este valor debe estar definido en `.local.env`.
  * @constant {number} SALT_ROUNDS - Número de rondas para encriptación de contraseñas, convertido a número. Valor predeterminado: `5`.
  */
-export const PORT = process.env.PORT ?? 8080
-export const DB_PORT = process.env.DB_PORT ?? 3306
-export const DB_HOST = process.env.DB_HOST ?? 'localhost'
-export const DB_USER = process.env.DB_USER ?? 'root'
-export const DB_PASSWORD = process.env.DB_PASSWORD ?? ''
-export const DB_NAME = process.env.DB_NAME ?? 'test'
+export const PORT = process.env.PORT
+export const DB_PORT = process.env.DB_PORT
+export const DB_HOST = process.env.DB_HOST
+export const DB_USER = process.env.DB_USER
+export const DB_PASSWORD = process.env.DB_PASSWORD
+export const DB_NAME = process.env.DB_NAME
 export const JWT_SECRET = process.env.JWT_SECRET
-export const SALT_ROUNDS = Number(process.env.SALT_ROUNDS) ?? 5
+export const SALT_ROUNDS = Number(process.env.SALT_ROUNDS)
 
 export const corsOptions = {
   origin: ['http://localhost:3001', 'http://localhost:3000'],
