@@ -67,13 +67,18 @@ export const retrieveUserSessionData = async (req, res) => {
  */
 export const logoutUser = async (req, res) => {
   try {
-    res.clearCookie('token')
+    res.clearCookie('token', {
+      httpOnly: true,
+      secure: true,
+      sameSite: 'none'
+    })
     res.status(200).json({ message: 'Logged out' })
   } catch (e) {
     console.error(e)
     res.status(500).json({ message: 'Something went wrong' })
   }
 }
+
 
 /**
  * Verifica si el usuario tiene una sesión activa.
