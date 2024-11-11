@@ -41,5 +41,10 @@ export const Sales = sequelize.define('sales', {
       model: 'user',
       key: 'user_id'
     }
+  },
+  saleDate: {
+    type: DataTypes.DATE,
+    allowNull: false,
+    field: 'sale_date'
   }
 }, { timestamps: false })

@@ -7,7 +7,8 @@ import { DB_USER, DB_HOST, DB_NAME, DB_PASSWORD } from '../config/config.js'
  */
 export const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
   host: DB_HOST,
-  dialect: 'mysql'
+  dialect: 'mysql',
+  attributeBehavior: "escape"
 })
 
 /**
