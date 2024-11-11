@@ -1,11 +1,11 @@
 import express from 'express'
-import { PORT, corsOptions } from './config/config.js'
+import {PORT, corsOptions} from './config/config.js'
 import morgan from 'morgan'
 import cors from 'cors'
-import { usersRouter } from './routes/users/users-router.js'
-import { authRouter } from './routes/auth/auth-router.js'
-import { productsRouter } from './routes/products/products-router.js'
-import { salesRouter } from './routes/sales/sales-router.js'
+import {usersRouter} from './routes/users/users-router.js'
+import {authRouter} from './routes/auth/auth-router.js'
+import {productsRouter} from './routes/products/products-router.js'
+import {salesRouter} from './routes/sales/sales-router.js'
 
 export const app = express()
 
@@ -42,6 +42,8 @@ app.use('/api/sales', salesRouter)
 /**
  * Inicia el servidor y escucha en el puerto especificado.
  */
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`)
-})
+if (process.env.NODE_ENV !== 'test') {
+   app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
+}
