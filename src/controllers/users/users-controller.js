@@ -71,6 +71,7 @@ export const registerUser = async (req, res) => {
 export const updateUser = async (req, res) => {
   const { userId } = req.params
   const {
+    username,
     firstName,
     lastName,
     userEmail,
@@ -84,6 +85,7 @@ export const updateUser = async (req, res) => {
   } = req.body
 
   const user = {
+    username,
     firstName,
     lastName,
     userEmail,
