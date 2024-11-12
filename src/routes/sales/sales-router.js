@@ -1,4 +1,4 @@
-import { createSale , listSales} from '../../controllers/sales/sales-controller.js'
+import { createSale, listSales } from '../../controllers/sales/sales-controller.js'
 import express from 'express'
 
 export const salesRouter = express.Router()

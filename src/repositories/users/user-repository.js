@@ -184,7 +184,8 @@ export const getAllUsersDb = async () => {
       where: {
         roleId: {
           [Op.ne]: 1
-        }
+        },
+        isAvailable: 1
       }
     })
   } catch (e) {
