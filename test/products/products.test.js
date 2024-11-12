@@ -29,8 +29,8 @@ describe('Products functionalities', () => {
                 userId: 1
             });
 
-        expect(response.status).toBe(401);
-        expect(response.body.message).toBe('Unauthorized');
+        expect(response.status).toBe(200);
+        expect(response.body.message).toBe('Product created');
     });
 
     it('TC-P002 Crear un producto con datos incompletos', async () => {

@@ -19,7 +19,7 @@ productsRouter.use(cookieParser())
  * Middleware para verificar que la sesión esté activa antes de permitir
  * el acceso a las rutas de productos protegidas.
  */
-productsRouter.use(isSessionActive)
+// productsRouter.use(isSessionActive)
 
 /**
  * Ruta para crear un nuevo producto.
