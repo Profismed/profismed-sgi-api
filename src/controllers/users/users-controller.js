@@ -1,6 +1,6 @@
 import { saveUser, verifyExistingUserByUsername, updateUserDb, deleteUserByIdDb, verifyExistingUserById, getAllUsersDb, verifyExistingUserByEmail, retrieveUserById } from '../../repositories/users/user-repository.js'
-import { JWT_SECRET } from "../../config/config.js";
-import jwt from "jsonwebtoken";
+import { JWT_SECRET } from '../../config/config.js'
+import jwt from 'jsonwebtoken'
 
 /**
  * Registra un nuevo usuario en el sistema.
@@ -117,7 +117,6 @@ export const updateUser = async (req, res) => {
     res.cookie('token', newToken, { httpOnly: true, secure: true, maxAge: 10800000 })
 
     return res.status(200).json({ message: 'User updated' })
-
   } catch (e) {
     console.error(e)
     res.status(500).json({ message: 'Something went wrong' })

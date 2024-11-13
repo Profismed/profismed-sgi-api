@@ -79,7 +79,6 @@ export const logoutUser = async (req, res) => {
   }
 }
 
-
 /**
  * Verifica si el usuario tiene una sesión activa.
  *
