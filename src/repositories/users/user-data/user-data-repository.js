@@ -61,11 +61,11 @@ export const retrieveRoles = async () => {
  * @returns {Promise<Object|undefined>} - Devuelve el rol encontrado o `undefined` si ocurre un error.
  */
 export const retrieveRoleById = async (roleId) => {
-    try {
-        return await Role.findByPk(roleId)
-    } catch (e) {
-        console.error(e)
-    }
+  try {
+    return await Role.findByPk(roleId)
+  } catch (e) {
+    console.error(e)
+  }
 }
 
 /**
@@ -79,11 +79,11 @@ export const retrieveRoleById = async (roleId) => {
  * @returns {Promise<Object|undefined>} - Devuelve el documento encontrado o `undefined` si ocurre un error.
  */
 export const retrieveDocumentById = async (documentId) => {
-    try {
-        return await Document.findByPk(documentId)
-    } catch (e) {
-        console.error(e)
-    }
+  try {
+    return await Document.findByPk(documentId)
+  } catch (e) {
+    console.error(e)
+  }
 }
 
 /**
@@ -97,9 +97,9 @@ export const retrieveDocumentById = async (documentId) => {
  * @returns {Promise<Object|undefined>} - Devuelve la ubicación encontrada o `undefined` si ocurre un error.
  */
 export const retrieveLocationById = async (locationId) => {
-    try {
-        return await Location.findByPk(locationId)
-    } catch (e) {
-        console.error(e)
-    }
+  try {
+    return await Location.findByPk(locationId)
+  } catch (e) {
+    console.error(e)
+  }
 }

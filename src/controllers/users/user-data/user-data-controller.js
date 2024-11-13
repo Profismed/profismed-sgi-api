@@ -76,14 +76,14 @@ export const getLocations = async (req, res) => {
  * @returns {Promise<void>} - Envía una respuesta JSON con el rol o un mensaje de error.
  */
 export const getRoleById = async (req, res) => {
-    const { roleId } = req.params
-    try {
-        const role = await retrieveRoleById(roleId)
-        res.status(200).json(role)
-    } catch (e) {
-        console.error(e)
-        res.status(500).json({ message: 'Something went wrong' })
-    }
+  const { roleId } = req.params
+  try {
+    const role = await retrieveRoleById(roleId)
+    res.status(200).json(role)
+  } catch (e) {
+    console.error(e)
+    res.status(500).json({ message: 'Something went wrong' })
+  }
 }
 
 /**
@@ -99,14 +99,14 @@ export const getRoleById = async (req, res) => {
  * @returns {Promise<void>} - Envía una respuesta JSON con el documento o un mensaje de error.
  */
 export const getDocumentById = async (req, res) => {
-    const { documentId } = req.params
-    try {
-        const document = await retrieveDocumentById(documentId)
-        res.status(200).json(document)
-    } catch (e) {
-        console.error(e)
-        res.status(500).json({ message: 'Something went wrong' })
-    }
+  const { documentId } = req.params
+  try {
+    const document = await retrieveDocumentById(documentId)
+    res.status(200).json(document)
+  } catch (e) {
+    console.error(e)
+    res.status(500).json({ message: 'Something went wrong' })
+  }
 }
 
 /**
@@ -122,13 +122,12 @@ export const getDocumentById = async (req, res) => {
  * @returns {Promise<void>} - Envía una respuesta JSON con la ubicación o un mensaje de error.
  */
 export const getLocationById = async (req, res) => {
-    const { locationId } = req.params
-    try {
-        const location = await retrieveLocationById(locationId)
-        res.status(200).json(location)
-    } catch (e) {
-        console.error(e)
-        res.status(500).json({ message: 'Something went wrong' })
-    }
+  const { locationId } = req.params
+  try {
+    const location = await retrieveLocationById(locationId)
+    res.status(200).json(location)
+  } catch (e) {
+    console.error(e)
+    res.status(500).json({ message: 'Something went wrong' })
+  }
 }
-
