@@ -1,4 +1,4 @@
-import { getRoles, getLocations, getDocuments } from '../../../controllers/users/user-data/user-data-controller.js'
+import { getRoles, getLocations, getDocuments, getDocumentById, getLocationById, getRoleById } from '../../../controllers/users/user-data/user-data-controller.js'
 import express from 'express'
 
 export const userDataRouter = express.Router()
@@ -41,3 +41,42 @@ userDataRouter.get('/locations', getLocations)
  * @inner
  */
 userDataRouter.get('/documents', getDocuments)
+
+/**
+ * Ruta para obtener un rol específico por su ID.
+ *
+ * Define una ruta HTTP GET para `/roles/:roleId` que invoca la función `getRoleById`
+ * desde el controlador `user-data-controller.js`. Esta función recupera un rol específico
+ * usando el `roleId` proporcionado en la URL como parámetro y devuelve los datos del rol en formato JSON.
+ *
+ * @name GET /roles/:roleId
+ * @function
+ * @inner
+ */
+userDataRouter.get('/roles/:roleId', getRoleById)
+
+/**
+ * Ruta para obtener una ubicación específica por su ID.
+ *
+ * Define una ruta HTTP GET para `/locations/:locationId` que invoca la función `getLocationById`
+ * desde el controlador `user-data-controller.js`. Esta función recupera una ubicación específica
+ * usando el `locationId` proporcionado en la URL como parámetro y devuelve los datos de la ubicación en formato JSON.
+ *
+ * @name GET /locations/:locationId
+ * @function
+ * @inner
+ */
+userDataRouter.get('/locations/:locationId', getLocationById)
+
+/**
+ * Ruta para obtener un documento específico por su ID.
+ *
+ * Define una ruta HTTP GET para `/documents/:documentId` que invoca la función `getDocumentById`
+ * desde el controlador `user-data-controller.js`. Esta función recupera un documento específico
+ * usando el `documentId` proporcionado en la URL como parámetro y devuelve los datos del documento en formato JSON.
+ *
+ * @name GET /documents/:documentId
+ * @function
+ * @inner
+ */
+userDataRouter.get('/documents/:documentId', getDocumentById)

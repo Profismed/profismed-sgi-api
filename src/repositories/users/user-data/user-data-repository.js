@@ -49,3 +49,57 @@ export const retrieveRoles = async () => {
     console.error(e)
   }
 }
+
+/**
+ * Recupera un rol específico de la base de datos mediante su identificador.
+ *
+ * Esta función utiliza el modelo `Role` para obtener un único registro de la tabla de roles,
+ * identificado por el `roleId` proporcionado.
+ * En caso de que ocurra un error durante la operación, se captura y se muestra en la consola.
+ *
+ * @param {number} roleId - El identificador del rol que se desea recuperar.
+ * @returns {Promise<Object|undefined>} - Devuelve el rol encontrado o `undefined` si ocurre un error.
+ */
+export const retrieveRoleById = async (roleId) => {
+    try {
+        return await Role.findByPk(roleId)
+    } catch (e) {
+        console.error(e)
+    }
+}
+
+/**
+ * Recupera un documento específico de la base de datos mediante su identificador.
+ *
+ * Esta función utiliza el modelo `Document` para obtener un único registro de la tabla de documentos,
+ * identificado por el `documentId` proporcionado.
+ * En caso de que ocurra un error durante la operación, se captura y se muestra en la consola.
+ *
+ * @param {number} documentId - El identificador del documento que se desea recuperar.
+ * @returns {Promise<Object|undefined>} - Devuelve el documento encontrado o `undefined` si ocurre un error.
+ */
+export const retrieveDocumentById = async (documentId) => {
+    try {
+        return await Document.findByPk(documentId)
+    } catch (e) {
+        console.error(e)
+    }
+}
+
+/**
+ * Recupera una ubicación específica de la base de datos mediante su identificador.
+ *
+ * Esta función utiliza el modelo `Location` para obtener un único registro de la tabla de ubicaciones,
+ * identificado por el `locationId` proporcionado.
+ * En caso de que ocurra un error durante la operación, se captura y se muestra en la consola.
+ *
+ * @param {number} locationId - El identificador de la ubicación que se desea recuperar.
+ * @returns {Promise<Object|undefined>} - Devuelve la ubicación encontrada o `undefined` si ocurre un error.
+ */
+export const retrieveLocationById = async (locationId) => {
+    try {
+        return await Location.findByPk(locationId)
+    } catch (e) {
+        console.error(e)
+    }
+}
