@@ -106,10 +106,6 @@ export const updateUser = async (req, res) => {
     const token = req.cookies.token
     const userData = jwt.verify(token, JWT_SECRET)
 
-    if (userData.userId !== Number(userId)) {
-      return res.status(403).json({ message: 'Forbidden' })
-    }
-
     await updateUserDb(userId, user)
 
     if (userData.userId === Number(userId)) {
@@ -118,7 +114,12 @@ export const updateUser = async (req, res) => {
       const updatedUser = await retrieveUserById(userId)
       const newToken = jwt.sign(updatedUser, JWT_SECRET, { expiresIn: '3h' })
 
-      res.cookie('token', newToken, { httpOnly: true, secure: true, maxAge: 10800000, sameSite: 'none' })
+      res.cookie('token', newToken, {
+        httpOnly: true,
+        secure: true,
+        maxAge: 10800000,
+        sameSite: 'none'
+      })
     }
 
     return res.status(200).json({ message: 'User updated' })
