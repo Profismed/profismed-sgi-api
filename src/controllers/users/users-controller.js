@@ -111,12 +111,15 @@ export const updateUser = async (req, res) => {
     }
 
     await updateUserDb(userId, user)
-    res.clearCookie('token')
 
-    const updatedUser = await retrieveUserById(userId)
-    const newToken = jwt.sign(updatedUser, JWT_SECRET, { expiresIn: '3h' })
+    if (userData.userId === Number(userId)) {
+      res.clearCookie('token')
 
-    res.cookie('token', newToken, { httpOnly: true, secure: true, maxAge: 10800000, sameSite: 'none' })
+      const updatedUser = await retrieveUserById(userId)
+      const newToken = jwt.sign(updatedUser, JWT_SECRET, { expiresIn: '3h' })
+
+      res.cookie('token', newToken, { httpOnly: true, secure: true, maxAge: 10800000, sameSite: 'none' })
+    }
 
     return res.status(200).json({ message: 'User updated' })
   } catch (e) {
