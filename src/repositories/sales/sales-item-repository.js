@@ -1,6 +1,7 @@
 import { SalesItem } from '../../models/sales/sales-item.js'
 import { Sales } from '../../models/sales/sales-model.js'
 import { Product } from '../../models/products/product-model.js'
+import { User } from '../../models/user/user-model.js'
 
 /**
  * Guarda una nueva venta en la base de datos, incluyendo los elementos de la venta.
@@ -17,6 +18,29 @@ export const saveSale = async (sale) => {
   const { buyerId, sellerId, items, saleDate } = sale
   try {
     let salesAmount = 0
+
+    const buyer = await User.findByPk(buyerId)
+    const seller = await User.findByPk(sellerId)
+
+    if (!buyer || !seller) {
+      console.error('Buyer or seller not found')
+      return
+    }
+
+    if (buyer.role !== 3) {
+      console.error('Invalid role for buyer')
+      return
+    }
+
+    if (seller.role !== 1 || seller.role !== 2) {
+      console.error('Invalid role for seller')
+      return
+    }
+
+    if (buyerId === sellerId) {
+      console.error('Buyer and seller cannot be the same user')
+      return
+    }
 
     for (const item of items) {
       const { productId, productQuantity, unitPrice: itemUnitPrice } = item
@@ -35,21 +59,6 @@ export const saveSale = async (sale) => {
       const unitPrice = itemUnitPrice || product.productPrice
       const subtotal = productQuantity * unitPrice
       salesAmount += subtotal
-    }
-
-    if (buyerId === sellerId) {
-      console.error('Buyer and seller cannot be the same user')
-      return
-    }
-
-    if (buyerId !== 3) {
-      console.error('buyerId must be 3')
-      return
-    }
-
-    if (sellerId !== 2 && sellerId !== 1) {
-      console.error('Incorrect sellerId')
-      return
     }
 
     const newSale = await Sales.create({
@@ -86,9 +95,6 @@ export const saveSale = async (sale) => {
     console.error(e)
   }
 }
-
-
-
 
 export const getSalesDb = async () => {
   try {
