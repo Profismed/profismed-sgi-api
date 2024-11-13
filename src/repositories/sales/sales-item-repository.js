@@ -27,9 +27,29 @@ export const saveSale = async (sale) => {
         return
       }
 
+      if (product.quantity < productQuantity) {
+        console.error(`Not enough stock for product with ID ${productId}`)
+        return
+      }
+
       const unitPrice = itemUnitPrice || product.productPrice
       const subtotal = productQuantity * unitPrice
       salesAmount += subtotal
+    }
+
+    if (buyerId === sellerId) {
+      console.error('Buyer and seller cannot be the same user')
+      return
+    }
+
+    if (buyerId !== 3) {
+      console.error('buyerId must be 3')
+      return
+    }
+
+    if (sellerId !== 2 && sellerId !== 1) {
+      console.error('Incorrect sellerId')
+      return
     }
 
     const newSale = await Sales.create({
@@ -43,6 +63,11 @@ export const saveSale = async (sale) => {
       const { productId, productQuantity, unitPrice: itemUnitPrice } = item
 
       const product = await Product.findByPk(productId)
+      if (!product) {
+        console.error(`Product with ID ${productId} not found`)
+        return
+      }
+
       const unitPrice = itemUnitPrice || product.productPrice
       const subtotal = productQuantity * unitPrice
 
@@ -53,11 +78,17 @@ export const saveSale = async (sale) => {
         subtotal,
         salesId: newSale.salesId
       })
+
+      product.quantity -= productQuantity
+      await product.save()
     }
   } catch (e) {
     console.error(e)
   }
 }
+
+
+
 
 export const getSalesDb = async () => {
   try {
