@@ -1,6 +1,7 @@
 import { createSale, listSales } from '../../controllers/sales/sales-controller.js'
 import express from 'express'
 import { isSessionActive } from '../../middlewares/auth/auth-middlewares.js'
+import cookieParser from 'cookie-parser'
 
 /**
  * Ruta para manejar las operaciones relacionadas con las ventas.
@@ -13,11 +14,13 @@ import { isSessionActive } from '../../middlewares/auth/auth-middlewares.js'
  */
 export const salesRouter = express.Router()
 
-// Middleware para verificar si la sesión está activa antes de procesar las solicitudes
-salesRouter.use(isSessionActive)
-
 // Middleware para procesar solicitudes con cuerpo JSON
 salesRouter.use(express.json())
+
+// Middleware para analizar las cookies de las solicitudes
+salesRouter.use(cookieParser())
+// Middleware para verificar si la sesión está activa antes de procesar las solicitudes
+salesRouter.use(isSessionActive)
 
 // Ruta POST para crear una nueva venta
 salesRouter.post('/create', createSale)
