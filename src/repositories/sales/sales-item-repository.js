@@ -12,7 +12,7 @@ import { User } from '../../models/user/user-model.js'
  * @param {Array} sale.items - Lista de elementos de la venta, cada uno conteniendo información del producto.
  * @param {number} sale.items[].productId - ID del producto.
  * @param {number} sale.items[].productQuantity - Cantidad del producto en la venta.
- * @returns {Promise<void>} - Indica el éxito o fallo de la operación.
+ * @returns {Promise<Model<any, TModelAttributes>>} - Indica el éxito o fallo de la operación.
  */
 export const saveSale = async (sale) => {
   const { buyerId, sellerId, items, saleDate } = sale
@@ -24,22 +24,21 @@ export const saveSale = async (sale) => {
 
     if (!buyer || !seller) {
       console.error('Buyer or seller not found')
-      return
+      return null
     }
-
-    if (buyer.role !== 3) {
+    if (buyer.roleId !== 3) {
       console.error('Invalid role for buyer')
-      return
+      return null
     }
 
-    if (seller.role !== 1 || seller.role !== 2) {
+    if (seller.roleId !== 1 && seller.roleId !== 2) {
       console.error('Invalid role for seller')
-      return
+      return null
     }
 
     if (buyerId === sellerId) {
       console.error('Buyer and seller cannot be the same user')
-      return
+      return null
     }
 
     for (const item of items) {
@@ -48,12 +47,12 @@ export const saveSale = async (sale) => {
       const product = await Product.findByPk(productId)
       if (!product) {
         console.error(`Product with ID ${productId} not found`)
-        return
+        return null
       }
 
       if (product.quantity < productQuantity) {
         console.error(`Not enough stock for product with ID ${productId}`)
-        return
+        return null
       }
 
       const unitPrice = itemUnitPrice || product.productPrice
@@ -74,7 +73,7 @@ export const saveSale = async (sale) => {
       const product = await Product.findByPk(productId)
       if (!product) {
         console.error(`Product with ID ${productId} not found`)
-        return
+        return null
       }
 
       const unitPrice = itemUnitPrice || product.productPrice
@@ -91,11 +90,18 @@ export const saveSale = async (sale) => {
       product.quantity -= productQuantity
       await product.save()
     }
+
+    return newSale
   } catch (e) {
     console.error(e)
   }
 }
 
+/**
+ * Recupera todas las ventas de la base de datos, incluyendo los elementos asociados a cada venta.
+ *
+ * @returns {Promise<object>} - Objeto que contiene todas las ventas, cada una con su lista de elementos.
+ */
 export const getSalesDb = async () => {
   try {
     const sales = await Sales.findAll()
