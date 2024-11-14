@@ -12,89 +12,83 @@ import { User } from '../../models/user/user-model.js'
  * @param {Array} sale.items - Lista de elementos de la venta, cada uno conteniendo información del producto.
  * @param {number} sale.items[].productId - ID del producto.
  * @param {number} sale.items[].productQuantity - Cantidad del producto en la venta.
- * @returns {Promise<Model<any, TModelAttributes>>} - Indica el éxito o fallo de la operación.
+ * @param {Date} sale.saleDate - Fecha de la venta.
+ * @returns {Promise<boolean>} - Indica el éxito o fallo de la operación.
  */
 export const saveSale = async (sale) => {
   const { buyerId, sellerId, items, saleDate } = sale
-  try {
-    let salesAmount = 0
+  let salesAmount = 0
 
-    const buyer = await User.findByPk(buyerId)
-    const seller = await User.findByPk(sellerId)
+  // Verificar la existencia de comprador y vendedor
+  const buyer = await User.findByPk(buyerId)
+  const seller = await User.findByPk(sellerId)
 
-    if (!buyer || !seller) {
-      console.error('Buyer or seller not found')
-      return null
-    }
-    if (buyer.roleId !== 3) {
-      console.error('Invalid role for buyer')
-      return null
-    }
+  if (!buyer || !seller) {
+    throw new Error('Buyer or seller not found')
+  }
+  if (buyer.roleId !== 3) {
+    throw new Error('Invalid role for buyer')
+  }
 
-    if (seller.roleId !== 1 && seller.roleId !== 2) {
-      console.error('Invalid role for seller')
-      return null
-    }
+  if (seller.roleId !== 1 && seller.roleId !== 2) {
+    throw new Error('Invalid role for seller')
+  }
 
-    if (buyerId === sellerId) {
-      console.error('Buyer and seller cannot be the same user')
-      return null
-    }
+  if (buyerId === sellerId) {
+    throw new Error('Buyer and seller cannot be the same user')
+  }
 
-    for (const item of items) {
-      const { productId, productQuantity, unitPrice: itemUnitPrice } = item
+  // Calcular el monto total de la venta y verificar stock de productos
+  for (const item of items) {
+    const { productId, productQuantity, unitPrice: itemUnitPrice } = item
 
-      const product = await Product.findByPk(productId)
-      if (!product) {
-        console.error(`Product with ID ${productId} not found`)
-        return null
-      }
-
-      if (product.quantity < productQuantity) {
-        console.error(`Not enough stock for product with ID ${productId}`)
-        return null
-      }
-
-      const unitPrice = itemUnitPrice || product.productPrice
-      const subtotal = productQuantity * unitPrice
-      salesAmount += subtotal
+    const product = await Product.findByPk(productId)
+    if (!product) {
+      throw new Error(`Product with ID ${productId} not found`)
     }
 
-    const newSale = await Sales.create({
-      salesAmount,
-      buyerId,
-      sellerId,
-      saleDate
+    if (product.quantity < productQuantity) {
+      throw new Error(`Not enough stock for product with ID ${productId}`)
+    }
+
+    const unitPrice = itemUnitPrice || product.productPrice
+    const subtotal = productQuantity * unitPrice
+    salesAmount += subtotal
+  }
+
+  // Crear la venta en la base de datos
+  const newSale = await Sales.create({
+    salesAmount,
+    buyerId,
+    sellerId,
+    saleDate
+  })
+
+  // Guardar cada elemento de la venta y actualizar el stock del producto
+  for (const item of items) {
+    const { productId, productQuantity, unitPrice: itemUnitPrice } = item
+
+    const product = await Product.findByPk(productId)
+    if (!product) {
+      throw new Error(`Product with ID ${productId} not found`)
+    }
+
+    const unitPrice = itemUnitPrice || product.productPrice
+    const subtotal = productQuantity * unitPrice
+
+    await SalesItem.create({
+      productId,
+      productQuantity,
+      unitPrice,
+      subtotal,
+      salesId: newSale.salesId
     })
 
-    for (const item of items) {
-      const { productId, productQuantity, unitPrice: itemUnitPrice } = item
-
-      const product = await Product.findByPk(productId)
-      if (!product) {
-        console.error(`Product with ID ${productId} not found`)
-        return null
-      }
-
-      const unitPrice = itemUnitPrice || product.productPrice
-      const subtotal = productQuantity * unitPrice
-
-      await SalesItem.create({
-        productId,
-        productQuantity,
-        unitPrice,
-        subtotal,
-        salesId: newSale.salesId
-      })
-
-      product.quantity -= productQuantity
-      await product.save()
-    }
-
-    return newSale
-  } catch (e) {
-    console.error(e)
+    product.quantity -= productQuantity
+    await product.save()
   }
+
+  return true
 }
 
 /**
@@ -106,6 +100,8 @@ export const getSalesDb = async () => {
   try {
     const sales = await Sales.findAll()
     const salesWithItems = {}
+
+    // Recuperar cada venta y sus elementos asociados
     for (const sale of sales) {
       const items = await SalesItem.findAll({
         where: {

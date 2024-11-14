@@ -29,10 +29,12 @@ export const createSale = async (req, res) => {
     if (!savedSale) {
       return res.status(400).json({ message: 'Sale could not be created' })
     }
+
     res.status(201).json({ message: 'Sale created' })
   } catch (e) {
     console.error(e)
-    res.status(500).json({ message: 'Something went wrong' })
+
+    res.status(400).json({ message: e.message })
   }
 }
 
@@ -49,9 +51,11 @@ export const createSale = async (req, res) => {
 export const listSales = async (req, res) => {
   try {
     const sales = await getSalesDb()
+
     res.status(200).json(sales)
   } catch (e) {
     console.error(e)
+
     res.status(500).json({ message: 'Something went wrong' })
   }
 }
