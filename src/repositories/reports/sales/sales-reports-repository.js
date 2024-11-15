@@ -6,9 +6,9 @@ export const retrieveMonthlySales = async () => {
   try {
     return await MonthlySales.findAll({
       attributes: [
-        'sale_month',
-        'sale_year',
-        'total_sales'
+        'month',
+        'total_sales',
+        'total_transactions'
       ]
     })
   } catch (error) {
