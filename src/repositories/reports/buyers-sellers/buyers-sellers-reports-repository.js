@@ -26,10 +26,20 @@ export const retrieveTopBuyers = async () => {
 }
 
 export const retrieveTopSellers = async () => {
-  try {
-    return await TopSellers.findAll()
-  } catch (error) {
-    console.error('Error retrieving top sellers:', error)
-    throw error
-  }
+    try {
+        return await TopSellers.findAll({
+        attributes: [
+            'seller_id',
+            'seller_name',
+            'seller_first_name',
+            'seller_last_name',
+            'seller_email',
+            'total_sales',
+            'products_sold'
+        ]
+        })
+    } catch (error) {
+        console.error('Error retrieving top sellers:', error)
+        throw error
+    }
 }
