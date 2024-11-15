@@ -40,6 +40,10 @@ app.use('/api/products', productsRouter)
  */
 app.use('/api/sales', salesRouter)
 
+/**
+ * Rutas para la generación de reportes.
+ * Prefijo de ruta: `/api/reports`
+ */
 app.use('/api/reports', reportsRouter)
 
 /**
