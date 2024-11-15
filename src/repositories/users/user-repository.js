@@ -58,7 +58,10 @@ export const verifyUserCredentials = async (user) => {
     const user = await User.findOne({
       where: {
         userEmail: email,
-        isAvailable: 1
+        isAvailable: 1,
+        roleId: {
+          [Op.in]: [1, 2]
+        }
       }
     })
     if (!user) {

@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken'
 import { JWT_SECRET } from '../../config/config.js'
 
 /**
- * Autentica un usuario y genera un token JWT para la sesión.
+ * Autentifica un usuario y genera un token JWT para la sesión.
  * Si el usuario ya tiene una sesión activa, responde con un error.
  *
  * @param {object} req - Objeto de solicitud de Express, que contiene `email` y `password` en `req.body`.
