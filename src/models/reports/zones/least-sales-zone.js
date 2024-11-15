@@ -1,5 +1,5 @@
-import { DataTypes } from 'sequelize';
-import { sequelize } from "../../../db/db-connection.js";
+import { DataTypes } from 'sequelize'
+import { sequelize } from '../../../db/db-connection.js'
 
 export const LeastSalesZone = sequelize.define('LeastSalesZone', {
   location_id: {
@@ -17,5 +17,5 @@ export const LeastSalesZone = sequelize.define('LeastSalesZone', {
 }, {
   tableName: 'least_sales_zone',
   timestamps: false,
-  freezeTableName: true,
-});
+  freezeTableName: true
+})

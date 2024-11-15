@@ -1,5 +1,5 @@
-import { DataTypes } from 'sequelize';
-import { sequelize } from "../../../db/db-connection.js";
+import { DataTypes } from 'sequelize'
+import { sequelize } from '../../../db/db-connection.js'
 
 export const SalesProductsView = sequelize.define('SalesProductsView', {
   sales_id: {
@@ -49,5 +49,5 @@ export const SalesProductsView = sequelize.define('SalesProductsView', {
 }, {
   tableName: 'sales_products_view',
   timestamps: false,
-  freezeTableName: true,
-});
+  freezeTableName: true
+})

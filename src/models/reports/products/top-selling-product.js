@@ -1,5 +1,5 @@
-import { DataTypes } from 'sequelize';
-import { sequelize } from "../../../db/db-connection.js";
+import { DataTypes } from 'sequelize'
+import { sequelize } from '../../../db/db-connection.js'
 
 export const TopSellingProduct = sequelize.define('TopSellingProduct', {
   product_id: {
@@ -17,5 +17,5 @@ export const TopSellingProduct = sequelize.define('TopSellingProduct', {
 }, {
   tableName: 'top_selling_product',
   timestamps: false,
-  freezeTableName: true,
-});
+  freezeTableName: true
+})

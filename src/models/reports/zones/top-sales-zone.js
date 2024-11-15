@@ -1,5 +1,5 @@
-import { DataTypes } from 'sequelize';
-import { sequelize } from "../../../db/db-connection.js";
+import { DataTypes } from 'sequelize'
+import { sequelize } from '../../../db/db-connection.js'
 
 export const TopSalesZone = sequelize.define('TopSalesZone', {
   location_id: {
@@ -17,5 +17,5 @@ export const TopSalesZone = sequelize.define('TopSalesZone', {
 }, {
   tableName: 'top_sales_zone',
   timestamps: false,
-  freezeTableName: true,
-});
+  freezeTableName: true
+})

@@ -1,5 +1,5 @@
-import { DataTypes } from 'sequelize';
-import { sequelize } from "../../../db/db-connection.js";
+import { DataTypes } from 'sequelize'
+import { sequelize } from '../../../db/db-connection.js'
 
 export const MonthlySales = sequelize.define('MonthlySales', {
   sale_month: {
@@ -17,5 +17,5 @@ export const MonthlySales = sequelize.define('MonthlySales', {
 }, {
   tableName: 'monthly_sales',
   timestamps: false,
-  freezeTableName: true,
-});
+  freezeTableName: true
+})

@@ -1,5 +1,5 @@
 import { DataTypes } from 'sequelize'
-import {sequelize} from "../../../db/db-connection.js";
+import { sequelize } from '../../../db/db-connection.js'
 
 export const TopBuyers = sequelize.define('TopBuyers', {
   buyer_id: {
@@ -53,5 +53,5 @@ export const TopBuyers = sequelize.define('TopBuyers', {
 }, {
   tableName: 'top_buyers',
   timestamps: false,
-  freezeTableName: true,
-});
+  freezeTableName: true
+})
