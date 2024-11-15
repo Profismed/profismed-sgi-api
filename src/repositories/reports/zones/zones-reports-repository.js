@@ -5,9 +5,9 @@ export const retrieveTopSalesZone = async () => {
   try {
     return await TopSalesZone.findAll({
       attributes: [
-        'location_id',
-        'location_name',
-        'total_sales'
+        'zone_name',
+        'total_sales',
+        'total_sales_count'
       ]
     })
   } catch (error) {
@@ -20,9 +20,9 @@ export const retrieveLeastSalesZone = async () => {
   try {
     return await LeastSalesZone.findAll({
       attributes: [
-        'location_id',
-        'location_name',
-        'total_sales'
+        'zone_name',
+        'total_sales',
+        'total_sales_count'
       ]
     })
   } catch (error) {
