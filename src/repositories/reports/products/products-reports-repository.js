@@ -1,6 +1,6 @@
-import { TopSellingProduct } from '../../../models/reports/products/top-selling-product.js';
-import { Top10Products } from '../../../models/reports/products/top-10-selling-products.js';
-import { LeastSellingProduct } from '../../../models/reports/products/least-selling-product.js';
+import { TopSellingProduct } from '../../../models/reports/products/top-selling-product.js'
+import { Top10Products } from '../../../models/reports/products/top-10-selling-products.js'
+import { LeastSellingProduct } from '../../../models/reports/products/least-selling-product.js'
 
 export const retrieveTopSellingProduct = async () => {
   try {
@@ -10,10 +10,10 @@ export const retrieveTopSellingProduct = async () => {
         'product_name',
         'total_quantity_sold'
       ]
-    });
+    })
   } catch (error) {
-    console.error('Error retrieving top selling product:', error);
-    throw error;
+    console.error('Error retrieving top selling product:', error)
+    throw error
   }
 }
 
@@ -25,10 +25,10 @@ export const retrieveTop10Products = async () => {
         'product_name',
         'total_quantity_sold'
       ]
-    });
+    })
   } catch (error) {
-    console.error('Error retrieving top 10 products:', error);
-    throw error;
+    console.error('Error retrieving top 10 products:', error)
+    throw error
   }
 }
 
@@ -40,9 +40,9 @@ export const retrieveLeastSellingProduct = async () => {
         'product_name',
         'total_quantity_sold'
       ]
-    });
+    })
   } catch (error) {
-    console.error('Error retrieving least selling product:', error);
-    throw error;
+    console.error('Error retrieving least selling product:', error)
+    throw error
   }
 }
