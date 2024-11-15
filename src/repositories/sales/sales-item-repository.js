@@ -19,6 +19,11 @@ export const saveSale = async (sale) => {
   const { buyerId, sellerId, items, saleDate } = sale
   let salesAmount = 0
 
+  // Verificar que la venta tenga al menos un item
+  if (!items || items.length === 0) {
+    throw new Error('Sale must have at least one item')
+  }
+
   // Verificar la existencia de comprador y vendedor
   const buyer = await User.findByPk(buyerId)
   const seller = await User.findByPk(sellerId)
