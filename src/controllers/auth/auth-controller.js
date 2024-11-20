@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken'
 import { JWT_SECRET } from '../../config/config.js'
 
 /**
- * Autentica un usuario y genera un token JWT para la sesión.
+ * Autentifica un usuario y genera un token JWT para la sesión.
  * Si el usuario ya tiene una sesión activa, responde con un error.
  *
  * @param {object} req - Objeto de solicitud de Express, que contiene `email` y `password` en `req.body`.
@@ -67,7 +67,11 @@ export const retrieveUserSessionData = async (req, res) => {
  */
 export const logoutUser = async (req, res) => {
   try {
-    res.clearCookie('token')
+    res.clearCookie('token', {
+      httpOnly: true,
+      secure: true,
+      sameSite: 'none'
+    })
     res.status(200).json({ message: 'Logged out' })
   } catch (e) {
     console.error(e)

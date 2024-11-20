@@ -1,6 +1,6 @@
 import { saveUser, verifyExistingUserByUsername, updateUserDb, deleteUserByIdDb, verifyExistingUserById, getAllUsersDb, verifyExistingUserByEmail, retrieveUserById } from '../../repositories/users/user-repository.js'
-import { JWT_SECRET } from "../../config/config.js";
-import jwt from "jsonwebtoken";
+import { JWT_SECRET } from '../../config/config.js'
+import jwt from 'jsonwebtoken'
 
 /**
  * Registra un nuevo usuario en el sistema.
@@ -71,6 +71,7 @@ export const registerUser = async (req, res) => {
 export const updateUser = async (req, res) => {
   const { userId } = req.params
   const {
+    username,
     firstName,
     lastName,
     userEmail,
@@ -84,6 +85,7 @@ export const updateUser = async (req, res) => {
   } = req.body
 
   const user = {
+    username,
     firstName,
     lastName,
     userEmail,
@@ -104,20 +106,23 @@ export const updateUser = async (req, res) => {
     const token = req.cookies.token
     const userData = jwt.verify(token, JWT_SECRET)
 
-    if (userData.userId !== Number(userId)) {
-      return res.status(403).json({ message: 'Forbidden' })
+    await updateUserDb(userId, user)
+
+    if (userData.userId === Number(userId)) {
+      res.clearCookie('token')
+
+      const updatedUser = await retrieveUserById(userId)
+      const newToken = jwt.sign(updatedUser, JWT_SECRET, { expiresIn: '3h' })
+
+      res.cookie('token', newToken, {
+        httpOnly: true,
+        secure: true,
+        maxAge: 10800000,
+        sameSite: 'none'
+      })
     }
 
-    await updateUserDb(userId, user)
-    res.clearCookie('token')
-
-    const updatedUser = await retrieveUserById(userId)
-    const newToken = jwt.sign(updatedUser, JWT_SECRET, { expiresIn: '3h' })
-
-    res.cookie('token', newToken, { httpOnly: true, secure: true, maxAge: 10800000, sameSite: 'none' })
-
     return res.status(200).json({ message: 'User updated' })
-
   } catch (e) {
     console.error(e)
     res.status(500).json({ message: 'Something went wrong' })
