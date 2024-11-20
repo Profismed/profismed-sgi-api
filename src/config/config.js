@@ -27,6 +27,10 @@ export const JWT_SECRET = process.env.JWT_SECRET
 export const SALT_ROUNDS = Number(process.env.SALT_ROUNDS)
 
 export const corsOptions = {
-  origin: ['http://localhost:3001', 'http://localhost:3000'],
-  credentials: true
-}
+  origin: ['http://localhost:3001', 'http://localhost:3000', 'https://bright-empanada-a7b001.netlify.app'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+  preflightContinue: false
+};
+
