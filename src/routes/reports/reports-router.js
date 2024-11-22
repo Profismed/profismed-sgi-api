@@ -2,9 +2,27 @@ import { buyersSellersReportsRouter } from './buyers-sellers/buyers-sellers-repo
 import { productsReportsRouter } from './products/products-reports-router.js'
 import { salesReportsRouter } from './sales/sales-reports-router.js'
 import { zonesReportsRouter } from './zones/zones-reports-router.js'
+import { isAdmin } from '../../middlewares/auth/auth-middlewares.js'
+import cookieParser from 'cookie-parser'
 import express from 'express'
 
 export const reportsRouter = express.Router()
+
+/**
+ * Middleware para analizar el cuerpo de las solicitudes como JSON.
+ */
+reportsRouter.use(express.json())
+
+/**
+ * Middleware para habilitar el análisis de cookies.
+ */
+reportsRouter.use(cookieParser())
+
+/**
+ * Middleware para verificar que el usuario es administrador antes de permitir
+ * el acceso a las rutas de reportes.
+ */
+reportsRouter.use(isAdmin)
 
 /**
  * Ruta principal para los reportes de compradores y vendedores.

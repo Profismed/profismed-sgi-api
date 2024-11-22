@@ -1,6 +1,7 @@
 import express from 'express'
 import { createProduct, listProducts, updateProduct, deleteProduct, getProduct } from '../../controllers/products/products-controller.js'
 import { isSessionActive } from '../../middlewares/auth/auth-middlewares.js'
+import { checkProductExists, verifyDuplicateProduct } from '../../middlewares/products/products-middlewares.js'
 import cookieParser from 'cookie-parser'
 
 export const productsRouter = express.Router()
@@ -28,7 +29,7 @@ productsRouter.use(isSessionActive)
  * @name POST /create
  * @path {POST} /create
  */
-productsRouter.post('/create', createProduct)
+productsRouter.post('/create', verifyDuplicateProduct, createProduct)
 
 /**
  * Ruta para listar todos los productos disponibles.
@@ -46,7 +47,7 @@ productsRouter.get('/all', listProducts)
  * @name PUT /update/:id
  * @path {PUT} /update/:id
  */
-productsRouter.put('/update/:id', updateProduct)
+productsRouter.put('/update/:id', checkProductExists, updateProduct)
 
 /**
  * Ruta para eliminar un producto específico.
@@ -55,7 +56,7 @@ productsRouter.put('/update/:id', updateProduct)
  * @name DELETE /delete/:id
  * @path {DELETE} /delete/:id
  */
-productsRouter.delete('/delete/:id', deleteProduct)
+productsRouter.delete('/delete/:id', checkProductExists, deleteProduct)
 
 /**
  * Ruta para obtener un producto específico.
@@ -64,4 +65,4 @@ productsRouter.delete('/delete/:id', deleteProduct)
  * @name GET /:id
  * @path {GET} /:id
  */
-productsRouter.get('/:id', getProduct)
+productsRouter.get('/:id', checkProductExists, getProduct)
