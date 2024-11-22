@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: models/reports/sales/sales-products-summary.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: models/reports/sales/sales-products-summary.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { DataTypes } from 'sequelize'
+import { sequelize } from '../../../db/db-connection.js'
+
+/**
+ * Modelo de SalesProductsSummary que representa un resumen de las ventas y productos asociados.
+ *
+ * Este modelo utiliza Sequelize para definir la estructura de la vista `sales_products_summary`,
+ * que muestra detalles resumidos de las ventas, incluyendo la fecha, el monto total, el vendedor,
+ * el comprador, nombres de productos, cantidad total vendida y el subtotal total de cada venta.
+ */
+export const SalesProductsSummary = sequelize.define('SalesProductsSummary', {
+  /**
+   * ID de la venta.
+   * @type {number}
+   */
+  sales_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    field: 'sales_id'
+  },
+  /**
+   * Fecha de la venta.
+   * @type {Date}
+   */
+  sale_date: {
+    type: DataTypes.DATE,
+    allowNull: true,
+    field: 'sale_date'
+  },
+  /**
+   * Monto total de la venta.
+   * @type {number}
+   */
+  sales_amount: {
+    type: DataTypes.DOUBLE,
+    allowNull: true,
+    field: 'sales_amount'
+  },
+  /**
+   * ID del vendedor.
+   * @type {number}
+   */
+  seller_id: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    field: 'seller_id'
+  },
+  /**
+   * ID del comprador.
+   * @type {number}
+   */
+  buyer_id: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    field: 'buyer_id'
+  },
+  /**
+   * Nombres de los productos vendidos, separados por coma.
+   * @type {string}
+   */
+  product_names: {
+    type: DataTypes.TEXT,
+    allowNull: true,
+    field: 'product_names'
+  },
+  /**
+   * Cantidad total de productos vendidos en la venta.
+   * @type {number}
+   */
+  total_quantity: {
+    type: DataTypes.DECIMAL(32),
+    allowNull: true,
+    field: 'total_quantity'
+  },
+  /**
+   * Subtotal total de los productos vendidos en la venta.
+   * @type {number}
+   */
+  total_subtotal: {
+    type: DataTypes.DOUBLE,
+    allowNull: true,
+    field: 'total_subtotal'
+  }
+}, {
+  tableName: 'sales_products_summary',
+  timestamps: false,
+  freezeTableName: true
+})
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html">/buyers-sellers</a></li><li><a href="global.html">/products</a></li><li><a href="global.html">/sales</a></li><li><a href="global.html">/zones</a></li><li><a href="global.html#DELETE/delete/:id">DELETE /delete/:id</a></li><li><a href="global.html#DELETE/delete/:userId">DELETE /delete/:userId</a></li><li><a href="global.html#GET/:id">GET /:id</a></li><li><a href="global.html#GET/all">GET /all</a></li><li><a href="global.html">GET /documents</a></li><li><a href="global.html">GET /documents/:documentId</a></li><li><a href="global.html">GET /least-selling-product</a></li><li><a href="global.html">GET /locations</a></li><li><a href="global.html">GET /locations/:locationId</a></li><li><a href="global.html">GET /monthly-sales</a></li><li><a href="global.html">GET /roles</a></li><li><a href="global.html">GET /roles/:roleId</a></li><li><a href="global.html">GET /sales-products</a></li><li><a href="global.html">GET /sales-products-summary</a></li><li><a href="global.html">GET /top-10-products</a></li><li><a href="global.html">GET /top-buyers</a></li><li><a href="global.html">GET /top-sellers</a></li><li><a href="global.html">GET /top-selling-product</a></li><li><a href="global.html#GET/userData">GET /userData</a></li><li><a href="global.html#GET/verifySession">GET /verifySession</a></li><li><a href="global.html#LeastSalesZone">LeastSalesZone</a></li><li><a href="global.html#LeastSellingProduct">LeastSellingProduct</a></li><li><a href="global.html#MonthlySales">MonthlySales</a></li><li><a href="global.html#POST/create">POST /create</a></li><li><a href="global.html#POST/login">POST /login</a></li><li><a href="global.html#POST/logout">POST /logout</a></li><li><a href="global.html#POST/register">POST /register</a></li><li><a href="global.html#PUT/update/:id">PUT /update/:id</a></li><li><a href="global.html#PUT/update/:userId">PUT /update/:userId</a></li><li><a href="global.html#SALT_ROUNDS">SALT_ROUNDS</a></li><li><a href="global.html#SalesProductsSummary">SalesProductsSummary</a></li><li><a href="global.html#SalesProductsView">SalesProductsView</a></li><li><a href="global.html#Top10Products">Top10Products</a></li><li><a href="global.html#TopBuyers">TopBuyers</a></li><li><a href="global.html#TopSalesZone">TopSalesZone</a></li><li><a href="global.html#TopSellers">TopSellers</a></li><li><a href="global.html#TopSellingProduct">TopSellingProduct</a></li><li><a href="global.html#buyer_id">buyer_id</a></li><li><a href="global.html#checkProductExists">checkProductExists</a></li><li><a href="global.html#checkProductStock">checkProductStock</a></li><li><a href="global.html#contact_email">contact_email</a></li><li><a href="global.html#contact_first_name">contact_first_name</a></li><li><a href="global.html#contact_job">contact_job</a></li><li><a href="global.html#contact_last_name">contact_last_name</a></li><li><a href="global.html#contact_origin">contact_origin</a></li><li><a href="global.html#contact_phone">contact_phone</a></li><li><a href="global.html#createProduct">createProduct</a></li><li><a href="global.html#createSale">createSale</a></li><li><a href="global.html#deleteProduct">deleteProduct</a></li><li><a href="global.html#deleteProductDB">deleteProductDB</a></li><li><a href="global.html#deleteUser">deleteUser</a></li><li><a href="global.html#deleteUserByIdDb">deleteUserByIdDb</a></li><li><a href="global.html#deleteUserByUsernameDb">deleteUserByUsernameDb</a></li><li><a href="global.html#enterprise_document">enterprise_document</a></li><li><a href="global.html#enterprise_name">enterprise_name</a></li><li><a href="global.html#getAllUsers">getAllUsers</a></li><li><a href="global.html#getAllUsersDb">getAllUsersDb</a></li><li><a href="global.html#getDocumentById">getDocumentById</a></li><li><a href="global.html#getDocuments">getDocuments</a></li><li><a href="global.html#getLeastSalesZone">getLeastSalesZone</a></li><li><a href="global.html#getLeastSellingProduct">getLeastSellingProduct</a></li><li><a href="global.html#getLocationById">getLocationById</a></li><li><a href="global.html#getLocations">getLocations</a></li><li><a href="global.html#getMonthlySales">getMonthlySales</a></li><li><a href="global.html#getProduct">getProduct</a></li><li><a href="global.html#getProductById">getProductById</a></li><li><a href="global.html#getProducts">getProducts</a></li><li><a href="global.html#getRoleById">getRoleById</a></li><li><a href="global.html#getRoles">getRoles</a></li><li><a href="global.html#getSalesDb">getSalesDb</a></li><li><a href="global.html#getSalesProducts">getSalesProducts</a></li><li><a href="global.html#getSalesProductsSummary">getSalesProductsSummary</a></li><li><a href="global.html#getTop10Products">getTop10Products</a></li><li><a href="global.html#getTopBuyers">getTopBuyers</a></li><li><a href="global.html#getTopSalesZone">getTopSalesZone</a></li><li><a href="global.html#getTopSellers">getTopSellers</a></li><li><a href="global.html#getTopSellingProduct">getTopSellingProduct</a></li><li><a href="global.html#isAdmin">isAdmin</a></li><li><a href="global.html#isSessionActive">isSessionActive</a></li><li><a href="global.html#listProducts">listProducts</a></li><li><a href="global.html#listSales">listSales</a></li><li><a href="global.html#location_id">location_id</a></li><li><a href="global.html#location_name">location_name</a></li><li><a href="global.html#loginUser">loginUser</a></li><li><a href="global.html#logoutUser">logoutUser</a></li><li><a href="global.html#product_id">product_id</a></li><li><a href="global.html#product_name">product_name</a></li><li><a href="global.html#product_names">product_names</a></li><li><a href="global.html#product_quantity">product_quantity</a></li><li><a href="global.html#products_bought">products_bought</a></li><li><a href="global.html#products_sold">products_sold</a></li><li><a href="global.html#registerUser">registerUser</a></li><li><a href="global.html#retrieveDocumentById">retrieveDocumentById</a></li><li><a href="global.html#retrieveDocuments">retrieveDocuments</a></li><li><a href="global.html#retrieveLocationById">retrieveLocationById</a></li><li><a href="global.html#retrieveLocations">retrieveLocations</a></li><li><a href="global.html#retrieveRoleById">retrieveRoleById</a></li><li><a href="global.html#retrieveRoles">retrieveRoles</a></li><li><a href="global.html#retrieveUserById">retrieveUserById</a></li><li><a href="global.html#retrieveUserData">retrieveUserData</a></li><li><a href="global.html#retrieveUserDataByEmail">retrieveUserDataByEmail</a></li><li><a href="global.html#retrieveUserSessionData">retrieveUserSessionData</a></li><li><a href="global.html#sale_date">sale_date</a></li><li><a href="global.html#sale_month">sale_month</a></li><li><a href="global.html#sale_year">sale_year</a></li><li><a href="global.html#salesRouter">salesRouter</a></li><li><a href="global.html#sales_amount">sales_amount</a></li><li><a href="global.html#sales_id">sales_id</a></li><li><a href="global.html#sales_item_id">sales_item_id</a></li><li><a href="global.html#saveProduct">saveProduct</a></li><li><a href="global.html#saveSale">saveSale</a></li><li><a href="global.html#saveUser">saveUser</a></li><li><a href="global.html#seller_email">seller_email</a></li><li><a href="global.html#seller_first_name">seller_first_name</a></li><li><a href="global.html#seller_id">seller_id</a></li><li><a href="global.html#seller_last_name">seller_last_name</a></li><li><a href="global.html#seller_name">seller_name</a></li><li><a href="global.html#sequelize">sequelize</a></li><li><a href="global.html#subtotal">subtotal</a></li><li><a href="global.html#total_purchased">total_purchased</a></li><li><a href="global.html#total_quantity">total_quantity</a></li><li><a href="global.html#total_quantity_sold">total_quantity_sold</a></li><li><a href="global.html#total_sales">total_sales</a></li><li><a href="global.html#total_subtotal">total_subtotal</a></li><li><a href="global.html#tryConnection">tryConnection</a></li><li><a href="global.html#unit_price">unit_price</a></li><li><a href="global.html#updateProduct">updateProduct</a></li><li><a href="global.html#updateProductDB">updateProductDB</a></li><li><a href="global.html#updateUser">updateUser</a></li><li><a href="global.html#updateUserDb">updateUserDb</a></li><li><a href="global.html#validateNoEmptyFields">validateNoEmptyFields</a></li><li><a href="global.html#verifyDuplicateProduct">verifyDuplicateProduct</a></li><li><a href="global.html#verifyExistingUserByEmail">verifyExistingUserByEmail</a></li><li><a href="global.html#verifyExistingUserById">verifyExistingUserById</a></li><li><a href="global.html#verifyExistingUserByUsername">verifyExistingUserByUsername</a></li><li><a href="global.html#verifyUserCredentials">verifyUserCredentials</a></li><li><a href="global.html#verifyUserSession">verifyUserSession</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Thu Nov 21 2024 23:08:18 GMT-0500 (Colombia Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,0 +1,12956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Global</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Global</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2></h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="DELETE/delete/:id"><span class="type-signature"></span>DELETE /delete/:id<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Ruta para eliminar un producto específico.Llama a la función `deleteProduct` del controlador.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_products_products-router.js.html">routes/products/products-router.js</a>, <a href="routes_products_products-router.js.html#line52">line 52</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="DELETE/delete/:userId"><span class="type-signature"></span>DELETE /delete/:userId<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Ruta para eliminar (desactivar) un usuario.Llama a la función `deleteUser` del controlador para eliminar (marcar como inactivo)un usuario del sistema. La solicitud debe ser un `DELETE` a `/delete/:userId`,donde `:userId` es el identificador del usuario a eliminar.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_users_users-router.js.html">routes/users/users-router.js</a>, <a href="routes_users_users-router.js.html#line62">line 62</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="GET/:id"><span class="type-signature"></span>GET /:id<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Ruta para obtener un producto específico.Llama a la función `getProduct` del controlador.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_products_products-router.js.html">routes/products/products-router.js</a>, <a href="routes_products_products-router.js.html#line61">line 61</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="GET/all"><span class="type-signature"></span>GET /all<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Ruta para listar todos los productos disponibles.Llama a la función `listProducts` del controlador.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_products_products-router.js.html">routes/products/products-router.js</a>, <a href="routes_products_products-router.js.html#line34">line 34</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="GET/all"><span class="type-signature"></span>GET /all<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Ruta para obtener todos los usuarios que no son administradores.Llama a la función `getAllUsers` del controlador para obtener la lista de usuariosque no tienen el rol de administrador. La solicitud debe ser un `GET` a `/all`.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_users_users-router.js.html">routes/users/users-router.js</a>, <a href="routes_users_users-router.js.html#line74">line 74</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="GET/userData"><span class="type-signature"></span>GET /userData<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Ruta para recuperar los datos de la sesión de un usuario autenticado.Llama a la función `retrieveUserSessionData` del controlador.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_auth_auth-router.js.html">routes/auth/auth-router.js</a>, <a href="routes_auth_auth-router.js.html#line51">line 51</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="GET/verifySession"><span class="type-signature"></span>GET /verifySession<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Ruta para verificar si el usuario tiene una sesión activa.Llama a la función `verifyUserSession` del controlador.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_auth_auth-router.js.html">routes/auth/auth-router.js</a>, <a href="routes_auth_auth-router.js.html#line36">line 36</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="LeastSalesZone"><span class="type-signature">(constant) </span>LeastSalesZone<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Modelo de LeastSalesZone que representa las zonas con menor cantidad de ventas.Este modelo utiliza Sequelize para definir la estructura de la vista `least_sales_zone`,que muestra las ubicaciones (zonas) con el menor total de ventas, incluyendo el ID de laubicación, el nombre de la ubicación y el total de ventas en esa zona.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_zones_least-sales-zone.js.html">models/reports/zones/least-sales-zone.js</a>, <a href="models_reports_zones_least-sales-zone.js.html#line11">line 11</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="LeastSellingProduct"><span class="type-signature">(constant) </span>LeastSellingProduct<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Modelo de LeastSellingProduct que representa los productos con menor cantidad de ventas.Este modelo utiliza Sequelize para definir la estructura de la tabla `least_selling_product`,que almacena los productos con menor cantidad de ventas, junto con su nombre y la cantidad total vendida.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_products_least-selling-product.js.html">models/reports/products/least-selling-product.js</a>, <a href="models_reports_products_least-selling-product.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="MonthlySales"><span class="type-signature">(constant) </span>MonthlySales<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Modelo de MonthlySales que representa las ventas mensuales.Este modelo utiliza Sequelize para definir la estructura de la tabla `monthly_sales`,que almacena el total de ventas realizadas cada mes y año.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_sales_monthly-sales.js.html">models/reports/sales/monthly-sales.js</a>, <a href="models_reports_sales_monthly-sales.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="POST/create"><span class="type-signature"></span>POST /create<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Ruta para crear un nuevo producto.Llama a la función `createProduct` del controlador.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_products_products-router.js.html">routes/products/products-router.js</a>, <a href="routes_products_products-router.js.html#line25">line 25</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="POST/login"><span class="type-signature"></span>POST /login<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Ruta para iniciar sesión de un usuario.Llama a la función `loginUser` del controlador.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_auth_auth-router.js.html">routes/auth/auth-router.js</a>, <a href="routes_auth_auth-router.js.html#line18">line 18</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="POST/logout"><span class="type-signature"></span>POST /logout<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Ruta para cerrar sesión del usuario.Llama a la función `logoutUser` del controlador.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_auth_auth-router.js.html">routes/auth/auth-router.js</a>, <a href="routes_auth_auth-router.js.html#line27">line 27</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="POST/register"><span class="type-signature"></span>POST /register<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Ruta para registrar un nuevo usuario.Llama a la función `registerUser` del controlador para crear un nuevo usuario.La solicitud debe ser un `POST` a `/register`, enviando los datos del usuarioen el cuerpo de la solicitud.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_users_users-router.js.html">routes/users/users-router.js</a>, <a href="routes_users_users-router.js.html#line38">line 38</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="PUT/update/:id"><span class="type-signature"></span>PUT /update/:id<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Ruta para actualizar un producto específico.Llama a la función `updateProduct` del controlador.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_products_products-router.js.html">routes/products/products-router.js</a>, <a href="routes_products_products-router.js.html#line43">line 43</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="PUT/update/:userId"><span class="type-signature"></span>PUT /update/:userId<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Ruta para actualizar un usuario existente.Llama a la función `updateUser` del controlador para actualizar los datosde un usuario. La solicitud debe ser un `PUT` a `/update/:userId`, donde`:userId` es el identificador del usuario a actualizar.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_users_users-router.js.html">routes/users/users-router.js</a>, <a href="routes_users_users-router.js.html#line50">line 50</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="SALT_ROUNDS"><span class="type-signature">(constant) </span>SALT_ROUNDS<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Configuración de la aplicación obtenida de variables de entorno.Si las variables de entorno no están definidas, se utilizan valores predeterminados.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="config_config.js.html">config/config.js</a>, <a href="config_config.js.html#line7">line 7</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="SalesProductsSummary"><span class="type-signature">(constant) </span>SalesProductsSummary<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Modelo de SalesProductsSummary que representa un resumen de las ventas y productos asociados.Este modelo utiliza Sequelize para definir la estructura de la vista `sales_products_summary`,que muestra detalles resumidos de las ventas, incluyendo la fecha, el monto total, el vendedor,el comprador, nombres de productos, cantidad total vendida y el subtotal total de cada venta.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_sales_sales-products-summary.js.html">models/reports/sales/sales-products-summary.js</a>, <a href="models_reports_sales_sales-products-summary.js.html#line11">line 11</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="SalesProductsView"><span class="type-signature">(constant) </span>SalesProductsView<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Modelo de SalesProductsView que representa una vista de las ventas y productos asociados.Este modelo utiliza Sequelize para definir la estructura de la vista `sales_products_view`,que muestra detalles de las ventas, incluyendo la fecha, el monto, el vendedor, el comprador,y los productos vendidos con sus respectivas cantidades, precios y subtotales.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_sales_sales-products.js.html">models/reports/sales/sales-products.js</a>, <a href="models_reports_sales_sales-products.js.html#line11">line 11</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="Top10Products"><span class="type-signature">(constant) </span>Top10Products<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Modelo de Top10Products que representa los 10 productos con mayor cantidad de ventas.Este modelo utiliza Sequelize para definir la estructura de la tabla `top_10_products`,que almacena los productos con mayor cantidad de ventas, incluyendo su nombre y la cantidad total vendida.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_products_top-10-selling-products.js.html">models/reports/products/top-10-selling-products.js</a>, <a href="models_reports_products_top-10-selling-products.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="TopBuyers"><span class="type-signature">(constant) </span>TopBuyers<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Modelo de TopBuyers que representa a los compradores más destacados en la base de datos.Este modelo utiliza Sequelize para definir la estructura de la tabla `top_buyers`,la cual almacena información relevante de los compradores, incluyendo sus datosde contacto, el monto total de sus compras, y una lista de productos comprados.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_buyers-sellers_top-buyers.js.html">models/reports/buyers-sellers/top-buyers.js</a>, <a href="models_reports_buyers-sellers_top-buyers.js.html#line11">line 11</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="TopSalesZone"><span class="type-signature">(constant) </span>TopSalesZone<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Modelo de TopSalesZone que representa las zonas con mayor cantidad de ventas.Este modelo utiliza Sequelize para definir la estructura de la vista `top_sales_zone`,que muestra las ubicaciones (zonas) con el mayor total de ventas, incluyendo el ID de laubicación, el nombre de la ubicación y el total de ventas en esa zona.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_zones_top-sales-zone.js.html">models/reports/zones/top-sales-zone.js</a>, <a href="models_reports_zones_top-sales-zone.js.html#line11">line 11</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="TopSellers"><span class="type-signature">(constant) </span>TopSellers<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Modelo de TopSellers que representa a los vendedores más destacados en la base de datos.Este modelo utiliza Sequelize para definir la estructura de la tabla `top_sellers`,la cual almacena información relevante de los vendedores, incluyendo sus datosde contacto, el monto total de sus ventas, y una lista de productos vendidos.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_buyers-sellers_top-sellers.js.html">models/reports/buyers-sellers/top-sellers.js</a>, <a href="models_reports_buyers-sellers_top-sellers.js.html#line11">line 11</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="TopSellingProduct"><span class="type-signature">(constant) </span>TopSellingProduct<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Modelo de TopSellingProduct que representa el producto con la mayor cantidad de ventas.Este modelo utiliza Sequelize para definir la estructura de la tabla `top_selling_product`,que almacena el producto con la mayor cantidad de ventas, incluyendo su nombre y la cantidad total vendida.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_products_top-selling-product.js.html">models/reports/products/top-selling-product.js</a>, <a href="models_reports_products_top-selling-product.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="buyer_id"><span class="type-signature"></span>buyer_id<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    ID del comprador.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_buyers-sellers_top-buyers.js.html">models/reports/buyers-sellers/top-buyers.js</a>, <a href="models_reports_buyers-sellers_top-buyers.js.html#line16">line 16</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="buyer_id"><span class="type-signature"></span>buyer_id<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    ID del comprador.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_sales_sales-products-summary.js.html">models/reports/sales/sales-products-summary.js</a>, <a href="models_reports_sales_sales-products-summary.js.html#line52">line 52</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="buyer_id"><span class="type-signature"></span>buyer_id<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    ID del comprador.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_sales_sales-products.js.html">models/reports/sales/sales-products.js</a>, <a href="models_reports_sales_sales-products.js.html#line52">line 52</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="checkProductExists"><span class="type-signature">(constant) </span>checkProductExists<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Middleware para verificar si un producto existe por su ID.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="middlewares_products_products-middlewares.js.html">middlewares/products/products-middlewares.js</a>, <a href="middlewares_products_products-middlewares.js.html#line11">line 11</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="checkProductStock"><span class="type-signature">(constant) </span>checkProductStock<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Middleware para verificar si hay suficiente stock de un producto.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="middlewares_products_products-middlewares.js.html">middlewares/products/products-middlewares.js</a>, <a href="middlewares_products_products-middlewares.js.html#line28">line 28</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="contact_email"><span class="type-signature"></span>contact_email<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Correo electrónico del contacto.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_buyers-sellers_top-buyers.js.html">models/reports/buyers-sellers/top-buyers.js</a>, <a href="models_reports_buyers-sellers_top-buyers.js.html#line52">line 52</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="contact_first_name"><span class="type-signature"></span>contact_first_name<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Primer nombre del contacto.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_buyers-sellers_top-buyers.js.html">models/reports/buyers-sellers/top-buyers.js</a>, <a href="models_reports_buyers-sellers_top-buyers.js.html#line34">line 34</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="contact_job"><span class="type-signature"></span>contact_job<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Cargo del contacto dentro de la empresa.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_buyers-sellers_top-buyers.js.html">models/reports/buyers-sellers/top-buyers.js</a>, <a href="models_reports_buyers-sellers_top-buyers.js.html#line79">line 79</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="contact_last_name"><span class="type-signature"></span>contact_last_name<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Apellido del contacto.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_buyers-sellers_top-buyers.js.html">models/reports/buyers-sellers/top-buyers.js</a>, <a href="models_reports_buyers-sellers_top-buyers.js.html#line43">line 43</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="contact_origin"><span class="type-signature"></span>contact_origin<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Origen del contacto.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_buyers-sellers_top-buyers.js.html">models/reports/buyers-sellers/top-buyers.js</a>, <a href="models_reports_buyers-sellers_top-buyers.js.html#line88">line 88</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="contact_phone"><span class="type-signature"></span>contact_phone<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Teléfono del contacto.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_buyers-sellers_top-buyers.js.html">models/reports/buyers-sellers/top-buyers.js</a>, <a href="models_reports_buyers-sellers_top-buyers.js.html#line61">line 61</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="createProduct"><span class="type-signature">(constant) </span>createProduct<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Crea un nuevo producto y lo guarda en la base de datos.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_products_products-controller.js.html">controllers/products/products-controller.js</a>, <a href="controllers_products_products-controller.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="createSale"><span class="type-signature">(constant) </span>createSale<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Crea una nueva venta y guarda los datos en la base de datos.Este controlador toma los datos de la venta desde el cuerpo de la solicitud,genera la fecha de la venta, y luego llama a la función `saveSale` paraguardar la venta y sus elementos asociados.Si la venta se guarda correctamente, responde con un mensaje de éxito.Si ocurre un error, responde con un mensaje de error correspondiente.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_sales_sales-controller.js.html">controllers/sales/sales-controller.js</a>, <a href="controllers_sales_sales-controller.js.html#line15">line 15</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="deleteProduct"><span class="type-signature">(constant) </span>deleteProduct<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Marca un producto como no disponible en la base de datos.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_products_products-controller.js.html">controllers/products/products-controller.js</a>, <a href="controllers_products_products-controller.js.html#line78">line 78</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="deleteProductDB"><span class="type-signature">(constant) </span>deleteProductDB<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Marca un producto como no disponible en la base de datos.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="repositories_products_product-repository.js.html">repositories/products/product-repository.js</a>, <a href="repositories_products_product-repository.js.html#line79">line 79</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="deleteUser"><span class="type-signature">(constant) </span>deleteUser<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Elimina (marca como no disponible) un usuario del sistema.Verifica si el usuario existe antes de eliminarlo.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_users_users-controller.js.html">controllers/users/users-controller.js</a>, <a href="controllers_users_users-controller.js.html#line140">line 140</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="deleteUserByIdDb"><span class="type-signature">(constant) </span>deleteUserByIdDb<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Marca un usuario como no disponible en la base de datos por su ID.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="repositories_users_user-repository.js.html">repositories/users/user-repository.js</a>, <a href="repositories_users_user-repository.js.html#line170">line 170</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="deleteUserByUsernameDb"><span class="type-signature">(constant) </span>deleteUserByUsernameDb<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Marca un usuario como no disponible en la base de datos por su nombre de usuario.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="repositories_users_user-repository.js.html">repositories/users/user-repository.js</a>, <a href="repositories_users_user-repository.js.html#line136">line 136</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="enterprise_document"><span class="type-signature"></span>enterprise_document<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Documento de la empresa.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_buyers-sellers_top-buyers.js.html">models/reports/buyers-sellers/top-buyers.js</a>, <a href="models_reports_buyers-sellers_top-buyers.js.html#line70">line 70</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="enterprise_name"><span class="type-signature"></span>enterprise_name<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Nombre de la empresa del comprador.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_buyers-sellers_top-buyers.js.html">models/reports/buyers-sellers/top-buyers.js</a>, <a href="models_reports_buyers-sellers_top-buyers.js.html#line25">line 25</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="getAllUsers"><span class="type-signature">(constant) </span>getAllUsers<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Recupera todos los usuarios que no tienen el rol de administrador (ID de rol diferente de 1).
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_users_users-controller.js.html">controllers/users/users-controller.js</a>, <a href="controllers_users_users-controller.js.html#line167">line 167</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="getAllUsersDb"><span class="type-signature">(constant) </span>getAllUsersDb<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Recupera todos los usuarios que no tienen el rol con ID 1, excluyendo la contraseña y el estado de disponibilidad.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="repositories_users_user-repository.js.html">repositories/users/user-repository.js</a>, <a href="repositories_users_user-repository.js.html#line183">line 183</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="getDocumentById"><span class="type-signature">(constant) </span>getDocumentById<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Controlador para obtener un documento específico por su identificador.Este controlador llama a la función `retrieveDocumentById` para recuperar un único documento utilizando el `documentId`proporcionado como parámetro de la solicitud.Si la operación es exitosa, envía una respuesta con el estado HTTP 200 y los datos del documento.En caso de error, registra el error en la consola y envía una respuesta con el estado HTTP 500.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_users_user-data_user-data-controller.js.html">controllers/users/user-data/user-data-controller.js</a>, <a href="controllers_users_user-data_user-data-controller.js.html#line101">line 101</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="getDocuments"><span class="type-signature">(constant) </span>getDocuments<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Controlador para obtener todos los documentos disponibles.Este controlador llama a la función `retrieveDocuments` para recuperar todos los registros de documentos.Si la operación es exitosa, envía una respuesta con el estado HTTP 200 y los datos de los documentos.En caso de error, registra el error en la consola y envía una respuesta con el estado HTTP 500.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_users_user-data_user-data-controller.js.html">controllers/users/user-data/user-data-controller.js</a>, <a href="controllers_users_user-data_user-data-controller.js.html#line35">line 35</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="getLeastSalesZone"><span class="type-signature">(constant) </span>getLeastSalesZone<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Controlador para obtener la zona con menos ventas.Este controlador llama a la función `retrieveLeastSalesZone` para obtener los datos de la zona con menos ventas.Si se encuentran los datos, responde con el estado HTTP 200 y los datos en formato JSON.Si no se encuentran, responde con el estado HTTP 404 y un mensaje indicando que no se encontró la zona con menos ventas.En caso de error, responde con el estado HTTP 500 y un mensaje de error.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_reports_zones_zones-reports-controller.js.html">controllers/reports/zones/zones-reports-controller.js</a>, <a href="controllers_reports_zones_zones-reports-controller.js.html#line15">line 15</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="getLeastSellingProduct"><span class="type-signature">(constant) </span>getLeastSellingProduct<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Controlador para obtener el producto con menor venta.Este controlador llama a la función `retrieveLeastSellingProduct` para obtener los datos del producto con menor venta.Si se encuentra el producto, responde con el estado HTTP 200 y los datos del producto en formato JSON.Si no se encuentra, responde con el estado HTTP 404 y un mensaje indicando que no se encontró el producto.En caso de error, responde con el estado HTTP 500 y un mensaje de error.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_reports_products_products-reports-controller.js.html">controllers/reports/products/products-reports-controller.js</a>, <a href="controllers_reports_products_products-reports-controller.js.html#line15">line 15</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="getLocationById"><span class="type-signature">(constant) </span>getLocationById<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Controlador para obtener una ubicación específica por su identificador.Este controlador llama a la función `retrieveLocationById` para recuperar una única ubicación utilizando el `locationId`proporcionado como parámetro de la solicitud.Si la operación es exitosa, envía una respuesta con el estado HTTP 200 y los datos de la ubicación.En caso de error, registra el error en la consola y envía una respuesta con el estado HTTP 500.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_users_user-data_user-data-controller.js.html">controllers/users/user-data/user-data-controller.js</a>, <a href="controllers_users_user-data_user-data-controller.js.html#line124">line 124</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="getLocations"><span class="type-signature">(constant) </span>getLocations<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Controlador para obtener todas las ubicaciones disponibles.Este controlador llama a la función `retrieveLocations` para recuperar todos los registros de ubicaciones.Si la operación es exitosa, envía una respuesta con el estado HTTP 200 y los datos de las ubicaciones.En caso de error, registra el error en la consola y envía una respuesta con el estado HTTP 500.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_users_user-data_user-data-controller.js.html">controllers/users/user-data/user-data-controller.js</a>, <a href="controllers_users_user-data_user-data-controller.js.html#line56">line 56</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="getMonthlySales"><span class="type-signature">(constant) </span>getMonthlySales<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Controlador para obtener las ventas mensuales.Este controlador llama a la función `retrieveMonthlySales` para obtener los datos de ventas mensuales.Si se encuentran los datos, responde con el estado HTTP 200 y los datos en formato JSON.Si no se encuentran, responde con el estado HTTP 404 y un mensaje indicando que no se encontraron los datos.En caso de error, responde con el estado HTTP 500 y un mensaje de error.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_reports_sales_sales-reports-controller.js.html">controllers/reports/sales/sales-reports-controller.js</a>, <a href="controllers_reports_sales_sales-reports-controller.js.html#line15">line 15</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="getProduct"><span class="type-signature">(constant) </span>getProduct<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Obtiene la información de un producto específico en la base de datos.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_products_products-controller.js.html">controllers/products/products-controller.js</a>, <a href="controllers_products_products-controller.js.html#line96">line 96</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="getProductById"><span class="type-signature">(constant) </span>getProductById<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Obtiene un producto específico de la base de datos.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="repositories_products_product-repository.js.html">repositories/products/product-repository.js</a>, <a href="repositories_products_product-repository.js.html#line100">line 100</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="getProducts"><span class="type-signature">(constant) </span>getProducts<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Obtiene todos los productos disponibles de la base de datos.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="repositories_products_product-repository.js.html">repositories/products/product-repository.js</a>, <a href="repositories_products_product-repository.js.html#line34">line 34</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="getRoleById"><span class="type-signature">(constant) </span>getRoleById<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Controlador para obtener un rol específico por su identificador.Este controlador llama a la función `retrieveRoleById` para recuperar un único rol utilizando el `roleId`proporcionado como parámetro de la solicitud.Si la operación es exitosa, envía una respuesta con el estado HTTP 200 y los datos del rol.En caso de error, registra el error en la consola y envía una respuesta con el estado HTTP 500.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_users_user-data_user-data-controller.js.html">controllers/users/user-data/user-data-controller.js</a>, <a href="controllers_users_user-data_user-data-controller.js.html#line78">line 78</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="getRoles"><span class="type-signature">(constant) </span>getRoles<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Controlador para obtener todos los roles disponibles.Este controlador llama a la función `retrieveRoles` para recuperar todos los registros de roles.Si la operación es exitosa, envía una respuesta con el estado HTTP 200 y los datos de los roles.En caso de error, registra el error en la consola y envía una respuesta con el estado HTTP 500.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_users_user-data_user-data-controller.js.html">controllers/users/user-data/user-data-controller.js</a>, <a href="controllers_users_user-data_user-data-controller.js.html#line14">line 14</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="getSalesDb"><span class="type-signature">(constant) </span>getSalesDb<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Recupera todas las ventas de la base de datos, incluyendo los elementos asociados a cada venta.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="repositories_sales_sales-item-repository.js.html">repositories/sales/sales-item-repository.js</a>, <a href="repositories_sales_sales-item-repository.js.html#line104">line 104</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="getSalesProducts"><span class="type-signature">(constant) </span>getSalesProducts<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Controlador para obtener los productos de las ventas.Este controlador llama a la función `retrieveSalesProducts` para obtener los productos vendidos en las ventas.Si se encuentran los datos, responde con el estado HTTP 200 y los datos en formato JSON.Si no se encuentran, responde con el estado HTTP 404 y un mensaje indicando que no se encontraron los datos.En caso de error, responde con el estado HTTP 500 y un mensaje de error.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_reports_sales_sales-reports-controller.js.html">controllers/reports/sales/sales-reports-controller.js</a>, <a href="controllers_reports_sales_sales-reports-controller.js.html#line39">line 39</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="getSalesProductsSummary"><span class="type-signature">(constant) </span>getSalesProductsSummary<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Controlador para obtener el resumen de productos vendidos.Este controlador llama a la función `retrieveSalesProductsSummary` para obtener el resumen de productos vendidos.Si se encuentran los datos, responde con el estado HTTP 200 y los datos en formato JSON.Si no se encuentran, responde con el estado HTTP 404 y un mensaje indicando que no se encontraron los datos.En caso de error, responde con el estado HTTP 500 y un mensaje de error.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_reports_sales_sales-reports-controller.js.html">controllers/reports/sales/sales-reports-controller.js</a>, <a href="controllers_reports_sales_sales-reports-controller.js.html#line63">line 63</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="getTop10Products"><span class="type-signature">(constant) </span>getTop10Products<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Controlador para obtener los 10 productos más vendidos.Este controlador llama a la función `retrieveTop10Products` para obtener los datos de los 10 productos más vendidos.Si se encuentran los productos, responde con el estado HTTP 200 y los datos en formato JSON.Si no se encuentran, responde con el estado HTTP 404 y un mensaje indicando que no se encontraron los productos.En caso de error, responde con el estado HTTP 500 y un mensaje de error.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_reports_products_products-reports-controller.js.html">controllers/reports/products/products-reports-controller.js</a>, <a href="controllers_reports_products_products-reports-controller.js.html#line39">line 39</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="getTopBuyers"><span class="type-signature">(constant) </span>getTopBuyers<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Controlador para obtener los principales compradores.Este controlador llama a la función `retrieveTopBuyers` para obtener los datos de los principales compradores.Si se encuentran los datos, responde con el estado HTTP 200 y los datos de los compradores en formato JSON.Si no se encuentran datos, responde con el estado HTTP 404 y un mensaje indicando que no se encontraron compradores.En caso de error, responde con el estado HTTP 500 y un mensaje de error.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_reports_buyers-sellers_buyers-sellers-reports-controller.js.html">controllers/reports/buyers-sellers/buyers-sellers-reports-controller.js</a>, <a href="controllers_reports_buyers-sellers_buyers-sellers-reports-controller.js.html#line15">line 15</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="getTopSalesZone"><span class="type-signature">(constant) </span>getTopSalesZone<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Controlador para obtener la zona con más ventas.Este controlador llama a la función `retrieveTopSalesZone` para obtener los datos de la zona con más ventas.Si se encuentran los datos, responde con el estado HTTP 200 y los datos en formato JSON.Si no se encuentran, responde con el estado HTTP 404 y un mensaje indicando que no se encontró la zona con más ventas.En caso de error, responde con el estado HTTP 500 y un mensaje de error.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_reports_zones_zones-reports-controller.js.html">controllers/reports/zones/zones-reports-controller.js</a>, <a href="controllers_reports_zones_zones-reports-controller.js.html#line39">line 39</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="getTopSellers"><span class="type-signature">(constant) </span>getTopSellers<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Controlador para obtener los principales vendedores.Este controlador llama a la función `retrieveTopSellers` para obtener los datos de los principales vendedores.Si se encuentran los datos, responde con el estado HTTP 200 y los datos de los vendedores en formato JSON.Si no se encuentran datos, responde con el estado HTTP 404 y un mensaje indicando que no se encontraron vendedores.En caso de error, responde con el estado HTTP 500 y un mensaje de error.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_reports_buyers-sellers_buyers-sellers-reports-controller.js.html">controllers/reports/buyers-sellers/buyers-sellers-reports-controller.js</a>, <a href="controllers_reports_buyers-sellers_buyers-sellers-reports-controller.js.html#line39">line 39</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="getTopSellingProduct"><span class="type-signature">(constant) </span>getTopSellingProduct<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Controlador para obtener el producto más vendido.Este controlador llama a la función `retrieveTopSellingProduct` para obtener los datos del producto más vendido.Si se encuentra el producto, responde con el estado HTTP 200 y los datos del producto en formato JSON.Si no se encuentra, responde con el estado HTTP 404 y un mensaje indicando que no se encontró el producto.En caso de error, responde con el estado HTTP 500 y un mensaje de error.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_reports_products_products-reports-controller.js.html">controllers/reports/products/products-reports-controller.js</a>, <a href="controllers_reports_products_products-reports-controller.js.html#line63">line 63</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="isAdmin"><span class="type-signature">(constant) </span>isAdmin<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Middleware para verificar si el usuario es administrador.Verifica la existencia y validez de un token JWT en las cookies de la solicitud y si el usuario tiene rol de administrador.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="middlewares_auth_auth-middlewares.js.html">middlewares/auth/auth-middlewares.js</a>, <a href="middlewares_auth_auth-middlewares.js.html#line41">line 41</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="isSessionActive"><span class="type-signature">(constant) </span>isSessionActive<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Middleware para verificar si la sesión de un usuario está activa.Verifica la existencia y validez de un token JWT en las cookies de la solicitud.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="middlewares_auth_auth-middlewares.js.html">middlewares/auth/auth-middlewares.js</a>, <a href="middlewares_auth_auth-middlewares.js.html#line13">line 13</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="listProducts"><span class="type-signature">(constant) </span>listProducts<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Lista todos los productos disponibles en la base de datos.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_products_products-controller.js.html">controllers/products/products-controller.js</a>, <a href="controllers_products_products-controller.js.html#line35">line 35</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="listSales"><span class="type-signature">(constant) </span>listSales<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Obtiene todas las ventas desde la base de datos, junto con los elementos asociados a cada una.Este controlador obtiene la lista de todas las ventas y sus elementos relacionadosdesde la base de datos utilizando la función `getSalesDb`, y luego responde con los datos.Si ocurre un error durante el proceso, se responde con un mensaje de error.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_sales_sales-controller.js.html">controllers/sales/sales-controller.js</a>, <a href="controllers_sales_sales-controller.js.html#line51">line 51</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="location_id"><span class="type-signature"></span>location_id<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    ID de la ubicación del comprador.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_buyers-sellers_top-buyers.js.html">models/reports/buyers-sellers/top-buyers.js</a>, <a href="models_reports_buyers-sellers_top-buyers.js.html#line97">line 97</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="location_id"><span class="type-signature"></span>location_id<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    ID de la ubicación o zona de ventas.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_zones_least-sales-zone.js.html">models/reports/zones/least-sales-zone.js</a>, <a href="models_reports_zones_least-sales-zone.js.html#line16">line 16</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="location_id"><span class="type-signature"></span>location_id<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    ID de la ubicación o zona de ventas.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_zones_top-sales-zone.js.html">models/reports/zones/top-sales-zone.js</a>, <a href="models_reports_zones_top-sales-zone.js.html#line16">line 16</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="location_name"><span class="type-signature"></span>location_name<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Nombre de la ubicación o zona de ventas.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_zones_least-sales-zone.js.html">models/reports/zones/least-sales-zone.js</a>, <a href="models_reports_zones_least-sales-zone.js.html#line24">line 24</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="location_name"><span class="type-signature"></span>location_name<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Nombre de la ubicación o zona de ventas.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_zones_top-sales-zone.js.html">models/reports/zones/top-sales-zone.js</a>, <a href="models_reports_zones_top-sales-zone.js.html#line24">line 24</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="loginUser"><span class="type-signature">(constant) </span>loginUser<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Autentifica un usuario y genera un token JWT para la sesión.Si el usuario ya tiene una sesión activa, responde con un error.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_auth_auth-controller.js.html">controllers/auth/auth-controller.js</a>, <a href="controllers_auth_auth-controller.js.html#line13">line 13</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="logoutUser"><span class="type-signature">(constant) </span>logoutUser<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Cierra la sesión del usuario eliminando el token JWT de las cookies.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_auth_auth-controller.js.html">controllers/auth/auth-controller.js</a>, <a href="controllers_auth_auth-controller.js.html#line68">line 68</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="product_id"><span class="type-signature"></span>product_id<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    ID del producto.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_products_least-selling-product.js.html">models/reports/products/least-selling-product.js</a>, <a href="models_reports_products_least-selling-product.js.html#line15">line 15</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="product_id"><span class="type-signature"></span>product_id<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    ID del producto.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_products_top-10-selling-products.js.html">models/reports/products/top-10-selling-products.js</a>, <a href="models_reports_products_top-10-selling-products.js.html#line15">line 15</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="product_id"><span class="type-signature"></span>product_id<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    ID del producto.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_products_top-selling-product.js.html">models/reports/products/top-selling-product.js</a>, <a href="models_reports_products_top-selling-product.js.html#line15">line 15</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="product_id"><span class="type-signature"></span>product_id<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    ID del producto vendido.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_sales_sales-products.js.html">models/reports/sales/sales-products.js</a>, <a href="models_reports_sales_sales-products.js.html#line70">line 70</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="product_name"><span class="type-signature"></span>product_name<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Nombre del producto.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_products_least-selling-product.js.html">models/reports/products/least-selling-product.js</a>, <a href="models_reports_products_least-selling-product.js.html#line24">line 24</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="product_name"><span class="type-signature"></span>product_name<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Nombre del producto.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_products_top-10-selling-products.js.html">models/reports/products/top-10-selling-products.js</a>, <a href="models_reports_products_top-10-selling-products.js.html#line24">line 24</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="product_name"><span class="type-signature"></span>product_name<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Nombre del producto.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_products_top-selling-product.js.html">models/reports/products/top-selling-product.js</a>, <a href="models_reports_products_top-selling-product.js.html#line24">line 24</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="product_name"><span class="type-signature"></span>product_name<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Nombre del producto vendido.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_sales_sales-products.js.html">models/reports/sales/sales-products.js</a>, <a href="models_reports_sales_sales-products.js.html#line79">line 79</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="product_names"><span class="type-signature"></span>product_names<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Nombres de los productos vendidos, separados por coma.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_sales_sales-products-summary.js.html">models/reports/sales/sales-products-summary.js</a>, <a href="models_reports_sales_sales-products-summary.js.html#line61">line 61</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="product_quantity"><span class="type-signature"></span>product_quantity<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Cantidad del producto vendido.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_sales_sales-products.js.html">models/reports/sales/sales-products.js</a>, <a href="models_reports_sales_sales-products.js.html#line88">line 88</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="products_bought"><span class="type-signature"></span>products_bought<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Lista de productos comprados por el comprador.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_buyers-sellers_top-buyers.js.html">models/reports/buyers-sellers/top-buyers.js</a>, <a href="models_reports_buyers-sellers_top-buyers.js.html#line115">line 115</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="products_sold"><span class="type-signature"></span>products_sold<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Lista de productos vendidos por el vendedor.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_buyers-sellers_top-sellers.js.html">models/reports/buyers-sellers/top-sellers.js</a>, <a href="models_reports_buyers-sellers_top-sellers.js.html#line70">line 70</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="registerUser"><span class="type-signature">(constant) </span>registerUser<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Registra un nuevo usuario en el sistema.Verifica si el nombre de usuario ya existe antes de crear el usuario.Verifica si el correo electrónico ya está en uso antes de crear el usuario.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_users_users-controller.js.html">controllers/users/users-controller.js</a>, <a href="controllers_users_users-controller.js.html#line14">line 14</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="retrieveDocumentById"><span class="type-signature">(constant) </span>retrieveDocumentById<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Recupera un documento específico de la base de datos mediante su identificador.Esta función utiliza el modelo `Document` para obtener un único registro de la tabla de documentos,identificado por el `documentId` proporcionado.En caso de que ocurra un error durante la operación, se captura y se muestra en la consola.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="repositories_users_user-data_user-data-repository.js.html">repositories/users/user-data/user-data-repository.js</a>, <a href="repositories_users_user-data_user-data-repository.js.html#line81">line 81</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="retrieveDocuments"><span class="type-signature">(constant) </span>retrieveDocuments<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Recupera todos los documentos disponibles en la base de datos.Esta función utiliza el modelo `Document` para obtener todos los registros de la tabla correspondiente a los documentos.En caso de que ocurra un error durante la operación, se captura y se muestra en la consola.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="repositories_users_user-data_user-data-repository.js.html">repositories/users/user-data/user-data-repository.js</a>, <a href="repositories_users_user-data_user-data-repository.js.html#line13">line 13</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="retrieveLocationById"><span class="type-signature">(constant) </span>retrieveLocationById<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Recupera una ubicación específica de la base de datos mediante su identificador.Esta función utiliza el modelo `Location` para obtener un único registro de la tabla de ubicaciones,identificado por el `locationId` proporcionado.En caso de que ocurra un error durante la operación, se captura y se muestra en la consola.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="repositories_users_user-data_user-data-repository.js.html">repositories/users/user-data/user-data-repository.js</a>, <a href="repositories_users_user-data_user-data-repository.js.html#line99">line 99</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="retrieveLocations"><span class="type-signature">(constant) </span>retrieveLocations<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Recupera todas las ubicaciones disponibles en la base de datos.Esta función utiliza el modelo `Location` para obtener todos los registros de la tabla correspondiente a las ubicaciones.En caso de que ocurra un error durante la operación, se captura y se muestra en la consola.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="repositories_users_user-data_user-data-repository.js.html">repositories/users/user-data/user-data-repository.js</a>, <a href="repositories_users_user-data_user-data-repository.js.html#line29">line 29</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="retrieveRoleById"><span class="type-signature">(constant) </span>retrieveRoleById<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Recupera un rol específico de la base de datos mediante su identificador.Esta función utiliza el modelo `Role` para obtener un único registro de la tabla de roles,identificado por el `roleId` proporcionado.En caso de que ocurra un error durante la operación, se captura y se muestra en la consola.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="repositories_users_user-data_user-data-repository.js.html">repositories/users/user-data/user-data-repository.js</a>, <a href="repositories_users_user-data_user-data-repository.js.html#line63">line 63</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="retrieveRoles"><span class="type-signature">(constant) </span>retrieveRoles<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Recupera todos los roles disponibles en la base de datos.Esta función utiliza el modelo `Role` para obtener todos los registros de la tabla correspondiente a los roles.En caso de que ocurra un error durante la operación, se captura y se muestra en la consola.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="repositories_users_user-data_user-data-repository.js.html">repositories/users/user-data/user-data-repository.js</a>, <a href="repositories_users_user-data_user-data-repository.js.html#line45">line 45</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="retrieveUserById"><span class="type-signature">(constant) </span>retrieveUserById<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Recupera los datos de un usuario utilizando su ID, excluyendo la contraseña y el estado de disponibilidad.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="repositories_users_user-repository.js.html">repositories/users/user-repository.js</a>, <a href="repositories_users_user-repository.js.html#line243">line 243</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="retrieveUserData"><span class="type-signature">(constant) </span>retrieveUserData<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Recupera los datos de un usuario sin incluir la contraseña y el estado de disponibilidad.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="repositories_users_user-repository.js.html">repositories/users/user-repository.js</a>, <a href="repositories_users_user-repository.js.html#line103">line 103</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="retrieveUserDataByEmail"><span class="type-signature">(constant) </span>retrieveUserDataByEmail<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Recupera los datos de un usuario utilizando el correo electrónico, excluyendo la contraseña y el estado de disponibilidad.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="repositories_users_user-repository.js.html">repositories/users/user-repository.js</a>, <a href="repositories_users_user-repository.js.html#line225">line 225</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="retrieveUserSessionData"><span class="type-signature">(constant) </span>retrieveUserSessionData<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Recupera los datos de la sesión del usuario autenticado utilizando el token JWT.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_auth_auth-controller.js.html">controllers/auth/auth-controller.js</a>, <a href="controllers_auth_auth-controller.js.html#line50">line 50</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="sale_date"><span class="type-signature"></span>sale_date<span class="type-signature"> :Date</span></h4>
+
+
+
+
+<div class="description">
+    Fecha de la venta.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Date</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_sales_sales-products-summary.js.html">models/reports/sales/sales-products-summary.js</a>, <a href="models_reports_sales_sales-products-summary.js.html#line25">line 25</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="sale_date"><span class="type-signature"></span>sale_date<span class="type-signature"> :Date</span></h4>
+
+
+
+
+<div class="description">
+    Fecha de la venta.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Date</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_sales_sales-products.js.html">models/reports/sales/sales-products.js</a>, <a href="models_reports_sales_sales-products.js.html#line25">line 25</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="sale_month"><span class="type-signature"></span>sale_month<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Mes de la venta.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_sales_monthly-sales.js.html">models/reports/sales/monthly-sales.js</a>, <a href="models_reports_sales_monthly-sales.js.html#line15">line 15</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="sale_year"><span class="type-signature"></span>sale_year<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Año de la venta.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_sales_monthly-sales.js.html">models/reports/sales/monthly-sales.js</a>, <a href="models_reports_sales_monthly-sales.js.html#line24">line 24</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="salesRouter"><span class="type-signature">(constant) </span>salesRouter<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Ruta para manejar las operaciones relacionadas con las ventas.Se define un enrutador que utiliza los controladores `createSale` y `listSales`para procesar las solicitudes HTTP correspondientes a la creación de una ventay la obtención de todas las ventas, respectivamente.El middleware `isSessionActive` asegura que solo los usuarios con una sesión activapuedan acceder a las rutas de ventas.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_sales_sales-router.js.html">routes/sales/sales-router.js</a>, <a href="routes_sales_sales-router.js.html#line15">line 15</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="sales_amount"><span class="type-signature"></span>sales_amount<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Monto total de la venta.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_sales_sales-products-summary.js.html">models/reports/sales/sales-products-summary.js</a>, <a href="models_reports_sales_sales-products-summary.js.html#line34">line 34</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="sales_amount"><span class="type-signature"></span>sales_amount<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Monto total de la venta.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_sales_sales-products.js.html">models/reports/sales/sales-products.js</a>, <a href="models_reports_sales_sales-products.js.html#line34">line 34</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="sales_id"><span class="type-signature"></span>sales_id<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    ID de la venta.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_sales_sales-products-summary.js.html">models/reports/sales/sales-products-summary.js</a>, <a href="models_reports_sales_sales-products-summary.js.html#line16">line 16</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="sales_id"><span class="type-signature"></span>sales_id<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    ID de la venta.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_sales_sales-products.js.html">models/reports/sales/sales-products.js</a>, <a href="models_reports_sales_sales-products.js.html#line16">line 16</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="sales_item_id"><span class="type-signature"></span>sales_item_id<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    ID del elemento de venta.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_sales_sales-products.js.html">models/reports/sales/sales-products.js</a>, <a href="models_reports_sales_sales-products.js.html#line61">line 61</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="saveProduct"><span class="type-signature">(constant) </span>saveProduct<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Guarda un nuevo producto en la base de datos.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="repositories_products_product-repository.js.html">repositories/products/product-repository.js</a>, <a href="repositories_products_product-repository.js.html#line14">line 14</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="saveSale"><span class="type-signature">(constant) </span>saveSale<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Guarda una nueva venta en la base de datos, incluyendo los elementos de la venta.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="repositories_sales_sales-item-repository.js.html">repositories/sales/sales-item-repository.js</a>, <a href="repositories_sales_sales-item-repository.js.html#line18">line 18</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="saveUser"><span class="type-signature">(constant) </span>saveUser<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Guarda un nuevo usuario en la base de datos.Encripta la contraseña antes de guardar los datos.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="repositories_users_user-repository.js.html">repositories/users/user-repository.js</a>, <a href="repositories_users_user-repository.js.html#line25">line 25</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="seller_email"><span class="type-signature"></span>seller_email<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Correo electrónico del vendedor.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_buyers-sellers_top-sellers.js.html">models/reports/buyers-sellers/top-sellers.js</a>, <a href="models_reports_buyers-sellers_top-sellers.js.html#line52">line 52</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="seller_first_name"><span class="type-signature"></span>seller_first_name<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Primer nombre del vendedor.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_buyers-sellers_top-sellers.js.html">models/reports/buyers-sellers/top-sellers.js</a>, <a href="models_reports_buyers-sellers_top-sellers.js.html#line34">line 34</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="seller_id"><span class="type-signature"></span>seller_id<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    ID del vendedor.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_buyers-sellers_top-sellers.js.html">models/reports/buyers-sellers/top-sellers.js</a>, <a href="models_reports_buyers-sellers_top-sellers.js.html#line16">line 16</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="seller_id"><span class="type-signature"></span>seller_id<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    ID del vendedor.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_sales_sales-products-summary.js.html">models/reports/sales/sales-products-summary.js</a>, <a href="models_reports_sales_sales-products-summary.js.html#line43">line 43</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="seller_id"><span class="type-signature"></span>seller_id<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    ID del vendedor.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_sales_sales-products.js.html">models/reports/sales/sales-products.js</a>, <a href="models_reports_sales_sales-products.js.html#line43">line 43</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="seller_last_name"><span class="type-signature"></span>seller_last_name<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Apellido del vendedor.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_buyers-sellers_top-sellers.js.html">models/reports/buyers-sellers/top-sellers.js</a>, <a href="models_reports_buyers-sellers_top-sellers.js.html#line43">line 43</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="seller_name"><span class="type-signature"></span>seller_name<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    Nombre del vendedor.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_buyers-sellers_top-sellers.js.html">models/reports/buyers-sellers/top-sellers.js</a>, <a href="models_reports_buyers-sellers_top-sellers.js.html#line25">line 25</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="sequelize"><span class="type-signature">(constant) </span>sequelize<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Configuración de la conexión a la base de datos usando Sequelize.Inicializa una instancia de Sequelize con los parámetros de configuración para la base de datos.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="db_db-connection.js.html">db/db-connection.js</a>, <a href="db_db-connection.js.html#line8">line 8</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="subtotal"><span class="type-signature"></span>subtotal<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Subtotal para el producto (cantidad * precio unitario).
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_sales_sales-products.js.html">models/reports/sales/sales-products.js</a>, <a href="models_reports_sales_sales-products.js.html#line106">line 106</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="total_purchased"><span class="type-signature"></span>total_purchased<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Monto total de las compras realizadas por el comprador.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_buyers-sellers_top-buyers.js.html">models/reports/buyers-sellers/top-buyers.js</a>, <a href="models_reports_buyers-sellers_top-buyers.js.html#line106">line 106</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="total_quantity"><span class="type-signature"></span>total_quantity<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Cantidad total de productos vendidos en la venta.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_sales_sales-products-summary.js.html">models/reports/sales/sales-products-summary.js</a>, <a href="models_reports_sales_sales-products-summary.js.html#line70">line 70</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="total_quantity_sold"><span class="type-signature"></span>total_quantity_sold<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Cantidad total vendida del producto.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_products_least-selling-product.js.html">models/reports/products/least-selling-product.js</a>, <a href="models_reports_products_least-selling-product.js.html#line33">line 33</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="total_quantity_sold"><span class="type-signature"></span>total_quantity_sold<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Cantidad total vendida del producto.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_products_top-10-selling-products.js.html">models/reports/products/top-10-selling-products.js</a>, <a href="models_reports_products_top-10-selling-products.js.html#line33">line 33</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="total_quantity_sold"><span class="type-signature"></span>total_quantity_sold<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Cantidad total vendida del producto.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_products_top-selling-product.js.html">models/reports/products/top-selling-product.js</a>, <a href="models_reports_products_top-selling-product.js.html#line33">line 33</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="total_sales"><span class="type-signature"></span>total_sales<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Monto total de las ventas realizadas por el vendedor.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_buyers-sellers_top-sellers.js.html">models/reports/buyers-sellers/top-sellers.js</a>, <a href="models_reports_buyers-sellers_top-sellers.js.html#line61">line 61</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="total_sales"><span class="type-signature"></span>total_sales<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Total de ventas del mes.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_sales_monthly-sales.js.html">models/reports/sales/monthly-sales.js</a>, <a href="models_reports_sales_monthly-sales.js.html#line33">line 33</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="total_sales"><span class="type-signature"></span>total_sales<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Total de ventas en la zona especificada.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_zones_least-sales-zone.js.html">models/reports/zones/least-sales-zone.js</a>, <a href="models_reports_zones_least-sales-zone.js.html#line32">line 32</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="total_sales"><span class="type-signature"></span>total_sales<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Total de ventas en la zona especificada.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_zones_top-sales-zone.js.html">models/reports/zones/top-sales-zone.js</a>, <a href="models_reports_zones_top-sales-zone.js.html#line32">line 32</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="total_subtotal"><span class="type-signature"></span>total_subtotal<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Subtotal total de los productos vendidos en la venta.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_sales_sales-products-summary.js.html">models/reports/sales/sales-products-summary.js</a>, <a href="models_reports_sales_sales-products-summary.js.html#line79">line 79</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="unit_price"><span class="type-signature"></span>unit_price<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Precio unitario del producto.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_reports_sales_sales-products.js.html">models/reports/sales/sales-products.js</a>, <a href="models_reports_sales_sales-products.js.html#line97">line 97</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="updateProduct"><span class="type-signature">(constant) </span>updateProduct<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Actualiza la información de un producto existente en la base de datos.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_products_products-controller.js.html">controllers/products/products-controller.js</a>, <a href="controllers_products_products-controller.js.html#line52">line 52</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="updateProductDB"><span class="type-signature">(constant) </span>updateProductDB<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Actualiza un producto existente en la base de datos.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="repositories_products_product-repository.js.html">repositories/products/product-repository.js</a>, <a href="repositories_products_product-repository.js.html#line54">line 54</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="updateUser"><span class="type-signature">(constant) </span>updateUser<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Actualiza un usuario existente en el sistema.Verifica si el usuario existe antes de realizar la actualización.Si se realiza la actualización del usuario autenticado, genera un nuevo token.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_users_users-controller.js.html">controllers/users/users-controller.js</a>, <a href="controllers_users_users-controller.js.html#line71">line 71</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="updateUserDb"><span class="type-signature">(constant) </span>updateUserDb<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Actualiza la información de un usuario en la base de datos por su ID.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="repositories_users_user-repository.js.html">repositories/users/user-repository.js</a>, <a href="repositories_users_user-repository.js.html#line122">line 122</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="validateNoEmptyFields"><span class="type-signature">(constant) </span>validateNoEmptyFields<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Middleware para validar que no haya campos vacíos en el cuerpo de la solicitud.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="middlewares_requests_requests-middlewares.js.html">middlewares/requests/requests-middlewares.js</a>, <a href="middlewares_requests_requests-middlewares.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="verifyDuplicateProduct"><span class="type-signature">(constant) </span>verifyDuplicateProduct<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Middleware para verificar si un producto con el mismo nombre ya existe.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="middlewares_products_products-middlewares.js.html">middlewares/products/products-middlewares.js</a>, <a href="middlewares_products_products-middlewares.js.html#line48">line 48</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="verifyExistingUserByEmail"><span class="type-signature">(constant) </span>verifyExistingUserByEmail<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Verifica si un usuario ya existe en la base de datos por su correo electrónico.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="repositories_users_user-repository.js.html">repositories/users/user-repository.js</a>, <a href="repositories_users_user-repository.js.html#line205">line 205</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="verifyExistingUserById"><span class="type-signature">(constant) </span>verifyExistingUserById<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Verifica si un usuario ya existe en la base de datos por su ID.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="repositories_users_user-repository.js.html">repositories/users/user-repository.js</a>, <a href="repositories_users_user-repository.js.html#line150">line 150</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="verifyExistingUserByUsername"><span class="type-signature">(constant) </span>verifyExistingUserByUsername<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Verifica si un usuario ya existe en la base de datos por su nombre de usuario.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="repositories_users_user-repository.js.html">repositories/users/user-repository.js</a>, <a href="repositories_users_user-repository.js.html#line83">line 83</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="verifyUserCredentials"><span class="type-signature">(constant) </span>verifyUserCredentials<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Verifica las credenciales de un usuario comparando la contraseña ingresada con la almacenada.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="repositories_users_user-repository.js.html">repositories/users/user-repository.js</a>, <a href="repositories_users_user-repository.js.html#line55">line 55</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="verifyUserSession"><span class="type-signature">(constant) </span>verifyUserSession<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Verifica si el usuario tiene una sesión activa.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_auth_auth-controller.js.html">controllers/auth/auth-controller.js</a>, <a href="controllers_auth_auth-controller.js.html#line89">line 89</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="/buyers-sellers"><span class="type-signature">(inner) </span>/buyers-sellers<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Ruta principal para los reportes de compradores y vendedores.Define una subruta en `/buyers-sellers` que utiliza el router `buyersSellersReportsRouter`.Esta subruta permite acceder a los endpoints relacionados con los reportes de compradores y vendedores.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_reports_reports-router.js.html">routes/reports/reports-router.js</a>, <a href="routes_reports_reports-router.js.html#line27">line 27</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="/products"><span class="type-signature">(inner) </span>/products<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Ruta principal para los reportes de productos.Define una subruta en `/products` que utiliza el router `productsReportsRouter`.Esta subruta permite acceder a los endpoints relacionados con los reportes de productos.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_reports_reports-router.js.html">routes/reports/reports-router.js</a>, <a href="routes_reports_reports-router.js.html#line39">line 39</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="/sales"><span class="type-signature">(inner) </span>/sales<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Ruta principal para los reportes de ventas.Define una subruta en `/sales` que utiliza el router `salesReportsRouter`.Esta subruta permite acceder a los endpoints relacionados con los reportes de ventas.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_reports_reports-router.js.html">routes/reports/reports-router.js</a>, <a href="routes_reports_reports-router.js.html#line51">line 51</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="/zones"><span class="type-signature">(inner) </span>/zones<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Ruta principal para los reportes de zonas.Define una subruta en `/zones` que utiliza el router `zonesReportsRouter`.Esta subruta permite acceder a los endpoints relacionados con los reportes de zonas.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_reports_reports-router.js.html">routes/reports/reports-router.js</a>, <a href="routes_reports_reports-router.js.html#line63">line 63</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="GET /documents"><span class="type-signature">(inner) </span>GET /documents<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Ruta para obtener todos los documentos disponibles.Define una ruta HTTP GET para `/documents` que invoca la función `getDocuments`desde el controlador `user-data-controller.js`. Esta función recuperay envía una lista de documentos en formato JSON.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_users_user-data_user-data-router.js.html">routes/users/user-data/user-data-router.js</a>, <a href="routes_users_user-data_user-data-router.js.html#line32">line 32</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="GET /documents/:documentId"><span class="type-signature">(inner) </span>GET /documents/:documentId<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Ruta para obtener un documento específico por su ID.Define una ruta HTTP GET para `/documents/:documentId` que invoca la función `getDocumentById`desde el controlador `user-data-controller.js`. Esta función recupera un documento específicousando el `documentId` proporcionado en la URL como parámetro y devuelve los datos del documento en formato JSON.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_users_user-data_user-data-router.js.html">routes/users/user-data/user-data-router.js</a>, <a href="routes_users_user-data_user-data-router.js.html#line71">line 71</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="GET /least-selling-product"><span class="type-signature">(inner) </span>GET /least-selling-product<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Ruta para obtener el producto con menor cantidad de ventas.Define una ruta HTTP GET para `/least-selling-product` que invoca la función `getLeastSellingProduct`desde el controlador `products-reports-controller.js`. Esta función recupera y envía en formato JSONlos datos del producto con menor cantidad de ventas.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_reports_products_products-reports-router.js.html">routes/reports/products/products-reports-router.js</a>, <a href="routes_reports_products_products-reports-router.js.html#line6">line 6</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="GET /locations"><span class="type-signature">(inner) </span>GET /locations<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Ruta para obtener todas las ubicaciones disponibles.Define una ruta HTTP GET para `/locations` que invoca la función `getLocations`desde el controlador `user-data-controller.js`. Esta función recuperay envía una lista de ubicaciones en formato JSON.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_users_user-data_user-data-router.js.html">routes/users/user-data/user-data-router.js</a>, <a href="routes_users_user-data_user-data-router.js.html#line19">line 19</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="GET /locations/:locationId"><span class="type-signature">(inner) </span>GET /locations/:locationId<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Ruta para obtener una ubicación específica por su ID.Define una ruta HTTP GET para `/locations/:locationId` que invoca la función `getLocationById`desde el controlador `user-data-controller.js`. Esta función recupera una ubicación específicausando el `locationId` proporcionado en la URL como parámetro y devuelve los datos de la ubicación en formato JSON.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_users_user-data_user-data-router.js.html">routes/users/user-data/user-data-router.js</a>, <a href="routes_users_user-data_user-data-router.js.html#line58">line 58</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="GET /monthly-sales"><span class="type-signature">(inner) </span>GET /monthly-sales<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Ruta para obtener las ventas mensuales.Define una ruta HTTP GET para `/monthly-sales` que invoca la función `getMonthlySales`desde el controlador `sales-reports-controller.js`. Esta función recupera y envía en formato JSONlos datos de las ventas mensuales.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_reports_sales_sales-reports-router.js.html">routes/reports/sales/sales-reports-router.js</a>, <a href="routes_reports_sales_sales-reports-router.js.html#line6">line 6</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="GET /roles"><span class="type-signature">(inner) </span>GET /roles<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Ruta para obtener todos los roles disponibles.Define una ruta HTTP GET para `/roles` que invoca la función `getRoles`desde el controlador `user-data-controller.js`. Esta función recuperay envía una lista de roles en formato JSON.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_users_user-data_user-data-router.js.html">routes/users/user-data/user-data-router.js</a>, <a href="routes_users_user-data_user-data-router.js.html#line6">line 6</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="GET /roles/:roleId"><span class="type-signature">(inner) </span>GET /roles/:roleId<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Ruta para obtener un rol específico por su ID.Define una ruta HTTP GET para `/roles/:roleId` que invoca la función `getRoleById`desde el controlador `user-data-controller.js`. Esta función recupera un rol específicousando el `roleId` proporcionado en la URL como parámetro y devuelve los datos del rol en formato JSON.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_users_user-data_user-data-router.js.html">routes/users/user-data/user-data-router.js</a>, <a href="routes_users_user-data_user-data-router.js.html#line45">line 45</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="GET /sales-products"><span class="type-signature">(inner) </span>GET /sales-products<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Ruta para obtener los productos de las ventas.Define una ruta HTTP GET para `/sales-products` que invoca la función `getSalesProducts`desde el controlador `sales-reports-controller.js`. Esta función recupera y envía en formato JSONlos productos de cada venta.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_reports_sales_sales-reports-router.js.html">routes/reports/sales/sales-reports-router.js</a>, <a href="routes_reports_sales_sales-reports-router.js.html#line19">line 19</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="GET /sales-products-summary"><span class="type-signature">(inner) </span>GET /sales-products-summary<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Ruta para obtener el resumen de productos vendidos.Define una ruta HTTP GET para `/sales-products-summary` que invoca la función `getSalesProductsSummary`desde el controlador `sales-reports-controller.js`. Esta función recupera y envía en formato JSONel resumen de los productos vendidos en cada venta.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_reports_sales_sales-reports-router.js.html">routes/reports/sales/sales-reports-router.js</a>, <a href="routes_reports_sales_sales-reports-router.js.html#line32">line 32</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="GET /top-10-products"><span class="type-signature">(inner) </span>GET /top-10-products<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Ruta para obtener los 10 productos más vendidos.Define una ruta HTTP GET para `/top-10-products` que invoca la función `getTop10Products`desde el controlador `products-reports-controller.js`. Esta función recupera y envía en formato JSONlos datos de los 10 productos más vendidos.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_reports_products_products-reports-router.js.html">routes/reports/products/products-reports-router.js</a>, <a href="routes_reports_products_products-reports-router.js.html#line19">line 19</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="GET /top-buyers"><span class="type-signature">(inner) </span>GET /top-buyers<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Ruta para obtener el listado de los principales compradores.Define una ruta HTTP GET para `/top-buyers` que invoca la función `getTopBuyers`desde el controlador `buyers-sellers-reports-controller.js`. Esta función recuperay envía en formato JSON los datos de los principales compradores.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_reports_buyers-sellers_buyers-sellers-reports-router.js.html">routes/reports/buyers-sellers/buyers-sellers-reports-router.js</a>, <a href="routes_reports_buyers-sellers_buyers-sellers-reports-router.js.html#line6">line 6</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="GET /top-sellers"><span class="type-signature">(inner) </span>GET /top-sellers<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Ruta para obtener el listado de los principales vendedores.Define una ruta HTTP GET para `/top-sellers` que invoca la función `getTopSellers`desde el controlador `buyers-sellers-reports-controller.js`. Esta función recuperay envía en formato JSON los datos de los principales vendedores.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_reports_buyers-sellers_buyers-sellers-reports-router.js.html">routes/reports/buyers-sellers/buyers-sellers-reports-router.js</a>, <a href="routes_reports_buyers-sellers_buyers-sellers-reports-router.js.html#line19">line 19</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="GET /top-selling-product"><span class="type-signature">(inner) </span>GET /top-selling-product<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Ruta para obtener el producto con mayor cantidad de ventas.Define una ruta HTTP GET para `/top-selling-product` que invoca la función `getTopSellingProduct`desde el controlador `products-reports-controller.js`. Esta función recupera y envía en formato JSONlos datos del producto con mayor cantidad de ventas.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_reports_products_products-reports-router.js.html">routes/reports/products/products-reports-router.js</a>, <a href="routes_reports_products_products-reports-router.js.html#line32">line 32</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="tryConnection"><span class="type-signature">(async) </span>tryConnection<span class="signature">()</span><span class="type-signature"> &rarr; {Promise.&lt;void>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Intenta establecer la conexión con la base de datos.Autentica la conexión y muestra un mensaje de éxito o error en la consola.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="db_db-connection.js.html">db/db-connection.js</a>, <a href="db_db-connection.js.html#line14">line 14</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    - Muestra en la consola si la conexión fue exitosa o si hubo un error.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;void></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Type Definitions</h3>
+
+        
+                
+<h4 class="name" id="Document">Document</h4>
+
+
+
+
+<div class="description">
+    Modelo de documento que define la estructura de la tabla 'documents' en la base de datos.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>documentId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">ID único del documento (clave primaria, auto-incremental).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>documentName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Nombre del documento (abreviación).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>documentDescription</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Descripción del documento.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_user_user-data_documents-model.js.html">models/user/user-data/documents-model.js</a>, <a href="models_user_user-data_documents-model.js.html#line4">line 4</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="Location">Location</h4>
+
+
+
+
+<div class="description">
+    Modelo de ubicación que define la estructura de la tabla 'locations' en la base de datos.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>locationId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">ID único de la ubicación (clave primaria, auto-incremental).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>locationName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Nombre de la ubicación.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>locationDescription</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Descripción de la ubicación.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_user_user-data_locations-model.js.html">models/user/user-data/locations-model.js</a>, <a href="models_user_user-data_locations-model.js.html#line4">line 4</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="Product">Product</h4>
+
+
+
+
+<div class="description">
+    Modelo de producto que define la estructura de la tabla 'products' en la base de datos.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>productId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">ID único del producto (clave primaria, auto-incremental).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>productName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Nombre del producto.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>productDescription</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Descripción del producto.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>productPrice</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Precio del producto.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>isAvailable</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Indica si el producto está disponible.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>quantity</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Cantidad en inventario del producto.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>userId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">ID del usuario que creó el producto (clave foránea).</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_products_product-model.js.html">models/products/product-model.js</a>, <a href="models_products_product-model.js.html#line4">line 4</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="Role">Role</h4>
+
+
+
+
+<div class="description">
+    Modelo de rol que define la estructura de la tabla 'roles' en la base de datos.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>roleId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">ID único del rol (clave primaria, auto-incremental).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>roleName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Nombre del rol.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>roleDescription</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Descripción del rol.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_user_user-data_roles-model.js.html">models/user/user-data/roles-model.js</a>, <a href="models_user_user-data_roles-model.js.html#line4">line 4</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="Sales">Sales</h4>
+
+
+
+
+<div class="description">
+    Modelo de Sales que define la estructura de la tabla 'sales' en la base de datos.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>salesId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">ID único de la venta (clave primaria, auto-incremental).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>salesAmount</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Monto total de la venta.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>buyerId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">ID del usuario que compra (clave foránea).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>sellerId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">ID del usuario que vende (clave foránea).</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_sales_sales-model.js.html">models/sales/sales-model.js</a>, <a href="models_sales_sales-model.js.html#line4">line 4</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="SalesItem">SalesItem</h4>
+
+
+
+
+<div class="description">
+    Modelo de SalesItemModel que define la estructura de la tabla 'sales_item' en la base de datos.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>salesItemId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">ID único del ítem de venta (clave primaria, auto-incremental).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>productId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">ID del producto asociado (clave foránea).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>productQuantity</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Cantidad de producto vendida.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>unitPrice</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Precio unitario del producto en esta venta.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>subtotal</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Subtotal calculado (cantidad * precio unitario).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>salesId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">ID de la venta asociada (clave foránea).</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_sales_sales-item.js.html">models/sales/sales-item.js</a>, <a href="models_sales_sales-item.js.html#line4">line 4</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="User">User</h4>
+
+
+
+
+<div class="description">
+    Modelo de usuario que define la estructura de la tabla 'user' en la base de datos.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>userId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">ID único del usuario (clave primaria, auto-incremental).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>username</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Nombre de usuario.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>firstName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Nombre del usuario.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lastName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Apellido del usuario.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>userEmail</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Correo electrónico del usuario.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>userPhone</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Teléfono del usuario.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>roleId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">ID del rol del usuario.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>documentId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Tipo de documento del usuario.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>documentNumber</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Número de documento del usuario.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>userJob</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Profesión o cargo del usuario.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>userContactOrigin</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Origen de contacto del usuario.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>locationId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">ID de la ubicación del usuario.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>password</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Contraseña del usuario, almacenada como hash.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>isAvailable</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Indica si el usuario está disponible (1) o no (0).</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_user_user-model.js.html">models/user/user-model.js</a>, <a href="models_user_user-model.js.html#line4">line 4</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html">/buyers-sellers</a></li><li><a href="global.html">/products</a></li><li><a href="global.html">/sales</a></li><li><a href="global.html">/zones</a></li><li><a href="global.html#DELETE/delete/:id">DELETE /delete/:id</a></li><li><a href="global.html#DELETE/delete/:userId">DELETE /delete/:userId</a></li><li><a href="global.html#GET/:id">GET /:id</a></li><li><a href="global.html#GET/all">GET /all</a></li><li><a href="global.html">GET /documents</a></li><li><a href="global.html">GET /documents/:documentId</a></li><li><a href="global.html">GET /least-selling-product</a></li><li><a href="global.html">GET /locations</a></li><li><a href="global.html">GET /locations/:locationId</a></li><li><a href="global.html">GET /monthly-sales</a></li><li><a href="global.html">GET /roles</a></li><li><a href="global.html">GET /roles/:roleId</a></li><li><a href="global.html">GET /sales-products</a></li><li><a href="global.html">GET /sales-products-summary</a></li><li><a href="global.html">GET /top-10-products</a></li><li><a href="global.html">GET /top-buyers</a></li><li><a href="global.html">GET /top-sellers</a></li><li><a href="global.html">GET /top-selling-product</a></li><li><a href="global.html#GET/userData">GET /userData</a></li><li><a href="global.html#GET/verifySession">GET /verifySession</a></li><li><a href="global.html#LeastSalesZone">LeastSalesZone</a></li><li><a href="global.html#LeastSellingProduct">LeastSellingProduct</a></li><li><a href="global.html#MonthlySales">MonthlySales</a></li><li><a href="global.html#POST/create">POST /create</a></li><li><a href="global.html#POST/login">POST /login</a></li><li><a href="global.html#POST/logout">POST /logout</a></li><li><a href="global.html#POST/register">POST /register</a></li><li><a href="global.html#PUT/update/:id">PUT /update/:id</a></li><li><a href="global.html#PUT/update/:userId">PUT /update/:userId</a></li><li><a href="global.html#SALT_ROUNDS">SALT_ROUNDS</a></li><li><a href="global.html#SalesProductsSummary">SalesProductsSummary</a></li><li><a href="global.html#SalesProductsView">SalesProductsView</a></li><li><a href="global.html#Top10Products">Top10Products</a></li><li><a href="global.html#TopBuyers">TopBuyers</a></li><li><a href="global.html#TopSalesZone">TopSalesZone</a></li><li><a href="global.html#TopSellers">TopSellers</a></li><li><a href="global.html#TopSellingProduct">TopSellingProduct</a></li><li><a href="global.html#buyer_id">buyer_id</a></li><li><a href="global.html#checkProductExists">checkProductExists</a></li><li><a href="global.html#checkProductStock">checkProductStock</a></li><li><a href="global.html#contact_email">contact_email</a></li><li><a href="global.html#contact_first_name">contact_first_name</a></li><li><a href="global.html#contact_job">contact_job</a></li><li><a href="global.html#contact_last_name">contact_last_name</a></li><li><a href="global.html#contact_origin">contact_origin</a></li><li><a href="global.html#contact_phone">contact_phone</a></li><li><a href="global.html#createProduct">createProduct</a></li><li><a href="global.html#createSale">createSale</a></li><li><a href="global.html#deleteProduct">deleteProduct</a></li><li><a href="global.html#deleteProductDB">deleteProductDB</a></li><li><a href="global.html#deleteUser">deleteUser</a></li><li><a href="global.html#deleteUserByIdDb">deleteUserByIdDb</a></li><li><a href="global.html#deleteUserByUsernameDb">deleteUserByUsernameDb</a></li><li><a href="global.html#enterprise_document">enterprise_document</a></li><li><a href="global.html#enterprise_name">enterprise_name</a></li><li><a href="global.html#getAllUsers">getAllUsers</a></li><li><a href="global.html#getAllUsersDb">getAllUsersDb</a></li><li><a href="global.html#getDocumentById">getDocumentById</a></li><li><a href="global.html#getDocuments">getDocuments</a></li><li><a href="global.html#getLeastSalesZone">getLeastSalesZone</a></li><li><a href="global.html#getLeastSellingProduct">getLeastSellingProduct</a></li><li><a href="global.html#getLocationById">getLocationById</a></li><li><a href="global.html#getLocations">getLocations</a></li><li><a href="global.html#getMonthlySales">getMonthlySales</a></li><li><a href="global.html#getProduct">getProduct</a></li><li><a href="global.html#getProductById">getProductById</a></li><li><a href="global.html#getProducts">getProducts</a></li><li><a href="global.html#getRoleById">getRoleById</a></li><li><a href="global.html#getRoles">getRoles</a></li><li><a href="global.html#getSalesDb">getSalesDb</a></li><li><a href="global.html#getSalesProducts">getSalesProducts</a></li><li><a href="global.html#getSalesProductsSummary">getSalesProductsSummary</a></li><li><a href="global.html#getTop10Products">getTop10Products</a></li><li><a href="global.html#getTopBuyers">getTopBuyers</a></li><li><a href="global.html#getTopSalesZone">getTopSalesZone</a></li><li><a href="global.html#getTopSellers">getTopSellers</a></li><li><a href="global.html#getTopSellingProduct">getTopSellingProduct</a></li><li><a href="global.html#isAdmin">isAdmin</a></li><li><a href="global.html#isSessionActive">isSessionActive</a></li><li><a href="global.html#listProducts">listProducts</a></li><li><a href="global.html#listSales">listSales</a></li><li><a href="global.html#location_id">location_id</a></li><li><a href="global.html#location_name">location_name</a></li><li><a href="global.html#loginUser">loginUser</a></li><li><a href="global.html#logoutUser">logoutUser</a></li><li><a href="global.html#product_id">product_id</a></li><li><a href="global.html#product_name">product_name</a></li><li><a href="global.html#product_names">product_names</a></li><li><a href="global.html#product_quantity">product_quantity</a></li><li><a href="global.html#products_bought">products_bought</a></li><li><a href="global.html#products_sold">products_sold</a></li><li><a href="global.html#registerUser">registerUser</a></li><li><a href="global.html#retrieveDocumentById">retrieveDocumentById</a></li><li><a href="global.html#retrieveDocuments">retrieveDocuments</a></li><li><a href="global.html#retrieveLocationById">retrieveLocationById</a></li><li><a href="global.html#retrieveLocations">retrieveLocations</a></li><li><a href="global.html#retrieveRoleById">retrieveRoleById</a></li><li><a href="global.html#retrieveRoles">retrieveRoles</a></li><li><a href="global.html#retrieveUserById">retrieveUserById</a></li><li><a href="global.html#retrieveUserData">retrieveUserData</a></li><li><a href="global.html#retrieveUserDataByEmail">retrieveUserDataByEmail</a></li><li><a href="global.html#retrieveUserSessionData">retrieveUserSessionData</a></li><li><a href="global.html#sale_date">sale_date</a></li><li><a href="global.html#sale_month">sale_month</a></li><li><a href="global.html#sale_year">sale_year</a></li><li><a href="global.html#salesRouter">salesRouter</a></li><li><a href="global.html#sales_amount">sales_amount</a></li><li><a href="global.html#sales_id">sales_id</a></li><li><a href="global.html#sales_item_id">sales_item_id</a></li><li><a href="global.html#saveProduct">saveProduct</a></li><li><a href="global.html#saveSale">saveSale</a></li><li><a href="global.html#saveUser">saveUser</a></li><li><a href="global.html#seller_email">seller_email</a></li><li><a href="global.html#seller_first_name">seller_first_name</a></li><li><a href="global.html#seller_id">seller_id</a></li><li><a href="global.html#seller_last_name">seller_last_name</a></li><li><a href="global.html#seller_name">seller_name</a></li><li><a href="global.html#sequelize">sequelize</a></li><li><a href="global.html#subtotal">subtotal</a></li><li><a href="global.html#total_purchased">total_purchased</a></li><li><a href="global.html#total_quantity">total_quantity</a></li><li><a href="global.html#total_quantity_sold">total_quantity_sold</a></li><li><a href="global.html#total_sales">total_sales</a></li><li><a href="global.html#total_subtotal">total_subtotal</a></li><li><a href="global.html#tryConnection">tryConnection</a></li><li><a href="global.html#unit_price">unit_price</a></li><li><a href="global.html#updateProduct">updateProduct</a></li><li><a href="global.html#updateProductDB">updateProductDB</a></li><li><a href="global.html#updateUser">updateUser</a></li><li><a href="global.html#updateUserDb">updateUserDb</a></li><li><a href="global.html#validateNoEmptyFields">validateNoEmptyFields</a></li><li><a href="global.html#verifyDuplicateProduct">verifyDuplicateProduct</a></li><li><a href="global.html#verifyExistingUserByEmail">verifyExistingUserByEmail</a></li><li><a href="global.html#verifyExistingUserById">verifyExistingUserById</a></li><li><a href="global.html#verifyExistingUserByUsername">verifyExistingUserByUsername</a></li><li><a href="global.html#verifyUserCredentials">verifyUserCredentials</a></li><li><a href="global.html#verifyUserSession">verifyUserSession</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Thu Nov 21 2024 23:08:18 GMT-0500 (Colombia Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
