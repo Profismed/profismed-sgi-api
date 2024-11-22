@@ -51,7 +51,6 @@ export const listProducts = async (req, res) => {
  */
 export const updateProduct = async (req, res) => {
   const productId = req.params.id
-  console.log(productId)
   const { productName, productDescription, productPrice, quantity, userId } = req.body
   const product = {
     productName,
@@ -98,11 +97,7 @@ export const getProduct = async (req, res) => {
   const productId = req.params.id
   try {
     const product = await getProductById(productId)
-    if (!product) {
-      return res.status(404).json({ message: 'Product not found' })
-    } else {
-      res.status(200).json(product)
-    }
+    res.status(200).json(product)
   } catch (e) {
     console.error(e)
     res.status(500).json({ message: 'Something went wrong' })
