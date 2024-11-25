@@ -6,7 +6,6 @@ import {
   registerContact,
   updateExistentContact,
   deleteContact,
-  getUserContacts
 } from "../../controllers/contacts/contacts-controller.js";
 import { isSessionActive } from "../../middlewares/auth/auth-middlewares.js";
 import cookieParser from "cookie-parser";
@@ -93,7 +92,7 @@ contactsRouter.post('/register', registerContact);
  * @name PUT /contacts/:contactId
  * @path {PUT} /contacts/:contactId
  */
-contactsRouter.put('/:contactId', updateExistentContact);
+contactsRouter.put('/contact/:contactId', updateExistentContact);
 
 /**
  * Ruta para eliminar un contacto.
@@ -105,14 +104,3 @@ contactsRouter.put('/:contactId', updateExistentContact);
  * @path {DELETE} /contacts/:contactId
  */
 contactsRouter.delete('/:contactId', deleteContact);
-
-/**
-* Ruta para obtener los contactos de un cliente.
-*
-* Llama a la función `getAllClients` del controlador para obtener la lista de clientes.
-* La solicitud debe ser un `GET` a `/all-clients`.
-*
-* @name GET /all-clients
-* @path {GET} /all-clients
-*/
-contactsRouter.get('/:clientId', getUserContacts)

@@ -136,7 +136,7 @@ export const retrieveContactsByUserId= async (userId) => {
     const contacts = await Contact.findAll({
       where: {
         userId,
-        isAvailable: 1
+        isActive: 1
       }
     })
     return contacts
