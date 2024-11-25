@@ -212,8 +212,6 @@ export const getAllUsers = async (req, res) => {
   * @param {object} res - Objeto de respuesta de Express para enviar la respuesta HTTP.
   * @returns {Promise<void>} - Envía una respuesta indicando si el registro fue exitoso o si ocurrió un error.
   */
-
-
 export const registerClientWithContact = async (req, res) => {
   const {
     username,
@@ -273,3 +271,5 @@ export const getAllClients = async (req, res) => {
     res.status(500).json({ message: "Something went wrong" });
   }
 }
+
+

@@ -1,5 +1,5 @@
 import express from 'express'
-import { registerUser, updateUser, deleteUser, getAllUsers, registerClient, registerClientWithContact, getAllClients} from '../../controllers/users/users-controller.js'
+import { registerUser, updateUser, deleteUser, getAllUsers, registerClient, registerClientWithContact, getAllClients } from '../../controllers/users/users-controller.js'
 import { isSessionActive } from '../../middlewares/auth/auth-middlewares.js'
 import cookieParser from 'cookie-parser'
 
@@ -112,3 +112,5 @@ usersRouter.get('/all', getAllUsers)
 * @path {GET} /all-clients
 */
 usersRouter.get('/all-clients', getAllClients)
+
+

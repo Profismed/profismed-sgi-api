@@ -131,15 +131,15 @@ export const deleteContactById = async (contactId) => {
  * @returns {Promise<Array>} - Devuelve un array con los contactos del usuario.
  */
 
-export const retrieveContactsByUserId = async (userId) => {
+export const retrieveContactsByUserId= async (userId) => {
   try {
-      const contacts = await Contact.findAll({
-          where: {
-              userId,
-              isActive: 1
-          }
-      })
-      return contacts
+    const contacts = await Contact.findAll({
+      where: {
+        userId,
+        isAvailable: 1
+      }
+    })
+    return contacts
   } catch (e) {
       console.error(e)
   }

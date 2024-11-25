@@ -194,3 +194,21 @@ export const getContactById = async (req, res) => {
     res.status(500).json({ message: 'Something went wrong' })
   }
 }
+
+/**
+* Obtiene todos los contactos de un usuario.
+*
+* @param {object} req - Objeto de solicitud de Express, que contiene el ID del usuario en `req.params`.
+* @param {object} res - Objeto de respuesta de Express para enviar la respuesta HTTP.
+* @returns {Promise<void>} - Envía una respuesta con la lista de contactos o un mensaje de error.
+*/
+export const getUserContacts = async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const contacts = await retrieveContactsByUserId(userId);
+    res.status(200).json(contacts);
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ message: "Something went wrong" });
+  }
+}
