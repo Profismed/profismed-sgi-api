@@ -7,6 +7,7 @@ import { authRouter } from './routes/auth/auth-router.js'
 import { productsRouter } from './routes/products/products-router.js'
 import { salesRouter } from './routes/sales/sales-router.js'
 import { reportsRouter } from './routes/reports/reports-router.js'
+import { contactsRouter } from './routes/contacts/contacts-router.js'
 
 export const app = express()
 
@@ -27,6 +28,12 @@ app.use('/api/auth', authRouter)
  * Prefijo de ruta: `/api/users`
  */
 app.use('/api/users', usersRouter)
+
+/** 
+ * Rutas para la gestión de contactos.
+ * Prefijo de ruta: `/api/contacts`
+ */
+app.use('/api/contacts', contactsRouter)
 
 /**
  * Rutas para la gestión de productos.

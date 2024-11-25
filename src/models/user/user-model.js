@@ -86,7 +86,7 @@ export const User = sequelize.define('user', {
   },
   password: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
     field: 'password_hash'
   },
   isAvailable: {

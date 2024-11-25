@@ -1,5 +1,5 @@
 import express from 'express'
-import { registerUser, updateUser, deleteUser, getAllUsers } from '../../controllers/users/users-controller.js'
+import { registerUser, updateUser, deleteUser, getAllUsers, registerClient, registerClientWithContact} from '../../controllers/users/users-controller.js'
 import { isSessionActive } from '../../middlewares/auth/auth-middlewares.js'
 import cookieParser from 'cookie-parser'
 
@@ -46,6 +46,27 @@ usersRouter.use(isSessionActive)
  * @path {POST} /register
  */
 usersRouter.post('/register', registerUser)
+
+/**
+  * Ruta para obtener los datos de un usuario.
+  *
+  * Llama a la función `registerClient` del controlador para obtener los datos de un usuario.
+  * La solicitud debe ser un `GET` a `/data/:userId`, donde `:userId` es el identificador del usuario.
+  * en el cuerpo de la solicitud.
+  *
+  * @name GET /data/:userId
+  * @path {GET} /data/:userId
+  */
+usersRouter.post('/register-contact/', registerClientWithContact)
+
+/**
+  * Ruta para crear un nuevo cliente.
+  * Verifica si el nombre de usuario ya existe antes de crear el usuario.
+  *
+  * @name POST /register-client
+  * @path {POST} /register-client
+  */
+usersRouter.post('/register-client', registerClient)
 
 /**
  * Ruta para actualizar un usuario existente.

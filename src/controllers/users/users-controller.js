@@ -1,4 +1,6 @@
-import { saveUser, verifyExistingUserByUsername, updateUserDb, deleteUserByIdDb, verifyExistingUserById, getAllUsersDb, verifyExistingUserByEmail, retrieveUserById } from '../../repositories/users/user-repository.js'
+import { saveUser, verifyExistingUserByUsername, updateUserDb, deleteUserByIdDb, verifyExistingUserById, getAllUsersDb, verifyExistingUserByEmail, retrieveUserById, saveClient } from '../../repositories/users/user-repository.js'
+import { verifyExistingContactByContactName } from '../../repositories/contacts/contact-repository.js'
+import { saveContact } from '../../repositories/contacts/contact-repository.js'
 import { JWT_SECRET } from '../../config/config.js'
 import jwt from 'jsonwebtoken'
 
@@ -58,6 +60,35 @@ export const registerUser = async (req, res) => {
     res.status(500).json({ message: 'Something went wrong' })
   }
 }
+
+/**
+  * Registrar un cliente en el sistema.
+  * Verifica si el nombre de usuario ya existe antes de crear el usuario.
+  *
+  * @param {object} req - Objeto de solicitud de Express, que contiene los datos del cliente en `req.body`.
+  * @param {object} res - Objeto de respuesta de Express para enviar la respuesta HTTP.
+  * @returns {Promise<void>} - Envía una respuesta indicando si el registro fue exitoso o si ocurrió un error.
+  */
+export const registerClient = async (req, res) => {
+  const {
+    username,
+    firstName,
+  } = req.body
+  const user = {
+    username,
+    firstName,
+  }
+  if (await verifyExistingUserByUsername(username)) {
+    return res.status(400).json({ message: 'User already exists' })
+  }
+  try {
+    await saveClient(user)
+    res.status(201).json({ message: 'User created' })
+  } catch (e) {
+    console.error(e)
+    res.status(500).json({ message: 'Something went wrong' })
+  }
+  }
 
 /**
  * Actualiza un usuario existente en el sistema.
@@ -171,5 +202,57 @@ export const getAllUsers = async (req, res) => {
   } catch (e) {
     console.error(e)
     res.status(500).json({ message: 'Something went wrong' })
+  }
+}
+
+/**
+  * Crea un cliente con un contacto asociado.
+  *
+  * @param {object} req - Objeto de solicitud de Express, que contiene los datos del cliente en `req.body`.
+  * @param {object} res - Objeto de respuesta de Express para enviar la respuesta HTTP.
+  * @returns {Promise<void>} - Envía una respuesta indicando si el registro fue exitoso o si ocurrió un error.
+  */
+
+
+export const registerClientWithContact = async (req, res) => {
+  const {
+    username,
+    firstName,
+    contactName,
+    contactEmail,
+    contactPhone,
+    contactJob,
+    relationship,
+  } = req.body;
+
+  try {
+    const existingUser = await verifyExistingUserByUsername(username);
+    const existingContact = await verifyExistingContactByContactName(contactName);
+    
+    // Verificar si el usuario y el contacto ya existen
+    if (existingContact && existingUser) {
+      return res.status(400).json({ message: "Contact and user already exists" });
+    }if (existingContact) {
+      return res.status(400).json({ message: "Contact already exists" });
+    } if (existingUser) {
+      return res.status(400).json({ message: "User already exists" });
+    }
+
+    const savedUser = await saveClient({ username, firstName });
+
+    const contact = {
+      userId: savedUser.userId,       
+      contactName,
+      contactEmail,
+      contactPhone,
+      contactJob,
+      relationship,
+    };
+
+    await saveContact(contact);
+    return res.status(201).json({ message: "User and contact created successfully" });
+  } catch (e) {
+    console.error("Error in registerClientWithContact:", e);
+    res.status(500).json({ message: "Something went wrong" });
   }
 }

@@ -47,6 +47,26 @@ export const saveUser = async (user) => {
 }
 
 /**
+  * Guardar un cliente en la base de datos.
+  *
+  * @param {object} client - Objeto que contiene los datos del cliente a guardar.
+  * returns {Promise<void>} - Indica el éxito o fallo de la operación.
+  */
+export const saveClient = async (client) => {
+  const {username, firstName } = client
+  try {
+    const createdUser = await User.create({
+      username,
+      firstName,
+      roleId: 3,
+    })
+    return createdUser
+  } catch (e) {
+    console.error(e)
+  }
+}
+
+/**
  * Verifica las credenciales de un usuario comparando la contraseña ingresada con la almacenada.
  *
  * @param {object} user - Objeto que contiene `userEmail` y `password` del usuario.
