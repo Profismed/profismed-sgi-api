@@ -1,5 +1,5 @@
 import express from 'express'
-import { registerUser, updateUser, deleteUser, getAllUsers, registerClient, registerClientWithContact} from '../../controllers/users/users-controller.js'
+import { registerUser, updateUser, deleteUser, getAllUsers, registerClient, registerClientWithContact, getAllClients} from '../../controllers/users/users-controller.js'
 import { isSessionActive } from '../../middlewares/auth/auth-middlewares.js'
 import cookieParser from 'cookie-parser'
 
@@ -102,3 +102,13 @@ usersRouter.delete('/delete/:userId', deleteUser)
  * @path {GET} /all
  */
 usersRouter.get('/all', getAllUsers)
+
+/**
+* Ruta para obtener todos los clientes.
+* Llama a la función `getAllClients` del controlador para obtener la lista de clientes.
+* La solicitud debe ser un `GET` a `/all-clients`. 
+*
+* @name GET /all-clients
+* @path {GET} /all-clients
+*/
+usersRouter.get('/all-clients', getAllClients)

@@ -1,4 +1,4 @@
-import { saveUser, verifyExistingUserByUsername, updateUserDb, deleteUserByIdDb, verifyExistingUserById, getAllUsersDb, verifyExistingUserByEmail, retrieveUserById, saveClient } from '../../repositories/users/user-repository.js'
+import { saveUser, verifyExistingUserByUsername, updateUserDb, deleteUserByIdDb, verifyExistingUserById, getAllUsersDb, verifyExistingUserByEmail, retrieveUserById, saveClient, getAllClientsDb} from '../../repositories/users/user-repository.js'
 import { verifyExistingContactByContactName } from '../../repositories/contacts/contact-repository.js'
 import { saveContact } from '../../repositories/contacts/contact-repository.js'
 import { JWT_SECRET } from '../../config/config.js'
@@ -253,6 +253,23 @@ export const registerClientWithContact = async (req, res) => {
     return res.status(201).json({ message: "User and contact created successfully" });
   } catch (e) {
     console.error("Error in registerClientWithContact:", e);
+    res.status(500).json({ message: "Something went wrong" });
+  }
+}
+
+/**
+* Obtiene todos los clientes del sistema.
+*
+* @param {object} req - Objeto de solicitud de Express.
+* @param {object} res - Objeto de respuesta de Express para enviar la respuesta HTTP.
+* @returns {Promise<void>} - Envía una respuesta con la lista de clientes o un mensaje de error.
+*/
+export const getAllClients = async (req, res) => {
+  try {
+    const clients = await getAllClientsDb();
+    res.status(200).json(clients);
+  } catch (e) {
+    console.error(e);
     res.status(500).json({ message: "Something went wrong" });
   }
 }

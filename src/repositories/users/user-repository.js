@@ -271,3 +271,23 @@ export const retrieveUserById = async (userId) => {
     console.error(e)
   }
 }
+
+/**
+* Obtener todos los clientes de la base de datos.
+*
+* @param {number} roleId - ID del rol de cliente.
+* @returns {Promise<Array>} - Lista de clientes.
+*/
+export const getAllClientsDb = async (roleId) => {
+  try {
+    return await User.findAll({
+      attributes: { exclude: ['password', 'isAvailable'] },
+      where: {
+        roleId: 3,
+        isAvailable: 1
+      }
+    })
+  } catch (e) {
+    console.error(e)
+  }
+}
