@@ -1,7 +1,8 @@
-try {
-  process.loadEnvFile('.local.env')
-} catch (error) {
-  console.error('Error loading .local.env file:', error.message)
+import dotenv from 'dotenv';
+
+if (process.env.NODE_ENV !== 'production') {
+  dotenv.config({ path: '.local.env' });
+  console.log('.local.env loaded');
 }
 
 /**
