@@ -229,7 +229,7 @@ export const registerClientWithContact = async (req, res) => {
     const existingUser = await verifyExistingUserByUsername(username);
     const existingContact = await verifyExistingContactByContactName(contactName);
     
-    // Verificar si el usuario y el contacto ya existen
+    // Verificar si el usuario y el contacto ya existen 
     if (existingContact && existingUser) {
       return res.status(400).json({ message: "Contact and user already exists" });
     }if (existingContact) {
