@@ -63,6 +63,24 @@ export const TopSellers = sequelize.define('TopSellers', {
     allowNull: true,
     field: 'total_sales'
   },
+    /**
+  * Cantidad total de productos vendidos por el vendedor.
+  * @type {number}
+  */
+  total_sales_amount: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    field: 'total_sales_amount'
+  },
+  /**
+  * Cantidad total de productos vendidos por el vendedor.
+  * @type {number}
+  */
+  total_quantity_sold: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    field: 'total_quantity_sold'
+  },
   /**
    * Lista de productos vendidos por el vendedor.
    * @type {string}

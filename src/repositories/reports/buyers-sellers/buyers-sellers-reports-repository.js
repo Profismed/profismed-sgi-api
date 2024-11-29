@@ -35,6 +35,8 @@ export const retrieveTopSellers = async () => {
         'seller_last_name',
         'seller_email',
         'total_sales',
+        'total_sales_amount',
+        'total_quantity_sold',
         'products_sold'
       ]
     })
