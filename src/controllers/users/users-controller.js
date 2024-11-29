@@ -1,6 +1,6 @@
-import { saveUser, verifyExistingUserByUsername, updateUserDb, updateClientDb, deleteUserByIdDb, verifyExistingUserById, getAllUsersDb, verifyExistingUserByEmail, retrieveUserById, saveClient, getAllClientsDb} from '../../repositories/users/user-repository.js'
-import { verifyExistingContactByContactName } from '../../repositories/contacts/contact-repository.js'
-import { saveContact } from '../../repositories/contacts/contact-repository.js'
+import { saveUser, verifyExistingUserByUsername, updateUserDb, updateClientDb, deleteUserByIdDb, verifyExistingUserById, getAllUsersDb, verifyExistingUserByEmail, retrieveUserById, saveClient, getAllClientsDb } from '../../repositories/users/user-repository.js'
+import { verifyExistingContactByContactName, saveContact } from '../../repositories/contacts/contact-repository.js'
+
 import { JWT_SECRET } from '../../config/config.js'
 import jwt from 'jsonwebtoken'
 
@@ -72,11 +72,11 @@ export const registerUser = async (req, res) => {
 export const registerClient = async (req, res) => {
   const {
     username,
-    firstName,
+    firstName
   } = req.body
   const user = {
     username,
-    firstName,
+    firstName
   }
   if (await verifyExistingUserByUsername(username)) {
     return res.status(400).json({ message: 'User already exists' })
@@ -88,7 +88,7 @@ export const registerClient = async (req, res) => {
     console.error(e)
     res.status(500).json({ message: 'Something went wrong' })
   }
-  }
+}
 
 /**
  * Actualiza un usuario existente en el sistema.
@@ -170,7 +170,6 @@ export const updateUser = async (req, res) => {
   */
 export const updateClient = async (req, res) => {
   const { userId } = req.params
-  const { contactId } = req.params
   const {
     username,
     firstName,
@@ -178,8 +177,11 @@ export const updateClient = async (req, res) => {
     contactEmail,
     contactPhone,
     contactJob,
-    relationship
+    relationship,
+    contactId
   } = req.body
+
+  console.log(req.body)
   const user = {
     username,
     firstName,
@@ -187,23 +189,22 @@ export const updateClient = async (req, res) => {
     contactEmail,
     contactPhone,
     contactJob,
-    relationship
+    relationship,
+    contactId
   }
-  if (!
-    (await verifyExistingUserById(userId) && 
+  if (!(await verifyExistingUserById(userId) ||
       (await verifyExistingContactByContactName(contactId)))
   ) {
     return res.status(404).json({ message: 'User not found' })
   }
   try {
-    await updateClientDb(userId, contactId, user)
+    await updateClientDb(userId, user)
     res.status(200).json({ message: 'User updated' })
   } catch (e) {
     console.error(e)
     res.status(500).json({ message: 'Something went wrong' })
   }
-  }
-
+}
 
 /**
  * Elimina (marca como no disponible) un usuario del sistema.
@@ -265,38 +266,38 @@ export const registerClientWithContact = async (req, res) => {
     contactEmail,
     contactPhone,
     contactJob,
-    relationship,
-  } = req.body;
+    relationship
+  } = req.body
 
   try {
-    const existingUser = await verifyExistingUserByUsername(username);
-    const existingContact = await verifyExistingContactByContactName(contactName);
-    
-    // Verificar si el usuario y el contacto ya existen 
+    const existingUser = await verifyExistingUserByUsername(username)
+    const existingContact = await verifyExistingContactByContactName(contactName)
+
+    // Verificar si el usuario y el contacto ya existen
     if (existingContact && existingUser) {
-      return res.status(400).json({ message: "Contact and user already exists" });
-    }if (existingContact) {
-      return res.status(400).json({ message: "Contact already exists" });
+      return res.status(400).json({ message: 'Contact and user already exists' })
+    } if (existingContact) {
+      return res.status(400).json({ message: 'Contact already exists' })
     } if (existingUser) {
-      return res.status(400).json({ message: "User already exists" });
+      return res.status(400).json({ message: 'User already exists' })
     }
 
-    const savedUser = await saveClient({ username, firstName });
+    const savedUser = await saveClient({ username, firstName })
 
     const contact = {
-      userId: savedUser.userId,       
+      userId: savedUser.userId,
       contactName,
       contactEmail,
       contactPhone,
       contactJob,
-      relationship,
-    };
+      relationship
+    }
 
-    await saveContact(contact);
-    return res.status(201).json({ message: "User and contact created successfully" });
+    await saveContact(contact)
+    return res.status(201).json({ message: 'User and contact created successfully' })
   } catch (e) {
-    console.error("Error in registerClientWithContact:", e);
-    res.status(500).json({ message: "Something went wrong" });
+    console.error('Error in registerClientWithContact:', e)
+    res.status(500).json({ message: 'Something went wrong' })
   }
 }
 
@@ -309,12 +310,10 @@ export const registerClientWithContact = async (req, res) => {
 */
 export const getAllClients = async (req, res) => {
   try {
-    const clients = await getAllClientsDb();
-    res.status(200).json(clients);
+    const clients = await getAllClientsDb()
+    res.status(200).json(clients)
   } catch (e) {
-    console.error(e);
-    res.status(500).json({ message: "Something went wrong" });
+    console.error(e)
+    res.status(500).json({ message: 'Something went wrong' })
   }
 }
-
-

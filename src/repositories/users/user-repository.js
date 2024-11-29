@@ -2,6 +2,7 @@ import { User } from '../../models/user/user-model.js'
 import bcrypt from 'bcrypt'
 import { SALT_ROUNDS } from '../../config/config.js'
 import { Op } from 'sequelize'
+import { Contact } from '../../models/contacts/contact-model.js'
 
 /**
  * Guarda un nuevo usuario en la base de datos.
@@ -53,12 +54,12 @@ export const saveUser = async (user) => {
   * returns {Promise<void>} - Indica el éxito o fallo de la operación.
   */
 export const saveClient = async (client) => {
-  const {username, firstName } = client
+  const { username, firstName } = client
   try {
     const createdUser = await User.create({
       username,
       firstName,
-      roleId: 3,
+      roleId: 3
     })
     return createdUser
   } catch (e) {
@@ -141,7 +142,7 @@ export const retrieveUserData = async (username) => {
  */
 export const updateUserDb = async (userId, user) => {
   try {
-    await User.update(user, { where: { userId } })
+    await User.update(user, { where: { userId, roleId: 3 } })
   } catch (e) {
     console.error(e)
   }
@@ -154,11 +155,37 @@ export const updateUserDb = async (userId, user) => {
   * @param {object} user - Objeto con los datos actualizados.
   * @returns {Promise<void>} - Indica el éxito o fallo de la operación.
   */
-export const updateClientDb = async (userId, clientId, user) => {
+export const updateClientDb = async (userId, user) => {
   try {
-    //TODO
+    const {
+      username,
+      firstName,
+      contactName,
+      contactEmail,
+      contactPhone,
+      contactJob,
+      relationship,
+      contactId
+    } = user
+
+    const userToUpdate = {
+      username,
+      firstName
+    }
+
+    const contactToUpdate = {
+      contactId,
+      contactName,
+      contactEmail,
+      contactPhone,
+      contactJob,
+      relationship
+    }
+
+    await User.update(userToUpdate, { where: { userId } })
+    await Contact.update(contactToUpdate, { where: { contactId } })
   } catch {
-    console.error(e) 
+    console.error(e)
   }
 }
 

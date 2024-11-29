@@ -29,7 +29,7 @@ app.use('/api/auth', authRouter)
  */
 app.use('/api/users', usersRouter)
 
-/** 
+/**
  * Rutas para la gestión de contactos.
  * Prefijo de ruta: `/api/contacts`
  */

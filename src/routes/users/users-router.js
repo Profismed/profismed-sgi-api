@@ -115,11 +115,9 @@ usersRouter.get('/all', getAllUsers)
 /**
 * Ruta para obtener todos los clientes.
 * Llama a la función `getAllClients` del controlador para obtener la lista de clientes.
-* La solicitud debe ser un `GET` a `/all-clients`. 
+* La solicitud debe ser un `GET` a `/all-clients`.
 *
 * @name GET /all-clients
 * @path {GET} /all-clients
 */
 usersRouter.get('/all-clients', getAllClients)
-
-
