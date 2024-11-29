@@ -148,6 +148,21 @@ export const updateUserDb = async (userId, user) => {
 }
 
 /**
+  * Actualiza la información del cliente en la base de datos por su ID.
+  *
+  * @param {number} userId - ID del cliente a actualizar.
+  * @param {object} user - Objeto con los datos actualizados.
+  * @returns {Promise<void>} - Indica el éxito o fallo de la operación.
+  */
+export const updateClientDb = async (userId, clientId, user) => {
+  try {
+    //TODO
+  } catch {
+    console.error(e) 
+  }
+}
+
+/**
  * Marca un usuario como no disponible en la base de datos por su nombre de usuario.
  *
  * @param {string} username - Nombre de usuario a eliminar.

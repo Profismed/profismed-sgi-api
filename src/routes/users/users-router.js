@@ -1,5 +1,5 @@
 import express from 'express'
-import { registerUser, updateUser, deleteUser, getAllUsers, registerClient, registerClientWithContact, getAllClients } from '../../controllers/users/users-controller.js'
+import { registerUser, updateUser, updateClient, deleteUser, getAllUsers, registerClient, registerClientWithContact, getAllClients } from '../../controllers/users/users-controller.js'
 import { isSessionActive } from '../../middlewares/auth/auth-middlewares.js'
 import cookieParser from 'cookie-parser'
 
@@ -67,6 +67,15 @@ usersRouter.post('/register-contact/', registerClientWithContact)
   * @path {POST} /register-client
   */
 usersRouter.post('/register-client', registerClient)
+
+/**
+  * Ruta para editar un cliente.
+  * Verifica si el nombre de usuario ya existe antes de crear el usuario.
+  *
+  * @name PUT /update-client/:userId
+  * @path {PUT} /update-client/:userId
+  */
+usersRouter.put('/update-client/:userId', updateClient)
 
 /**
  * Ruta para actualizar un usuario existente.

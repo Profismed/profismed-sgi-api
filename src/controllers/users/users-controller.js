@@ -1,4 +1,4 @@
-import { saveUser, verifyExistingUserByUsername, updateUserDb, deleteUserByIdDb, verifyExistingUserById, getAllUsersDb, verifyExistingUserByEmail, retrieveUserById, saveClient, getAllClientsDb} from '../../repositories/users/user-repository.js'
+import { saveUser, verifyExistingUserByUsername, updateUserDb, updateClientDb, deleteUserByIdDb, verifyExistingUserById, getAllUsersDb, verifyExistingUserByEmail, retrieveUserById, saveClient, getAllClientsDb} from '../../repositories/users/user-repository.js'
 import { verifyExistingContactByContactName } from '../../repositories/contacts/contact-repository.js'
 import { saveContact } from '../../repositories/contacts/contact-repository.js'
 import { JWT_SECRET } from '../../config/config.js'
@@ -159,6 +159,51 @@ export const updateUser = async (req, res) => {
     res.status(500).json({ message: 'Something went wrong' })
   }
 }
+
+/**
+  * Actualiza un cliente existente en el sistema, con su contacto.
+  * Verifica si el cliente existe antes de realizar la actualización.
+  *
+  * @param {object} req - Objeto de solicitud de Express, que contiene `userId` en `req.params` y los datos a actualizar en `req.body`.
+  * @param {object} res - Objeto de respuesta de Express para enviar la respuesta HTTP.
+  * @returns {Promise<void>} - Envía una respuesta indicando si la actualización fue exitosa o si ocurrió un error.
+  */
+export const updateClient = async (req, res) => {
+  const { userId } = req.params
+  const { contactId } = req.params
+  const {
+    username,
+    firstName,
+    contactName,
+    contactEmail,
+    contactPhone,
+    contactJob,
+    relationship
+  } = req.body
+  const user = {
+    username,
+    firstName,
+    contactName,
+    contactEmail,
+    contactPhone,
+    contactJob,
+    relationship
+  }
+  if (!
+    (await verifyExistingUserById(userId) && 
+      (await verifyExistingContactByContactName(contactId)))
+  ) {
+    return res.status(404).json({ message: 'User not found' })
+  }
+  try {
+    await updateClientDb(userId, contactId, user)
+    res.status(200).json({ message: 'User updated' })
+  } catch (e) {
+    console.error(e)
+    res.status(500).json({ message: 'Something went wrong' })
+  }
+  }
+
 
 /**
  * Elimina (marca como no disponible) un usuario del sistema.
